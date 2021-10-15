@@ -94,6 +94,8 @@ No potential abusable section.
 - nt!PsProcessType
 - nt!__C_specific_handler
 
+No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.
+
 # IOCTL
 
 ### DEVICE
