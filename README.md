@@ -1,5 +1,5 @@
 # AurumRE
-Reverse engineering of Aurum anti-cheat driver
+Reverse engineering of Aurum Ricochet anti-cheat driver
 
 # NOTES
 
