@@ -66,35 +66,33 @@ No potential abusable section.
 
 ### Imports
 
-```
-nt!RtlCompareMemory
-nt!KeAcquireGuardedMutex
-nt!KeReleaseGuardedMutex
-nt!ExAllocatePoolWithTag
-nt!ExFreePoolWithTag
-nt!IoGetCurrentProcess
-nt!ZwCreateFile
-nt!ZwQueryInformationFile
-nt!ZwReadFile
-nt!ZwClose
-nt!SeLocateProcessImageName
-nt!ZwQuerySystemInformation
-nt!KeInitializeSpinLock
-nt!KeAcquireSpinLockRaiseToDpc
-nt!KeReleaseSpinLock
-nt!KeInitializeGuardedMutex
-nt!IofCompleteRequest
-nt!IoCreateDevice
-nt!IoCreateSymbolicLink
-nt!IoDeleteDevice
-nt!IoDeleteSymbolicLink
-nt!ObRegisterCallbacks
-nt!ObUnRegisterCallbacks
-nt!PsSetCreateProcessNotifyRoutineEx
-nt!PsGetProcessPeb
-nt!PsProcessType
-nt!__C_specific_handler
-```
+- nt!RtlCompareMemory
+- nt!KeAcquireGuardedMutex
+- nt!KeReleaseGuardedMutex
+- nt!ExAllocatePoolWithTag
+- nt!ExFreePoolWithTag
+- nt!IoGetCurrentProcess
+- nt!ZwCreateFile
+- nt!ZwQueryInformationFile
+- nt!ZwReadFile
+- nt!ZwClose
+- nt!SeLocateProcessImageName
+- nt!ZwQuerySystemInformation
+- nt!KeInitializeSpinLock
+- nt!KeAcquireSpinLockRaiseToDpc
+- nt!KeReleaseSpinLock
+- nt!KeInitializeGuardedMutex
+- nt!IofCompleteRequest
+- nt!IoCreateDevice
+- nt!IoCreateSymbolicLink
+- nt!IoDeleteDevice
+- nt!IoDeleteSymbolicLink
+- nt!ObRegisterCallbacks
+- nt!ObUnRegisterCallbacks
+- nt!PsSetCreateProcessNotifyRoutineEx
+- nt!PsGetProcessPeb
+- nt!PsProcessType
+- nt!__C_specific_handler
 
 # IOCTL
 
