@@ -53,6 +53,8 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.
 
+The 2nd(at the last index) `.text` section looks like made by packer to store stubs of jmp tables where the specific functions are configured to obfuscate its control flows by abusing `jmp` trampoline.
+
 Obfuscated control-flow view:
 
 https://user-images.githubusercontent.com/37926134/137597435-5c8264ca-f68e-42cd-9709-2e805c326e26.mp4
@@ -62,14 +64,14 @@ Looks like the obfuscation algorithm is quite simple?
 ### PE Sections
 
 ```
-.text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
-.rdata IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
-.data  IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
-.pdata IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
-.INIT  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
-.rsrc  IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
-.reloc IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
-.text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ // stubs
+[0] .text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
+[1] .rdata IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+[2] .data  IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+[3] .pdata IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+[4] .INIT  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
+[5] .rsrc  IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+[6] .reloc IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+[7] .text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ // stubs
 ```
 
 ![image](https://user-images.githubusercontent.com/37926134/137428932-20b608cf-20e1-49e6-a965-835a5b99c23c.png)
