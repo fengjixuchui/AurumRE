@@ -50,8 +50,7 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 
 ### PE Packer
 
-The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.
-
+The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.
 
 ### PE Sections
@@ -210,7 +209,7 @@ fffff800`748622c6 4157            push    r15
 fffff800`748622c8 4881ec60020000  sub     rsp,260h
 ```
 
-See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
+See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
 See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
 
 ### Object Callbacks
