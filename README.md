@@ -224,6 +224,8 @@ fffff800`748622c8 4881ec60020000  sub     rsp,260h
 
 I am seeing this assembly stub on the entire IOCTL control flow over and over.
 
+<details>
+<summary>Spoiler</summary>
 ```asm
 .text:000000014001059D                 mov     [rsp+arg_180], rcx
 .text:00000001400105A5                 imul    rcx, 7D0h
@@ -301,6 +303,7 @@ I am seeing this assembly stub on the entire IOCTL control flow over and over.
 .text:00000001400106CE                 jz      loc_140014F99
 .text:00000001400106D4                 jmp     loc_140017A89
 ```
+</details>
 
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
 See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
