@@ -205,3 +205,21 @@ fffff800`748622c8 4881ec60020000  sub     rsp,260h
 ```
 
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
+
+### Object Callbacks
+
+`ObRegisterCallbacks` is called at the initialization phase of the driver.
+
+```
+[DEBUGGER] HookedObRegisterCallbacks: FFFFEC047C084810 FFFFEC047C0847B0
+[DEBUGGER] CallbackRegistration->Version: 0x100
+[DEBUGGER] CallbackRegistration->OperationRegistrationCount: 1
+[DEBUGGER] CallbackRegistration->Altitude: 1001.9834
+[DEBUGGER] CallbackRegistration->RegistrationContext: 0x0000000000000000
+[DEBUGGER] CallbackRegistration->OperationRegistration[0].ObjectType    : 0xFFFFF8066F6FC410 (PsProcessType)
+[DEBUGGER] CallbackRegistration->OperationRegistration[0].Operations    : 3
+[DEBUGGER] CallbackRegistration->OperationRegistration[0].PostOperation : 0x0000000000000000
+[DEBUGGER] CallbackRegistration->OperationRegistration[0].PreOperation  : 0xFFFFF8067137D9A0
+```
+
+No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
