@@ -55,7 +55,7 @@ Packed but it's totally human-readable.
 
 The 2nd(at the last index) `.text` section looks like made by packer to store stubs of jmp tables where the specific functions are configured to obfuscate its control flows by abusing `jmp` trampoline.
 
-The following functions are heavily obfuscated (as I just know of now):
+The following functions are heavily obfuscated (as I just know as of now):
 - Dispatch routine of IRPs: Aurum+0x14450
 - Process creation callback routine: Aurum+0x14060
 - Object pre-callback routine: Aurum+0xD9A0
