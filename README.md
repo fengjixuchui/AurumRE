@@ -223,3 +223,11 @@ See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
 ```
 
 No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
+
+### Process Callbacks
+
+`` is called at the initialization phase of the driver as well as object callbacks.
+
+```
+[DEBUGGER] HookedPsSetCreateProcessNotifyRoutineEx: FFFFF80313374060(Aurum+0x14060) 0
+```
