@@ -222,7 +222,9 @@ fffff800`748622c6 4157            push    r15
 fffff800`748622c8 4881ec60020000  sub     rsp,260h
 ```
 
-I am seeing this assembly stub on the entire IOCTL control flow over and over.
+I am seeing this assembly stub on the entire IOCTL control flow over and over.  
+Is this like a payload-unencryption routine? the number of this stubs are sounds like the number of Aurum's IOCTL commands.  
+I am pretty sure the driver would have payload-encryption measure if any of IOCTL processes has its payloads.
 
 <details>
 <summary>Spoiler</summary>
