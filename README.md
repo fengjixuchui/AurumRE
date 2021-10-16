@@ -53,6 +53,12 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.
 
+Obfuscated control-flow view:
+
+https://user-images.githubusercontent.com/37926134/137597435-5c8264ca-f68e-42cd-9709-2e805c326e26.mp4
+
+Looks like the obfuscation algorithm is quite simple?
+
 ### PE Sections
 
 ```
