@@ -231,3 +231,5 @@ No post operation (because post operation does not have an ability to strip gran
 ```
 [DEBUGGER] PsSetCreateProcessNotifyRoutineEx: FFFFF80313374060(Aurum+0x14060) 0
 ```
+
+See disassembly at [AurumProcessCallback.asm](AurumProcessCallback.asm)
