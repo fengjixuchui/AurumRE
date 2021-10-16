@@ -46,6 +46,7 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 
 - No anti kernel debugger
 - Packed by original packer
+    - jmp control flow obfuscation, can mitigate by writing some code.
 
 ### PE Sections
 
