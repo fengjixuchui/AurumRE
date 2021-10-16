@@ -219,7 +219,7 @@ See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
 [DEBUGGER] CallbackRegistration->OperationRegistration[0].ObjectType    : 0xFFFFF8066F6FC410 (PsProcessType)
 [DEBUGGER] CallbackRegistration->OperationRegistration[0].Operations    : 3
 [DEBUGGER] CallbackRegistration->OperationRegistration[0].PostOperation : 0x0000000000000000
-[DEBUGGER] CallbackRegistration->OperationRegistration[0].PreOperation  : 0xFFFFF8067137D9A0
+[DEBUGGER] CallbackRegistration->OperationRegistration[0].PreOperation  : 0xFFFFF8067137D9A0 Aurum+0xd9a0
 ```
 
 No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
