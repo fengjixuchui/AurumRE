@@ -211,6 +211,7 @@ fffff800`748622c8 4881ec60020000  sub     rsp,260h
 ```
 
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
+See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
 
 ### Object Callbacks
 
