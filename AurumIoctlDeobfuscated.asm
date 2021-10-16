@@ -41,7 +41,1261 @@
 .text:0000000140025187 loc_140025187:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400163F5↑j
 .text:0000000140025187                 cmp     ecx, 15h
 .text:000000014002518A                 ja      loc_14001741C
-> .text:0000000140025190                 jmp     loc_140014580
+.text:0000000140025190                 jmp     loc_140014580
+
+	.text:0000000140014580 loc_140014580:                          ; CODE XREF: sub_14001D640+7B50↓j
+	.text:0000000140014580                 jz      loc_1400171E1
+	.text:0000000140014586                 jmp     loc_14001282E
+	
+		.text:000000014001282E loc_14001282E:                          ; CODE XREF: IoHandler_sub_140014450+136↓j
+		.text:000000014001282E                 sub     ecx, 0Fh
+		.text:0000000140012831                 jz      loc_140016F9E
+		.text:0000000140012837                 jmp     loc_140014CC3
+		
+			.text:0000000140014CC3 loc_140014CC3:                          ; CODE XREF: PreOb_sub_14000D9A0+4E97↑j
+			.text:0000000140014CC3                 sub     ecx, 1
+			.text:0000000140014CC6                 jz      loc_140016D33
+			.text:0000000140014CCC                 jmp     loc_140041892
+			
+				.text:0000000140041892 loc_140041892:                          ; CODE XREF: IoHandler_sub_140014450+87C↑j
+				.text:0000000140041892                 sub     ecx, 1
+				.text:0000000140041895                 jz      loc_140016AF3
+				.text:000000014004189B                 jmp     loc_140038116
+				
+					.text:0000000140038116 loc_140038116:                          ; CODE XREF: sub_14004185D+3E↓j
+					.text:0000000140038116                 sub     ecx, 1
+					.text:0000000140038119                 jz      loc_1400168B0
+					.text:000000014003811F                 jmp     loc_14000EA95
+					
+						.text:000000014000EA95 loc_14000EA95:                          ; CODE XREF: sub_14003800C+113↓j
+						.text:000000014000EA95                 sub     ecx, 1
+						.text:000000014000EA98                 jz      loc_140016675
+						.text:000000014000EA9E                 jmp     loc_140013157
+						
+							.text:0000000140013157 loc_140013157:                          ; CODE XREF: PreOb_sub_14000D9A0+10FE↑j
+							.text:0000000140013157                 cmp     ecx, 1
+							.text:000000014001315A                 jnz     loc_1400181CE
+							.text:0000000140013160                 jmp     loc_140017C30
+							
+								.text:0000000140017C30 loc_140017C30:                          ; CODE XREF: PreOb_sub_14000D9A0+57C0↑j
+								.text:0000000140017C30                 mov     rax, cs:P
+								.text:0000000140017C37                 mov     r10, 0AA2D145923EC7F30h
+								.text:0000000140017C41                 lea     rsi, cs:140000000h
+								.text:0000000140017C48                 mov     r9, 0A25E5851D18A813Bh
+								.text:0000000140017C52                 mov     r12, 85BF37612CEE3C9Bh
+								.text:0000000140017C5C                 mov     r14, 0F0F0F0F0F0F0F0F1h
+								.text:0000000140017C66                 lea     r15, unk_14002B760
+								.text:0000000140017C6D                 mov     r8, 0FFFFFFFF00000000h
+								.text:0000000140017C77                 test    rax, rax
+								.text:0000000140017C7A                 jz      loc_14001820E
+								.text:0000000140017C80                 jmp     loc_140040DEC
+								
+									.text:0000000140040DEC loc_140040DEC:                          ; CODE XREF: IoHandler_sub_140014450+3830↑j
+									.text:0000000140040DEC                 cmp     dword ptr [rax], 7D0h
+									.text:0000000140040DF2                 mov     rax, 2262427FC07A8175h
+									.text:0000000140040DFC                 jnb     loc_140014797
+									.text:0000000140040E02                 jmp     loc_140043022
+									
+										.text:0000000140043022 loc_140043022:                          ; CODE XREF: sub_140040C0A+1F8↑j
+										.text:0000000140043022                 mov     [rsp+arg_28], r10
+										.text:0000000140043027                 mov     rcx, r13
+										.text:000000014004302A                 mov     rbx, 4E5E0A72F0539783h
+										.text:0000000140043034                 mov     r11, 0F08DE3B14D94C2BFh
+										.text:000000014004303E                 jmp     loc_1400164BC
+										
+										.text:00000001400164BC loc_1400164BC:                          ; CODE XREF: sub_14003DD84+141E↓j
+										.text:00000001400164BC                                         ; sub_14004185D+17E1↓j
+										.text:00000001400164BC                 jmp     loc_1400129E6
+										
+										.text:00000001400129E6 loc_1400129E6:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400164BC↓j
+										.text:00000001400129E6                 mov     [rsp+arg_138], rcx
+										.text:00000001400129EE                 imul    rcx, 7D0h
+										.text:00000001400129F5                 mul     rcx
+										.text:00000001400129F8                 jmp     loc_140024DE7
+										
+										.text:0000000140024DE7 loc_140024DE7:                          ; CODE XREF: PreOb_sub_14000D9A0+5058↑j
+										.text:0000000140024DE7                 mov     rax, rcx
+										.text:0000000140024DEA                 sub     rax, rdx
+										.text:0000000140024DED                 shr     rax, 1
+										.text:0000000140024DF0                 add     rax, rdx
+										.text:0000000140024DF3                 shr     rax, 0Bh
+										.text:0000000140024DF7                 imul    rax, 0E1Bh
+										.text:0000000140024DFE                 sub     rcx, rax
+										.text:0000000140024E01                 imul    rdi, rcx, 0E1Bh
+										.text:0000000140024E08                 mov     rax, r11
+										.text:0000000140024E0B                 mul     rdi
+										.text:0000000140024E0E                 jmp     loc_1400168F7
+										
+										.text:00000001400168F7 loc_1400168F7:                          ; CODE XREF: sub_14001D640+77CE↓j
+										.text:00000001400168F7                 shr     rdx, 0Ch
+										.text:00000001400168FB                 jmp     loc_1400414B7
+										
+										.text:00000001400414B7 loc_1400414B7:                          ; CODE XREF: IoHandler_sub_140014450+24AB↑j
+										.text:00000001400414B7                 imul    rax, rdx, 1107h
+										.text:00000001400414BE                 sub     rdi, rax
+										.text:00000001400414C1                 mov     rax, rbx
+										.text:00000001400414C4                 mul     rdi
+										.text:00000001400414C7                 mov     rax, rdi
+										.text:00000001400414CA                 sub     rax, rdx
+										.text:00000001400414CD                 shr     rax, 1
+										.text:00000001400414D0                 add     rax, rdx
+										.text:00000001400414D3                 jmp     loc_14003DA8D
+										
+										.text:000000014003DA8D loc_14003DA8D:                          ; CODE XREF: sub_140040C0A+8C9↓j
+										.text:000000014003DA8D                 shr     rax, 6
+										.text:000000014003DA91                 imul    rcx, rax, 62h ; 'b'
+										.text:000000014003DA95                 mov     rax, 0A0A0A0A0A0A0A0A1h
+										.text:000000014003DA9F                 mul     rdi
+										.text:000000014003DAA2                 shr     rdx, 5
+										.text:000000014003DAA6                 add     rcx, rdx
+										.text:000000014003DAA9                 imul    rax, rcx, 66h ; 'f'
+										.text:000000014003DAAD                 imul    rcx, rdi, 68h ; 'h'
+										.text:000000014003DAB1                 jmp     loc_14004177F
+										
+										.text:000000014004177F ; ---------------------------------------------------------------------------
+										.text:000000014004177F
+										.text:000000014004177F loc_14004177F:                          ; CODE XREF: sub_14003800C+5AA5↑j
+										.text:000000014004177F                 sub     rcx, rax
+										.text:0000000140041782                 movzx   eax, word ptr [rcx+rsi+29050h]
+										.text:000000014004178A                 imul    rcx, rax, 7D0h
+										.text:0000000140041791                 mov     rax, r9
+										.text:0000000140041794                 mul     rcx
+										.text:0000000140041797                 shr     rdx, 0Bh
+										.text:000000014004179B                 imul    rax, rdx, 0C9Dh
+										.text:00000001400417A2                 sub     rcx, rax
+										.text:00000001400417A5                 imul    rdi, rcx, 0E35h
+										.text:00000001400417AC                 jmp     loc_14000DF9D
+										.text:00000001400417AC ; END OF FUNCTION CHUNK FOR sub_14003800C
+										
+										.text:000000014000DF9D loc_14000DF9D:                          ; CODE XREF: sub_14003800C+97A0↓j
+										.text:000000014000DF9D                 mov     rax, r9
+										.text:000000014000DFA0                 mul     rdi
+										.text:000000014000DFA3                 shr     rdx, 0Bh
+										.text:000000014000DFA7                 imul    rax, rdx, 0C9Dh
+										.text:000000014000DFAE                 sub     rdi, rax
+										.text:000000014000DFB1                 mov     rax, r12
+										.text:000000014000DFB4                 mul     rdi
+										.text:000000014000DFB7                 shr     rdx, 7
+										.text:000000014000DFBB                 imul    rcx, rdx, 0F5h ; 'õ'
+										.text:000000014000DFC2                 jmp     loc_14000EB3F
+										
+										.text:000000014000EB3F loc_14000EB3F:                          ; CODE XREF: PreOb_sub_14000D9A0+622↑j
+										.text:000000014000EB3F                 mov     rax, r14
+										.text:000000014000EB42                 mul     rdi
+										.text:000000014000EB45                 shr     rdx, 4
+										.text:000000014000EB49                 add     rcx, rdx
+										.text:000000014000EB4C                 imul    rax, rcx, 88h ; 'ˆ'
+										.text:000000014000EB53                 lea     rcx, [rdi+rdi*8]
+										.text:000000014000EB57                 shl     rcx, 4
+										.text:000000014000EB5B                 sub     rcx, rax
+										.text:000000014000EB5E                 add     rcx, r15
+										.text:000000014000EB61                 jmp     loc_140039DF1
+										
+										.text:0000000140039DF1 loc_140039DF1:                          ; CODE XREF: PreOb_sub_14000D9A0+11C1↑j
+										.text:0000000140039DF1                 mov     [rsp+arg_30], rcx
+										.text:0000000140039DF6                 mov     rdx, [rcx]
+										.text:0000000140039DF9                 mov     rcx, rdx
+										.text:0000000140039DFC                 rol     rcx, 4
+										.text:0000000140039E00                 mov     rdi, [rsp+arg_28]
+										.text:0000000140039E05                 shr     rdi, 20h
+										.text:0000000140039E09                 mov     rax, rdi
+										.text:0000000140039E0C                 and     eax, 5E7F69B8h
+										.text:0000000140039E11                 mov     [rsp+arg_40], rax
+										.text:0000000140039E16                 jmp     loc_14003C3F0
+										
+										.text:000000014003C3F0 loc_14003C3F0:                          ; CODE XREF: sub_14003800C+1E0A↑j
+										.text:000000014003C3F0                 or      rdi, 5E7F69B8h
+										.text:000000014003C3F7                 sub     rdi, rax
+										.text:000000014003C3FA                 mov     rax, rcx
+										.text:000000014003C3FD                 not     rax
+										.text:000000014003C400                 and     rax, 0FFFFFFFFFFFFFFFEh
+										.text:000000014003C404                 add     rax, 2
+										.text:000000014003C408                 add     rax, rcx
+										.text:000000014003C40B                 jz      loc_14001474A
+										.text:000000014003C411                 jmp     loc_1400165F3
+										
+											.text:00000001400165F3 loc_1400165F3:                          ; CODE XREF: sub_14003800C+4405↓j
+											.text:00000001400165F3                 jmp     loc_14003AC6F
+											
+											.text:000000014003AC6F loc_14003AC6F:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400165F3↑j
+											.text:000000014003AC6F                 mov     rcx, [rsp+arg_28]
+											.text:000000014003AC74                 and     rcx, r8
+											.text:000000014003AC77                 jmp     loc_140017146
+											
+											.text:0000000140017146 loc_140017146:                          ; CODE XREF: sub_14003800C+2C6B↓j
+											.text:0000000140017146                 mov     rax, 5E7F69B800000000h
+											.text:0000000140017150                 or      rcx, rax
+											.text:0000000140017153                 jmp     loc_140012AAC
+											
+											.text:0000000140012AAC loc_140012AAC:                          ; CODE XREF: IoHandler_sub_140014450+2D03↓j
+											.text:0000000140012AAC                 mov     rax, [rsp+arg_40]
+											.text:0000000140012AB1                 shl     rax, 20h
+											.text:0000000140012AB5                 sub     rcx, rax
+											.text:0000000140012AB8                 mov     rax, rdx
+											.text:0000000140012ABB                 shl     rax, 20h
+											.text:0000000140012ABF                 or      rcx, rax
+											.text:0000000140012AC2                 mov     rax, rdx
+											.text:0000000140012AC5                 and     rax, rdi
+											.text:0000000140012AC8                 shl     rax, 20h
+											.text:0000000140012ACC                 cmp     rcx, rax
+											.text:0000000140012ACF                 jmp     loc_14001EFE5
+											
+											.text:000000014001EFE5 loc_14001EFE5:                          ; CODE XREF: PreOb_sub_14000D9A0+512F↑j
+											.text:000000014001EFE5                 jz      loc_140014740
+											.text:000000014001EFEB                 jmp     loc_14001434D
+											
+												.text:000000014001434D loc_14001434D:                          ; CODE XREF: sub_14001D640+19AB↓j
+												.text:000000014001434D                 mov     rcx, rdx
+												.text:0000000140014350                 not     rcx
+												.text:0000000140014353                 mov     rdi, [rsp+arg_28]
+												.text:0000000140014358                 and     rcx, rdi
+												.text:000000014001435B                 mov     rax, rdi
+												.text:000000014001435E                 not     rax
+												.text:0000000140014361                 jmp     loc_14003F177
+												
+												.text:000000014003F177 loc_14003F177:                          ; CODE XREF: ProcessCb_sub_140014060+301↑j
+												.text:000000014003F177                 or      rax, rdx
+												.text:000000014003F17A                 sub     rcx, rax
+												.text:000000014003F17D                 sub     rcx, rdi
+												.text:000000014003F180                 lea     rax, [rdx-1]
+												.text:000000014003F184                 lea     rax, [rax+rcx]
+												.text:000000014003F188                 mov     [rsp+arg_28], rax
+												.text:000000014003F18D                 mov     rcx, [rsp+arg_138]
+												.text:000000014003F195                 inc     rcx
+												.text:000000014003F198                 mov     rax, 2262427FC07A8175h
+												.text:000000014003F1A2                 jmp     loc_1400164BC
+						
+						.text:0000000140016675 loc_140016675:                          ; CODE XREF: PreOb_sub_14000D9A0+10F8↑j
+						.text:0000000140016675                 jmp     loc_14003E495
+						
+						.text:000000014003E495 loc_14003E495:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016675↑j
+						.text:000000014003E495                 mov     rax, cs:P
+						.text:000000014003E49C                 mov     r10, 0AA2D145923EC7F30h
+						.text:000000014003E4A6                 lea     rsi, cs:140000000h
+						.text:000000014003E4AD                 mov     r9, 0A25E5851D18A813Bh
+						.text:000000014003E4B7                 mov     r12, 85BF37612CEE3C9Bh
+						.text:000000014003E4C1                 mov     r14, 0F0F0F0F0F0F0F0F1h
+						.text:000000014003E4CB                 lea     r15, unk_14002B760
+						.text:000000014003E4D2                 mov     r8, 0FFFFFFFF00000000h
+						.text:000000014003E4DC                 test    rax, rax
+						.text:000000014003E4DF                 jz      loc_14001820E
+						.text:000000014003E4E5                 jmp     loc_1400416A7
+						
+							.text:00000001400416A7 loc_1400416A7:                          ; CODE XREF: sub_14003DD84+761↑j
+							.text:00000001400416A7                 cmp     dword ptr [rax], 7D0h
+							.text:00000001400416AD                 mov     rax, 2262427FC07A8175h
+							.text:00000001400416B7                 jnb     loc_140014797
+							.text:00000001400416BD                 jmp     loc_14003DD13
+							
+								.text:000000014003DD13 ; ---------------------------------------------------------------------------
+								.text:000000014003DD13 ; START OF FUNCTION CHUNK FOR sub_140040C0A
+								.text:000000014003DD13
+								.text:000000014003DD13 loc_14003DD13:                          ; CODE XREF: sub_140040C0A+AB3↓j
+								.text:000000014003DD13                 mov     [rsp+arg_28], r10
+								.text:000000014003DD18                 mov     rcx, r13
+								.text:000000014003DD1B                 mov     rbx, 4E5E0A72F0539783h
+								.text:000000014003DD25                 mov     r11, 0F08DE3B14D94C2BFh
+								.text:000000014003DD2F                 jmp     loc_1400166F7
+								.text:000000014003DD34 ; ---------------------------------------------------------------------------
+								
+								.text:00000001400166F7 loc_1400166F7:                          ; CODE XREF: sub_14003DC45+15↓j
+								.text:00000001400166F7                                         ; sub_140040C0A-2EDB↓j
+								.text:00000001400166F7                 jmp     loc_14004115F
+								
+								.text:000000014004115F loc_14004115F:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400166F7↑j
+								.text:000000014004115F                 mov     [rsp+arg_140], rcx
+								.text:0000000140041167                 imul    rcx, 7D0h
+								.text:000000014004116E                 mul     rcx
+								.text:0000000140041171                 mov     rax, rcx
+								.text:0000000140041174                 sub     rax, rdx
+								.text:0000000140041177                 shr     rax, 1
+								.text:000000014004117A                 add     rax, rdx
+								.text:000000014004117D                 shr     rax, 0Bh
+								.text:0000000140041181                 imul    rax, 0E1Bh
+								.text:0000000140041188                 jmp     loc_14003A21E
+								
+								.text:000000014003A21E loc_14003A21E:                          ; CODE XREF: sub_140040C0A+57E↓j
+								.text:000000014003A21E                 sub     rcx, rax
+								.text:000000014003A221                 imul    rdi, rcx, 0E1Bh
+								.text:000000014003A228                 mov     rax, r11
+								.text:000000014003A22B                 mul     rdi
+								.text:000000014003A22E                 shr     rdx, 0Ch
+								.text:000000014003A232                 imul    rax, rdx, 1107h
+								.text:000000014003A239                 sub     rdi, rax
+								.text:000000014003A23C                 mov     rax, rbx
+								.text:000000014003A23F                 mul     rdi
+								.text:000000014003A242                 mov     rax, rdi
+								.text:000000014003A245                 jmp     loc_14001ECFF
+								
+								.text:000000014001ECFF loc_14001ECFF:                          ; CODE XREF: sub_14003800C+2239↓j
+								.text:000000014001ECFF                 sub     rax, rdx
+								.text:000000014001ED02                 jmp     loc_140016B96
+								
+								.text:0000000140016B96 loc_140016B96:                          ; CODE XREF: sub_14001D640+16C2↓j
+								.text:0000000140016B96                 shr     rax, 1
+								.text:0000000140016B99                 add     rax, rdx
+								.text:0000000140016B9C                 shr     rax, 6
+								.text:0000000140016BA0                 imul    rcx, rax, 62h ; 'b'
+								.text:0000000140016BA4                 mov     rax, 0A0A0A0A0A0A0A0A1h
+								.text:0000000140016BAE                 mul     rdi
+								.text:0000000140016BB1                 shr     rdx, 5
+								.text:0000000140016BB5                 add     rcx, rdx
+								.text:0000000140016BB8                 jmp     loc_14001CBCC
+								
+								.text:000000014001CBCC loc_14001CBCC:                          ; CODE XREF: IoHandler_sub_140014450+2768↑j
+								.text:000000014001CBCC                 imul    rax, rcx, 66h ; 'f'
+								.text:000000014001CBD0                 imul    rcx, rdi, 68h ; 'h'
+								.text:000000014001CBD4                 sub     rcx, rax
+								.text:000000014001CBD7                 movzx   eax, word ptr [rcx+rsi+29050h]
+								.text:000000014001CBDF                 jmp     loc_140042D07
+								
+								.text:0000000140042D07 loc_140042D07:                          ; CODE XREF: IoHandler_sub_140014450+878F↑j
+								.text:0000000140042D07                 imul    rcx, rax, 7D0h
+								.text:0000000140042D0E                 mov     rax, r9
+								.text:0000000140042D11                 mul     rcx
+								.text:0000000140042D14                 jmp     loc_1400107E2
+								
+								.text:00000001400107E2 loc_1400107E2:                          ; CODE XREF: sub_14004185D+14B7↓j
+								.text:00000001400107E2                 shr     rdx, 0Bh
+								.text:00000001400107E6                 imul    rax, rdx, 0C9Dh
+								.text:00000001400107ED                 sub     rcx, rax
+								.text:00000001400107F0                 imul    rdi, rcx, 0E35h
+								.text:00000001400107F7                 mov     rax, r9
+								.text:00000001400107FA                 jmp     loc_140018BC4
+								
+								.text:0000000140018BC4 loc_140018BC4:                          ; CODE XREF: PreOb_sub_14000D9A0+2E5A↑j
+								.text:0000000140018BC4                 mul     rdi
+								.text:0000000140018BC7                 shr     rdx, 0Bh
+								.text:0000000140018BCB                 imul    rax, rdx, 0C9Dh
+								.text:0000000140018BD2                 sub     rdi, rax
+								.text:0000000140018BD5                 mov     rax, r12
+								.text:0000000140018BD8                 mul     rdi
+								.text:0000000140018BDB                 shr     rdx, 7
+								.text:0000000140018BDF                 imul    rcx, rdx, 0F5h ; 'õ'
+								.text:0000000140018BE6                 jmp     loc_140015CC2
+								
+								.text:0000000140015CC2 loc_140015CC2:                          ; CODE XREF: IoHandler_sub_140014450+4796↓j
+								.text:0000000140015CC2                 mov     rax, r14
+								.text:0000000140015CC5                 mul     rdi
+								.text:0000000140015CC8                 shr     rdx, 4
+								.text:0000000140015CCC                 add     rcx, rdx
+								.text:0000000140015CCF                 imul    rax, rcx, 88h ; 'ˆ'
+								.text:0000000140015CD6                 lea     rcx, [rdi+rdi*8]
+								.text:0000000140015CDA                 shl     rcx, 4
+								.text:0000000140015CDE                 sub     rcx, rax
+								.text:0000000140015CE1                 jmp     loc_14003CFF3
+								
+								.text:000000014003CFF3 loc_14003CFF3:                          ; CODE XREF: IoHandler_sub_140014450+1891↑j
+								.text:000000014003CFF3                 add     rcx, r15
+								.text:000000014003CFF6                 mov     [rsp+arg_30], rcx
+								.text:000000014003CFFB                 mov     rdx, [rcx]
+								.text:000000014003CFFE                 mov     rcx, rdx
+								.text:000000014003D001                 rol     rcx, 4
+								.text:000000014003D005                 mov     rdi, [rsp+arg_28]
+								.text:000000014003D00A                 shr     rdi, 20h
+								.text:000000014003D00E                 mov     rax, rdi
+								.text:000000014003D011                 jmp     loc_1400444D9
+								
+								.text:00000001400444D9 ; ---------------------------------------------------------------------------
+								.text:00000001400444D9 ; START OF FUNCTION CHUNK FOR sub_14003800C
+								.text:00000001400444D9
+								.text:00000001400444D9 loc_1400444D9:                          ; CODE XREF: sub_14003800C+5005↑j
+								.text:00000001400444D9                 and     eax, 2D93783h
+								.text:00000001400444DE                 mov     [rsp+arg_40], rax
+								.text:00000001400444E3                 or      rdi, 2D93783h
+								.text:00000001400444EA                 sub     rdi, rax
+								.text:00000001400444ED                 mov     rax, rcx
+								.text:00000001400444F0                 not     rax
+								.text:00000001400444F3                 and     rax, 0FFFFFFFFFFFFFFFEh
+								.text:00000001400444F7                 add     rax, 2
+								.text:00000001400444FB                 add     rax, rcx
+								.text:00000001400444FE                 jz      loc_14001474A
+								.text:0000000140044504                 jmp     loc_14001682E
+								.text:0000000140044504 ; END OF FUNCTION CHUNK FOR sub_14003800C
+								
+									.text:000000014001682E loc_14001682E:                          ; CODE XREF: sub_14003800C+C4F8↓j
+									.text:000000014001682E                 jmp     loc_1400193DA
+									
+									.text:00000001400193DA loc_1400193DA:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001682E↑j
+									.text:00000001400193DA                 mov     rcx, [rsp+arg_28]
+									.text:00000001400193DF                 and     rcx, r8
+									.text:00000001400193E2                 mov     rax, 2D9378300000000h
+									.text:00000001400193EC                 or      rcx, rax
+									.text:00000001400193EF                 jmp     loc_140013A8E
+									
+									.text:0000000140013A8E loc_140013A8E:                          ; CODE XREF: IoHandler_sub_140014450+4F9F↓j
+									.text:0000000140013A8E                 mov     rax, [rsp+arg_40]
+									.text:0000000140013A93                 shl     rax, 20h
+									.text:0000000140013A97                 sub     rcx, rax
+									.text:0000000140013A9A                 mov     rax, rdx
+									.text:0000000140013A9D                 shl     rax, 20h
+									.text:0000000140013AA1                 or      rcx, rax
+									.text:0000000140013AA4                 mov     rax, rdx
+									.text:0000000140013AA7                 jmp     loc_1400131B1
+									
+									.text:00000001400131B1 loc_1400131B1:                          ; CODE XREF: PreOb_sub_14000D9A0+6107↓j
+									.text:00000001400131B1                 and     rax, rdi
+									.text:00000001400131B4                 shl     rax, 20h
+									.text:00000001400131B8                 cmp     rcx, rax
+									.text:00000001400131BB                 jz      loc_140014740
+									.text:00000001400131C1                 jmp     loc_14002448B
+									
+										.text:000000014002448B loc_14002448B:                          ; CODE XREF: PreOb_sub_14000D9A0+5821↑j
+										.text:000000014002448B                 mov     rcx, rdx
+										.text:000000014002448E                 not     rcx
+										.text:0000000140024491                 mov     rdi, [rsp+arg_28]
+										.text:0000000140024496                 jmp     loc_14001B5E7
+										
+										.text:000000014001B5E7 loc_14001B5E7:                          ; CODE XREF: sub_14001D640+6E56↓j
+										.text:000000014001B5E7                 and     rcx, rdi
+										.text:000000014001B5EA                 mov     rax, rdi
+										.text:000000014001B5ED                 not     rax
+										.text:000000014001B5F0                 or      rax, rdx
+										.text:000000014001B5F3                 sub     rcx, rax
+										.text:000000014001B5F6                 sub     rcx, rdi
+										.text:000000014001B5F9                 lea     rax, [rdx-1]
+										.text:000000014001B5FD                 lea     rax, [rax+rcx]
+										.text:000000014001B601                 mov     [rsp+arg_28], rax
+										.text:000000014001B606                 jmp     sub_14003DC45
+					
+					.text:00000001400168B0 loc_1400168B0:                          ; CODE XREF: sub_14003800C+10D↓j
+					.text:00000001400168B0                 jmp     loc_14000FACD
+					
+					.text:000000014000FACD loc_14000FACD:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400168B0↓j
+					.text:000000014000FACD                 mov     rax, cs:P
+					.text:000000014000FAD4                 mov     r10, 0AA2D145923EC7F30h
+					.text:000000014000FADE                 lea     rsi, cs:140000000h
+					.text:000000014000FAE5                 mov     r9, 0A25E5851D18A813Bh
+					.text:000000014000FAEF                 mov     r12, 85BF37612CEE3C9Bh
+					.text:000000014000FAF9                 mov     r14, 0F0F0F0F0F0F0F0F1h
+					.text:000000014000FB03                 lea     r15, unk_14002B760
+					.text:000000014000FB0A                 mov     r8, 0FFFFFFFF00000000h
+					.text:000000014000FB14                 test    rax, rax
+					.text:000000014000FB17                 jz      loc_14001820E
+					.text:000000014000FB1D                 jmp     loc_1400193F4
+					
+						.text:00000001400193F4 loc_1400193F4:                          ; CODE XREF: PreOb_sub_14000D9A0+217D↑j
+						.text:00000001400193F4                 cmp     dword ptr [rax], 7D0h
+						.text:00000001400193FA                 mov     rax, 2262427FC07A8175h
+						.text:0000000140019404                 jnb     loc_140014797
+						.text:000000014001940A                 jmp     loc_1400236C7
+						
+							.text:00000001400236C7 loc_1400236C7:                          ; CODE XREF: IoHandler_sub_140014450+4FBA↑j
+							.text:00000001400236C7                 mov     [rsp+arg_28], r10
+							.text:00000001400236CC                 mov     rcx, r13
+							.text:00000001400236CF                 mov     rbx, 4E5E0A72F0539783h
+							.text:00000001400236D9                 mov     r11, 0F08DE3B14D94C2BFh
+							.text:00000001400236E3                 mov     edx, 0D00DAA9Fh
+							.text:00000001400236E8                 mov     [rsp+arg_48], rdx
+							.text:00000001400236ED                 jmp     loc_14001693C
+							
+							.text:000000014001693C loc_14001693C:                          ; CODE XREF: IoHandler_sub_140014450+671F↓j
+							.text:000000014001693C                                         ; sub_14001D640+60AD↓j
+							.text:000000014001693C                 jmp     loc_14003CB71
+							
+							.text:000000014003CB71 loc_14003CB71:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001693C↑j
+							.text:000000014003CB71                 mov     [rsp+arg_148], rcx
+							.text:000000014003CB79                 imul    rcx, 7D0h
+							.text:000000014003CB80                 mul     rcx
+							.text:000000014003CB83                 mov     rax, rcx
+							.text:000000014003CB86                 sub     rax, rdx
+							.text:000000014003CB89                 shr     rax, 1
+							.text:000000014003CB8C                 add     rax, rdx
+							.text:000000014003CB8F                 shr     rax, 0Bh
+							.text:000000014003CB93                 jmp     loc_1400166DB
+							
+							.text:00000001400166DB loc_1400166DB:                          ; CODE XREF: sub_14003800C+4B87↓j
+							.text:00000001400166DB                 imul    rax, 0E1Bh
+							.text:00000001400166E2                 sub     rcx, rax
+							.text:00000001400166E5                 imul    rdi, rcx, 0E1Bh
+							.text:00000001400166EC                 mov     rax, r11
+							.text:00000001400166EF                 jmp     loc_140039F87
+							
+							.text:0000000140039F87 loc_140039F87:                          ; CODE XREF: IoHandler_sub_140014450+229F↑j
+							.text:0000000140039F87                 mul     rdi
+							.text:0000000140039F8A                 shr     rdx, 0Ch
+							.text:0000000140039F8E                 imul    rax, rdx, 1107h
+							.text:0000000140039F95                 sub     rdi, rax
+							.text:0000000140039F98                 mov     rax, rbx
+							.text:0000000140039F9B                 mul     rdi
+							.text:0000000140039F9E                 mov     rax, rdi
+							.text:0000000140039FA1                 jmp     loc_14001C11C
+							
+							.text:000000014001C11C loc_14001C11C:                          ; CODE XREF: sub_14003800C+1F95↓j
+							.text:000000014001C11C                 sub     rax, rdx
+							.text:000000014001C11F                 shr     rax, 1
+							.text:000000014001C122                 add     rax, rdx
+							.text:000000014001C125                 shr     rax, 6
+							.text:000000014001C129                 jmp     loc_1400167BE
+							
+							.text:00000001400167BE loc_1400167BE:                          ; CODE XREF: IoHandler_sub_140014450+7CD9↓j
+							.text:00000001400167BE                 imul    rcx, rax, 62h ; 'b'
+							.text:00000001400167C2                 mov     rax, 0A0A0A0A0A0A0A0A1h
+							.text:00000001400167CC                 mul     rdi
+							.text:00000001400167CF                 shr     rdx, 5
+							.text:00000001400167D3                 add     rcx, rdx
+							.text:00000001400167D6                 imul    rax, rcx, 66h ; 'f'
+							.text:00000001400167DA                 imul    rcx, rdi, 68h ; 'h'
+							.text:00000001400167DE                 sub     rcx, rax
+							.text:00000001400167E1                 jmp     loc_14003D964
+							
+							.text:000000014003D964 loc_14003D964:                          ; CODE XREF: IoHandler_sub_140014450+2391↑j
+							.text:000000014003D964                 movzx   eax, word ptr [rcx+rsi+29050h]
+							.text:000000014003D96C                 imul    rcx, rax, 7D0h
+							.text:000000014003D973                 mov     rax, r9
+							.text:000000014003D976                 mul     rcx
+							.text:000000014003D979                 shr     rdx, 0Bh
+							.text:000000014003D97D                 imul    rax, rdx, 0C9Dh
+							.text:000000014003D984                 jmp     loc_14003C0CC
+							
+							.text:000000014003C0CC loc_14003C0CC:                          ; CODE XREF: sub_14003800C+5978↓j
+							.text:000000014003C0CC                 sub     rcx, rax
+							.text:000000014003C0CF                 imul    rdi, rcx, 0E35h
+							.text:000000014003C0D6                 mov     rax, r9
+							.text:000000014003C0D9                 mul     rdi
+							.text:000000014003C0DC                 jmp     loc_140042F17
+							
+							.text:0000000140042F17 loc_140042F17:                          ; CODE XREF: sub_14003800C+40D0↑j
+							.text:0000000140042F17                 shr     rdx, 0Bh
+							.text:0000000140042F1B                 imul    rax, rdx, 0C9Dh
+							.text:0000000140042F22                 sub     rdi, rax
+							.text:0000000140042F25                 jmp     loc_14003BA80
+							
+							.text:000000014003BA80 loc_14003BA80:                          ; CODE XREF: sub_14004185D+16C8↓j
+							.text:000000014003BA80                 mov     rax, r12
+							.text:000000014003BA83                 mul     rdi
+							.text:000000014003BA86                 shr     rdx, 7
+							.text:000000014003BA8A                 imul    rcx, rdx, 0F5h ; 'õ'
+							.text:000000014003BA91                 mov     rax, r14
+							.text:000000014003BA94                 jmp     loc_14003B74F
+							
+							.text:000000014003B74F loc_14003B74F:                          ; CODE XREF: sub_14003800C+3A88↓j
+							.text:000000014003B74F                 mul     rdi
+							.text:000000014003B752                 shr     rdx, 4
+							.text:000000014003B756                 add     rcx, rdx
+							.text:000000014003B759                 imul    rax, rcx, 88h ; 'ˆ'
+							.text:000000014003B760                 lea     rcx, [rdi+rdi*8]
+							.text:000000014003B764                 shl     rcx, 4
+							.text:000000014003B768                 jmp     loc_14000ED50
+							
+							.text:000000014000ED50 loc_14000ED50:                          ; CODE XREF: sub_14003800C+375C↓j
+							.text:000000014000ED50                 sub     rcx, rax
+							.text:000000014000ED53                 add     rcx, r15
+							.text:000000014000ED56                 mov     [rsp+ByteOffset], rcx
+							.text:000000014000ED5B                 mov     rdx, [rcx]
+							.text:000000014000ED5E                 mov     rcx, rdx
+							.text:000000014000ED61                 rol     rcx, 4
+							.text:000000014000ED65                 mov     rdi, qword ptr [rsp+Length]
+							.text:000000014000ED6A                 shr     rdi, 20h
+							.text:000000014000ED6E                 mov     rax, rdi
+							.text:000000014000ED71                 and     rax, [rsp+arg_48]
+							.text:000000014000ED76                 jmp     loc_140013C08
+							
+							.text:0000000140013C08 loc_140013C08:                          ; CODE XREF: PreOb_sub_14000D9A0+13D6↑j
+							.text:0000000140013C08                 mov     [rsp+arg_40], rax
+							.text:0000000140013C0D                 or      rdi, [rsp+arg_48]
+							.text:0000000140013C12                 sub     rdi, rax
+							.text:0000000140013C15                 mov     rax, rcx
+							.text:0000000140013C18                 not     rax
+							.text:0000000140013C1B                 and     rax, 0FFFFFFFFFFFFFFFEh
+							.text:0000000140013C1F                 add     rax, 2
+							.text:0000000140013C23                 add     rax, rcx
+							.text:0000000140013C26                 jz      loc_14001474A
+							.text:0000000140013C2C                 jmp     loc_140016A71
+							
+								.text:0000000140016A71 loc_140016A71:                          ; CODE XREF: PreOb_sub_14000D9A0+628C↑j
+								.text:0000000140016A71                 jmp     loc_14003AC3D
+								
+								.text:000000014003AC3D loc_14003AC3D:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016A71↑j
+								.text:000000014003AC3D                 mov     rcx, [rsp+arg_28]
+								.text:000000014003AC42                 and     rcx, r8
+								.text:000000014003AC45                 mov     rax, 0D00DAA9F00000000h
+								.text:000000014003AC4F                 jmp     loc_14004099C
+								
+								.text:000000014004099C loc_14004099C:                          ; CODE XREF: sub_14003800C+2C43↑j
+								.text:000000014004099C                 or      rcx, rax
+								.text:000000014004099F                 mov     rax, [rsp+arg_40]
+								.text:00000001400409A4                 shl     rax, 20h
+								.text:00000001400409A8                 sub     rcx, rax
+								.text:00000001400409AB                 mov     rax, rdx
+								.text:00000001400409AE                 shl     rax, 20h
+								.text:00000001400409B2                 or      rcx, rax
+								.text:00000001400409B5                 jmp     loc_14003E4F7
+								
+								.text:000000014003E4F7 loc_14003E4F7:                          ; CODE XREF: sub_14003DD84+2C31↓j
+								.text:000000014003E4F7                 mov     rax, rdx
+								.text:000000014003E4FA                 and     rax, rdi
+								.text:000000014003E4FD                 shl     rax, 20h
+								.text:000000014003E501                 cmp     rcx, rax
+								.text:000000014003E504                 jz      loc_140014740
+								.text:000000014003E50A                 jmp     loc_14001AB30
+								
+									.text:000000014001AB30 loc_14001AB30:                          ; CODE XREF: sub_14003DD84+786↓j
+									.text:000000014001AB30                 mov     rdi, [rsp+arg_28]
+									.text:000000014001AB35                 mov     rcx, rdi
+									.text:000000014001AB38                 not     rcx
+									.text:000000014001AB3B                 or      rcx, rdx
+									.text:000000014001AB3E                 mov     rax, rdx
+									.text:000000014001AB41                 not     rax
+									.text:000000014001AB44                 and     rax, rdi
+									.text:000000014001AB47                 sub     rax, rcx
+									.text:000000014001AB4A                 sub     rax, rdi
+									.text:000000014001AB4D                 lea     rax, [rax-1]
+									.text:000000014001AB51                 lea     rax, [rax+rdx]
+									.text:000000014001AB55                 mov     [rsp+arg_28], rax
+									.text:000000014001AB5A                 mov     rcx, [rsp+arg_148]
+									.text:000000014001AB62                 inc     rcx
+									.text:000000014001AB65                 mov     rax, 2262427FC07A8175h
+									.text:000000014001AB6F                 jmp     loc_14001693C
+				
+				.text:0000000140016AF3 loc_140016AF3:                          ; CODE XREF: sub_14004185D+38↓j
+				.text:0000000140016AF3                 jmp     loc_1400381D6
+				
+				.text:00000001400381D6 loc_1400381D6:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016AF3↑j
+				.text:00000001400381D6                 mov     rax, cs:P
+				.text:00000001400381DD                 mov     r10, 0AA2D145923EC7F30h
+				.text:00000001400381E7                 lea     rsi, cs:140000000h
+				.text:00000001400381EE                 mov     r9, 0A25E5851D18A813Bh
+				.text:00000001400381F8                 mov     r12, 85BF37612CEE3C9Bh
+				.text:0000000140038202                 mov     r14, 0F0F0F0F0F0F0F0F1h
+				.text:000000014003820C                 lea     r15, unk_14002B760
+				.text:0000000140038213                 mov     r8, 0FFFFFFFF00000000h
+				.text:000000014003821D                 test    rax, rax
+				.text:0000000140038220                 jz      loc_14001820E
+				.text:0000000140038226                 jmp     loc_14001251C
+				
+					.text:000000014001251C loc_14001251C:                          ; CODE XREF: sub_14003800C+21A↓j
+					.text:000000014001251C                 cmp     dword ptr [rax], 7D0h
+					.text:0000000140012522                 mov     rax, 2262427FC07A8175h
+					.text:000000014001252C                 jnb     loc_140014797
+					.text:0000000140012532                 jmp     loc_1400251E7
+					
+						.text:00000001400251E7 loc_1400251E7:                          ; CODE XREF: PreOb_sub_14000D9A0+4B92↑j
+						.text:00000001400251E7                 mov     [rsp+arg_28], r10
+						.text:00000001400251EC                 mov     rcx, r13
+						.text:00000001400251EF                 mov     rbx, 4E5E0A72F0539783h
+						.text:00000001400251F9                 mov     r11, 0F08DE3B14D94C2BFh
+						.text:0000000140025203                 mov     edx, 0B2C41B84h
+						.text:0000000140025208                 mov     [rsp+arg_48], rdx
+						.text:000000014002520D                 jmp     loc_140016B7F
+						
+						.text:0000000140016B7F loc_140016B7F:                          ; CODE XREF: PreOb_sub_14000D9A0+65BD↑j
+						.text:0000000140016B7F                                         ; sub_14001D640+7BCD↓j
+						.text:0000000140016B7F                 jmp     loc_140041C64
+						
+						.text:0000000140041C64 loc_140041C64:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016B7F↑j
+						.text:0000000140041C64                 mov     [rsp+arg_150], rcx
+						.text:0000000140041C6C                 imul    rcx, 7D0h
+						.text:0000000140041C73                 mul     rcx
+						.text:0000000140041C76                 mov     rax, rcx
+						.text:0000000140041C79                 sub     rax, rdx
+						.text:0000000140041C7C                 shr     rax, 1
+						.text:0000000140041C7F                 add     rax, rdx
+						.text:0000000140041C82                 shr     rax, 0Bh
+						.text:0000000140041C86                 imul    rax, 0E1Bh
+						.text:0000000140041C8D                 sub     rcx, rax
+						.text:0000000140041C90                 imul    rdi, rcx, 0E1Bh
+						.text:0000000140041C97                 mov     rax, r11
+						.text:0000000140041C9A                 mul     rdi
+						.text:0000000140041C9D                 shr     rdx, 0Ch
+						.text:0000000140041CA1                 imul    rax, rdx, 1107h
+						.text:0000000140041CA8                 sub     rdi, rax
+						.text:0000000140041CAB                 mov     rax, rbx
+						.text:0000000140041CAE                 mul     rdi
+						.text:0000000140041CB1                 mov     rax, rdi
+						.text:0000000140041CB4                 sub     rax, rdx
+						.text:0000000140041CB7                 shr     rax, 1
+						.text:0000000140041CBA                 add     rax, rdx
+						.text:0000000140041CBD                 shr     rax, 6
+						.text:0000000140041CC1                 imul    rcx, rax, 62h ; 'b'
+						.text:0000000140041CC5                 mov     rax, 0A0A0A0A0A0A0A0A1h
+						.text:0000000140041CCF                 mul     rdi
+						.text:0000000140041CD2                 shr     rdx, 5
+						.text:0000000140041CD6                 add     rcx, rdx
+						.text:0000000140041CD9                 imul    rax, rcx, 66h ; 'f'
+						.text:0000000140041CDD                 imul    rcx, rdi, 68h ; 'h'
+						.text:0000000140041CE1                 sub     rcx, rax
+						.text:0000000140041CE4                 movzx   eax, word ptr [rcx+rsi+29050h]
+						.text:0000000140041CEC                 imul    rcx, rax, 7D0h
+						.text:0000000140041CF3                 mov     rax, r9
+						.text:0000000140041CF6                 mul     rcx
+						.text:0000000140041CF9                 shr     rdx, 0Bh
+						.text:0000000140041CFD                 imul    rax, rdx, 0C9Dh
+						.text:0000000140041D04                 sub     rcx, rax
+						.text:0000000140041D07                 imul    rdi, rcx, 0E35h
+						.text:0000000140041D0E                 mov     rax, r9
+						.text:0000000140041D11                 mul     rdi
+						.text:0000000140041D14                 shr     rdx, 0Bh
+						.text:0000000140041D18                 imul    rax, rdx, 0C9Dh
+						.text:0000000140041D1F                 sub     rdi, rax
+						.text:0000000140041D22                 mov     rax, r12
+						.text:0000000140041D25                 mul     rdi
+						.text:0000000140041D28                 shr     rdx, 7
+						.text:0000000140041D2C                 imul    rcx, rdx, 0F5h ; 'õ'
+						.text:0000000140041D33                 mov     rax, r14
+						.text:0000000140041D36                 mul     rdi
+						.text:0000000140041D39                 shr     rdx, 4
+						.text:0000000140041D3D                 add     rcx, rdx
+						.text:0000000140041D40                 imul    rax, rcx, 88h ; 'ˆ'
+						.text:0000000140041D47                 lea     rcx, [rdi+rdi*8]
+						.text:0000000140041D4B                 shl     rcx, 4
+						.text:0000000140041D4F                 sub     rcx, rax
+						.text:0000000140041D52                 add     rcx, r15
+						.text:0000000140041D55                 mov     [rsp+arg_30], rcx
+						.text:0000000140041D5A                 mov     rdi, [rcx]
+						.text:0000000140041D5D                 mov     rcx, rdi
+						.text:0000000140041D60                 rol     rcx, 4
+						.text:0000000140041D64                 mov     rdx, [rsp+arg_28]
+						.text:0000000140041D69                 shr     rdx, 20h
+						.text:0000000140041D6D                 mov     rax, rdx
+						.text:0000000140041D70                 and     rax, [rsp+arg_48]
+						.text:0000000140041D75                 mov     [rsp+arg_40], rax
+						.text:0000000140041D7A                 or      rdx, [rsp+arg_48]
+						.text:0000000140041D7F                 sub     rdx, rax
+						.text:0000000140041D82                 mov     rax, rcx
+						.text:0000000140041D85                 not     rax
+						.text:0000000140041D88                 and     rax, 0FFFFFFFFFFFFFFFEh
+						.text:0000000140041D8C                 add     rax, 2
+						.text:0000000140041D90                 add     rax, rcx
+						.text:0000000140041D93                 jz      loc_140014F99
+						.text:0000000140041D99                 jmp     loc_140016CB4
+						
+							.text:0000000140016CB4 loc_140016CB4:                          ; CODE XREF: sub_14004185D+53C↓j
+							.text:0000000140016CB4                 jmp     loc_14001CC32
+							
+							.text:000000014001CC32 loc_14001CC32:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016CB4↑j
+							.text:000000014001CC32                 mov     rcx, [rsp+arg_28]
+							.text:000000014001CC37                 and     rcx, r8
+							.text:000000014001CC3A                 mov     rax, 0B2C41B8400000000h
+							.text:000000014001CC44                 or      rcx, rax
+							.text:000000014001CC47                 mov     rax, [rsp+arg_40]
+							.text:000000014001CC4C                 shl     rax, 20h
+							.text:000000014001CC50                 sub     rcx, rax
+							.text:000000014001CC53                 mov     rax, rdi
+							.text:000000014001CC56                 shl     rax, 20h
+							.text:000000014001CC5A                 or      rcx, rax
+							.text:000000014001CC5D                 and     rdx, rdi
+							.text:000000014001CC60                 shl     rdx, 20h
+							.text:000000014001CC64                 cmp     rcx, rdx
+							.text:000000014001CC67                 jz      loc_140014740
+							.text:000000014001CC6D                 jmp     loc_140013F1E
+							
+								.text:0000000140013F1E loc_140013F1E:                          ; CODE XREF: IoHandler_sub_140014450+881D↓j
+								.text:0000000140013F1E                 mov     rdx, qword ptr [rsp+Length]
+								.text:0000000140013F23                 mov     rcx, rdx
+								.text:0000000140013F26                 not     rcx
+								.text:0000000140013F29                 or      rcx, rdi
+								.text:0000000140013F2C                 mov     rax, rdi
+								.text:0000000140013F2F                 not     rax
+								.text:0000000140013F32                 and     rax, rdx
+								.text:0000000140013F35                 sub     rax, rcx
+								.text:0000000140013F38                 sub     rax, rdx
+								.text:0000000140013F3B                 lea     rax, [rax-1]
+								.text:0000000140013F3F                 lea     rax, [rax+rdi]
+								.text:0000000140013F43                 mov     qword ptr [rsp+Length], rax
+								.text:0000000140013F48                 mov     rcx, [rsp+arg_150]
+								.text:0000000140013F50                 inc     rcx
+								.text:0000000140013F53                 mov     rax, 2262427FC07A8175h
+								.text:0000000140013F5D                 jmp     loc_140016B7F
+			
+			.text:0000000140016D33 loc_140016D33:                          ; CODE XREF: IoHandler_sub_140014450+876↑j
+			.text:0000000140016D33                 jmp     loc_140016241
+			
+			.text:0000000140016241 loc_140016241:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016D33↓j
+			.text:0000000140016241                 mov     rax, cs:P
+			.text:0000000140016248                 mov     r10, 0AA2D145923EC7F30h
+			.text:0000000140016252                 lea     rsi, cs:140000000h
+			.text:0000000140016259                 mov     r9, 0A25E5851D18A813Bh
+			.text:0000000140016263                 mov     r12, 85BF37612CEE3C9Bh
+			.text:000000014001626D                 mov     r14, 0F0F0F0F0F0F0F0F1h
+			.text:0000000140016277                 lea     r15, unk_14002B760
+			.text:000000014001627E                 mov     r8, 0FFFFFFFF00000000h
+			.text:0000000140016288                 test    rax, rax
+			.text:000000014001628B                 jz      loc_14001820E
+			.text:0000000140016291                 jmp     loc_1400189F9
+			
+				.text:00000001400189F9 loc_1400189F9:                          ; CODE XREF: IoHandler_sub_140014450+1E41↑j
+				.text:00000001400189F9                 cmp     dword ptr [rax], 7D0h
+				.text:00000001400189FF                 mov     rax, 2262427FC07A8175h
+				.text:0000000140018A09                 jnb     loc_140014797
+				.text:0000000140018A0F                 jmp     loc_14001447E
+				
+					.text:000000014001447E loc_14001447E:                          ; CODE XREF: IoHandler_sub_140014450+45BF↓j
+					.text:000000014001447E                 mov     [rsp+arg_28], r10
+					.text:0000000140014483                 mov     rcx, r13
+					.text:0000000140014486                 mov     rbx, 4E5E0A72F0539783h
+					.text:0000000140014490                 mov     r11, 0F08DE3B14D94C2BFh
+					.text:000000014001449A                 jmp     loc_140016DB5
+					
+					.text:0000000140016DB5 loc_140016DB5:                          ; CODE XREF: IoHandler_sub_140014450+4A↑j
+					.text:0000000140016DB5                                         ; IoHandler_sub_140014450+747A↓j
+					.text:0000000140016DB5                 jmp     loc_14000F17A
+					
+					.text:000000014000F17A loc_14000F17A:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016DB5↓j
+					.text:000000014000F17A                 mov     [rsp+arg_158], rcx
+					.text:000000014000F182                 imul    rcx, 7D0h
+					.text:000000014000F189                 mul     rcx
+					.text:000000014000F18C                 mov     rax, rcx
+					.text:000000014000F18F                 sub     rax, rdx
+					.text:000000014000F192                 shr     rax, 1
+					.text:000000014000F195                 add     rax, rdx
+					.text:000000014000F198                 shr     rax, 0Bh
+					.text:000000014000F19C                 imul    rax, 0E1Bh
+					.text:000000014000F1A3                 sub     rcx, rax
+					.text:000000014000F1A6                 imul    rdi, rcx, 0E1Bh
+					.text:000000014000F1AD                 mov     rax, r11
+					.text:000000014000F1B0                 mul     rdi
+					.text:000000014000F1B3                 shr     rdx, 0Ch
+					.text:000000014000F1B7                 imul    rax, rdx, 1107h
+					.text:000000014000F1BE                 sub     rdi, rax
+					.text:000000014000F1C1                 mov     rax, rbx
+					.text:000000014000F1C4                 mul     rdi
+					.text:000000014000F1C7                 mov     rax, rdi
+					.text:000000014000F1CA                 sub     rax, rdx
+					.text:000000014000F1CD                 shr     rax, 1
+					.text:000000014000F1D0                 add     rax, rdx
+					.text:000000014000F1D3                 shr     rax, 6
+					.text:000000014000F1D7                 imul    rcx, rax, 62h ; 'b'
+					.text:000000014000F1DB                 mov     rax, 0A0A0A0A0A0A0A0A1h
+					.text:000000014000F1E5                 mul     rdi
+					.text:000000014000F1E8                 shr     rdx, 5
+					.text:000000014000F1EC                 add     rcx, rdx
+					.text:000000014000F1EF                 imul    rax, rcx, 66h ; 'f'
+					.text:000000014000F1F3                 imul    rcx, rdi, 68h ; 'h'
+					.text:000000014000F1F7                 sub     rcx, rax
+					.text:000000014000F1FA                 movzx   eax, word ptr [rcx+rsi+29050h]
+					.text:000000014000F202                 imul    rcx, rax, 7D0h
+					.text:000000014000F209                 mov     rax, r9
+					.text:000000014000F20C                 mul     rcx
+					.text:000000014000F20F                 shr     rdx, 0Bh
+					.text:000000014000F213                 imul    rax, rdx, 0C9Dh
+					.text:000000014000F21A                 sub     rcx, rax
+					.text:000000014000F21D                 imul    rdi, rcx, 0E35h
+					.text:000000014000F224                 mov     rax, r9
+					.text:000000014000F227                 mul     rdi
+					.text:000000014000F22A                 shr     rdx, 0Bh
+					.text:000000014000F22E                 imul    rax, rdx, 0C9Dh
+					.text:000000014000F235                 sub     rdi, rax
+					.text:000000014000F238                 mov     rax, r12
+					.text:000000014000F23B                 mul     rdi
+					.text:000000014000F23E                 shr     rdx, 7
+					.text:000000014000F242                 imul    rcx, rdx, 0F5h ; 'õ'
+					.text:000000014000F249                 mov     rax, r14
+					.text:000000014000F24C                 mul     rdi
+					.text:000000014000F24F                 shr     rdx, 4
+					.text:000000014000F253                 add     rcx, rdx
+					.text:000000014000F256                 imul    rax, rcx, 88h ; 'ˆ'
+					.text:000000014000F25D                 lea     rcx, [rdi+rdi*8]
+					.text:000000014000F261                 shl     rcx, 4
+					.text:000000014000F265                 sub     rcx, rax
+					.text:000000014000F268                 add     rcx, r15
+					.text:000000014000F26B                 mov     [rsp+ByteOffset], rcx
+					.text:000000014000F270                 mov     rdi, [rcx]
+					.text:000000014000F273                 mov     rcx, rdi
+					.text:000000014000F276                 rol     rcx, 4
+					.text:000000014000F27A                 mov     rdx, qword ptr [rsp+Length]
+					.text:000000014000F27F                 shr     rdx, 20h
+					.text:000000014000F283                 mov     rax, rdx
+					.text:000000014000F286                 and     eax, 5FC2EFB3h
+					.text:000000014000F28B                 mov     [rsp+arg_40], rax
+					.text:000000014000F290                 or      rdx, 5FC2EFB3h
+					.text:000000014000F297                 sub     rdx, rax
+					.text:000000014000F29A                 mov     rax, rcx
+					.text:000000014000F29D                 not     rax
+					.text:000000014000F2A0                 and     rax, 0FFFFFFFFFFFFFFFEh
+					.text:000000014000F2A4                 add     rax, 2
+					.text:000000014000F2A8                 add     rax, rcx
+					.text:000000014000F2AB                 jz      loc_140016F67
+					.text:000000014000F2B1                 jmp     loc_140016EE8
+					
+						.text:0000000140016EE8 loc_140016EE8:                          ; CODE XREF: PreOb_sub_14000D9A0+1911↑j
+						.text:0000000140016EE8                 jmp     loc_140016C3F
+						
+						.text:0000000140016C3F loc_140016C3F:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016EE8↓j
+						.text:0000000140016C3F                 mov     rcx, [rsp+arg_28]
+						.text:0000000140016C44                 and     rcx, r8
+						.text:0000000140016C47                 mov     rax, 5FC2EFB300000000h
+						.text:0000000140016C51                 or      rcx, rax
+						.text:0000000140016C54                 mov     rax, [rsp+arg_40]
+						.text:0000000140016C59                 shl     rax, 20h
+						.text:0000000140016C5D                 sub     rcx, rax
+						.text:0000000140016C60                 mov     rax, rdi
+						.text:0000000140016C63                 shl     rax, 20h
+						.text:0000000140016C67                 or      rcx, rax
+						.text:0000000140016C6A                 and     rdx, rdi
+						.text:0000000140016C6D                 shl     rdx, 20h
+						.text:0000000140016C71                 cmp     rcx, rdx
+						.text:0000000140016C74                 jz      loc_140014740
+						.text:0000000140016C7A                 jmp     loc_14003F4D5
+						
+							.text:000000014003F4D5 loc_14003F4D5:                          ; CODE XREF: IoHandler_sub_140014450+282A↑j
+							.text:000000014003F4D5                 mov     rcx, rdi
+							.text:000000014003F4D8                 not     rcx
+							.text:000000014003F4DB                 mov     rdx, [rsp+arg_28]
+							.text:000000014003F4E0                 jmp     loc_140017A7B
+							
+							.text:0000000140017A7B loc_140017A7B:                          ; CODE XREF: sub_14003DD84+175C↓j
+							.text:0000000140017A7B                 and     rcx, rdx
+							.text:0000000140017A7E                 mov     rax, rdx
+							.text:0000000140017A81                 not     rax
+							.text:0000000140017A84                 jmp     loc_14001B89F
+							
+							.text:000000014001B89F loc_14001B89F:                          ; CODE XREF: IoHandler_sub_140014450+3634↑j
+							.text:000000014001B89F                 or      rax, rdi
+							.text:000000014001B8A2                 sub     rcx, rax
+							.text:000000014001B8A5                 sub     rcx, rdx
+							.text:000000014001B8A8                 lea     rax, [rdi-1]
+							.text:000000014001B8AC                 lea     rax, [rax+rcx]
+							.text:000000014001B8B0                 mov     [rsp+arg_28], rax
+							.text:000000014001B8B5                 mov     rcx, [rsp+arg_158]
+							.text:000000014001B8BD                 inc     rcx
+							.text:000000014001B8C0                 mov     rax, 2262427FC07A8175h
+							.text:000000014001B8CA                 jmp     loc_140016DB5
+					
+					.text:0000000140016F67 loc_140016F67:                          ; CODE XREF: PreOb_sub_14000D9A0+190B↑j
+					.text:0000000140016F67                 jmp     loc_14003AEE6
+					
+					.text:000000014003AEE6 loc_14003AEE6:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016F67↑j
+					.text:000000014003AEE6                 mov     rcx, rdi
+					.text:000000014003AEE9                 not     rcx
+					.text:000000014003AEEC                 jmp     loc_14001B670
+					
+					.text:000000014001B670 loc_14001B670:                          ; CODE XREF: sub_14003800C+2EE0↓j
+					.text:000000014001B670                 or      rcx, r8
+					.text:000000014001B673                 mov     r11, 0EFFFFFFFFFFFFFFFh
+					.text:000000014001B67D                 and     rdi, r11
+					.text:000000014001B680                 mov     rbx, 1000000000000001h
+					.text:000000014001B68A                 add     rcx, rbx
+					.text:000000014001B68D                 jmp     loc_140039AE2
+					
+					.text:0000000140039AE2 loc_140039AE2:                          ; CODE XREF: IoHandler_sub_140014450+723D↑j
+					.text:0000000140039AE2                 add     rcx, rdi
+					.text:0000000140039AE5                 mov     rax, rdx
+					.text:0000000140039AE8                 or      rax, rcx
+					.text:0000000140039AEB                 and     rdx, rcx
+					.text:0000000140039AEE                 sub     rax, rdx
+					.text:0000000140039AF1                 jmp     loc_14001477C
+		
+		.text:0000000140016F9E loc_140016F9E:                          ; CODE XREF: PreOb_sub_14000D9A0+4E91↑j
+		.text:0000000140016F9E                 jmp     loc_14003F8EE
+		
+		.text:000000014003F8EE loc_14003F8EE:                          ; CODE XREF: IoHandler_sub_140014450:loc_140016F9E↑j
+		.text:000000014003F8EE                 mov     rax, cs:P
+		.text:000000014003F8F5                 mov     r10, 0AA2D145923EC7F30h
+		.text:000000014003F8FF                 lea     rsi, cs:140000000h
+		.text:000000014003F906                 mov     r9, 0A25E5851D18A813Bh
+		.text:000000014003F910                 mov     r12, 85BF37612CEE3C9Bh
+		.text:000000014003F91A                 mov     r14, 0F0F0F0F0F0F0F0F1h
+		.text:000000014003F924                 lea     r15, unk_14002B760
+		.text:000000014003F92B                 mov     r8, 0FFFFFFFF00000000h
+		.text:000000014003F935                 test    rax, rax
+		.text:000000014003F938                 jz      loc_14001820E
+		.text:000000014003F93E                 jmp     loc_140011CDA
+		
+			.text:0000000140011CDA loc_140011CDA:                          ; CODE XREF: sub_14003DD84+1BBA↓j
+			.text:0000000140011CDA                 cmp     dword ptr [rax], 7D0h
+			.text:0000000140011CE0                 mov     rax, 2262427FC07A8175h
+			.text:0000000140011CEA                 jnb     loc_140014797
+			.text:0000000140011CF0                 jmp     loc_1400157B7
+			
+				.text:00000001400157B7 loc_1400157B7:                          ; CODE XREF: PreOb_sub_14000D9A0+4350↑j
+				.text:00000001400157B7                 mov     [rsp+arg_28], r10
+				.text:00000001400157BC                 mov     rcx, r13
+				.text:00000001400157BF                 mov     rbx, 4E5E0A72F0539783h
+				.text:00000001400157C9                 mov     r11, 0F08DE3B14D94C2BFh
+				.text:00000001400157D3                 mov     edx, 0ED538DE2h
+				.text:00000001400157D8                 mov     [rsp+arg_48], rdx
+				.text:00000001400157DD                 jmp     loc_14001702A
+				
+				.text:000000014001702A loc_14001702A:                          ; CODE XREF: IoHandler_sub_140014450+138D↑j
+				.text:000000014001702A                                         ; sub_14003800C+516C↓j
+				.text:000000014001702A                 jmp     loc_14003B4A2
+				
+				.text:000000014003B4A2 loc_14003B4A2:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001702A↑j
+				.text:000000014003B4A2                 mov     [rsp+arg_160], rcx
+				.text:000000014003B4AA                 imul    rcx, 7D0h
+				.text:000000014003B4B1                 mul     rcx
+				.text:000000014003B4B4                 jmp     loc_140023CAD
+				
+				.text:0000000140023CAD loc_140023CAD:                          ; CODE XREF: sub_14003800C+34A8↓j
+				.text:0000000140023CAD                 mov     rax, rcx
+				.text:0000000140023CB0                 sub     rax, rdx
+				.text:0000000140023CB3                 shr     rax, 1
+				.text:0000000140023CB6                 jmp     loc_140040608
+				
+				.text:0000000140040608 loc_140040608:                          ; CODE XREF: sub_14001D640+6676↑j
+				.text:0000000140040608                 add     rax, rdx
+				.text:000000014004060B                 shr     rax, 0Bh
+				.text:000000014004060F                 imul    rax, 0E1Bh
+				.text:0000000140040616                 sub     rcx, rax
+				.text:0000000140040619                 imul    rdi, rcx, 0E1Bh
+				.text:0000000140040620                 mov     rax, r11
+				.text:0000000140040623                 mul     rdi
+				.text:0000000140040626                 shr     rdx, 0Ch
+				.text:000000014004062A                 imul    rax, rdx, 1107h
+				.text:0000000140040631                 jmp     loc_140011DB8
+				
+				.text:0000000140011DB8 loc_140011DB8:                          ; CODE XREF: sub_14003DD84+28AD↓j
+				.text:0000000140011DB8                 sub     rdi, rax
+				.text:0000000140011DBB                 mov     rax, rbx
+				.text:0000000140011DBE                 mul     rdi
+				.text:0000000140011DC1                 mov     rax, rdi
+				.text:0000000140011DC4                 sub     rax, rdx
+				.text:0000000140011DC7                 shr     rax, 1
+				.text:0000000140011DCA                 jmp     loc_140016CB9
+				
+				.text:0000000140016CB9 loc_140016CB9:                          ; CODE XREF: PreOb_sub_14000D9A0+442A↑j
+				.text:0000000140016CB9                 add     rax, rdx
+				.text:0000000140016CBC                 shr     rax, 6
+				.text:0000000140016CC0                 imul    rcx, rax, 62h ; 'b'
+				.text:0000000140016CC4                 mov     rax, 0A0A0A0A0A0A0A0A1h
+				.text:0000000140016CCE                 mul     rdi
+				.text:0000000140016CD1                 shr     rdx, 5
+				.text:0000000140016CD5                 add     rcx, rdx
+				.text:0000000140016CD8                 imul    rax, rcx, 66h ; 'f'
+				.text:0000000140016CDC                 jmp     loc_140042885
+				
+				.text:0000000140042885 loc_140042885:                          ; CODE XREF: IoHandler_sub_140014450+288C↑j
+				.text:0000000140042885                 imul    rcx, rdi, 68h ; 'h'
+				.text:0000000140042889                 sub     rcx, rax
+				.text:000000014004288C                 movzx   eax, word ptr [rcx+rsi+29050h]
+				.text:0000000140042894                 imul    rcx, rax, 7D0h
+				.text:000000014004289B                 mov     rax, r9
+				.text:000000014004289E                 mul     rcx
+				.text:00000001400428A1                 shr     rdx, 0Bh
+				.text:00000001400428A5                 imul    rax, rdx, 0C9Dh
+				.text:00000001400428AC                 jmp     loc_14000DAB0
+				
+				.text:000000014000DAB0 loc_14000DAB0:                          ; CODE XREF: sub_14004185D+104F↓j
+				.text:000000014000DAB0                 sub     rcx, rax
+				.text:000000014000DAB3                 jmp     loc_14003D06E
+				
+				.text:000000014003D06E loc_14003D06E:                          ; CODE XREF: PreOb_sub_14000D9A0+113↑j
+				.text:000000014003D06E                 imul    rdi, rcx, 0E35h
+				.text:000000014003D075                 mov     rax, r9
+				.text:000000014003D078                 mul     rdi
+				.text:000000014003D07B                 shr     rdx, 0Bh
+				.text:000000014003D07F                 imul    rax, rdx, 0C9Dh
+				.text:000000014003D086                 sub     rdi, rax
+				.text:000000014003D089                 mov     rax, r12
+				.text:000000014003D08C                 mul     rdi
+				.text:000000014003D08F                 jmp     loc_14003D7A7
+				
+				.text:000000014003D7A7 loc_14003D7A7:                          ; CODE XREF: sub_14003800C+5083↑j
+				.text:000000014003D7A7                 shr     rdx, 7
+				.text:000000014003D7AB                 imul    rcx, rdx, 0F5h ; 'õ'
+				.text:000000014003D7B2                 mov     rax, r14
+				.text:000000014003D7B5                 jmp     loc_140018F4F
+				
+				.text:0000000140018F4F loc_140018F4F:                          ; CODE XREF: sub_14003800C+57A9↓j
+				.text:0000000140018F4F                 mul     rdi
+				.text:0000000140018F52                 shr     rdx, 4
+				.text:0000000140018F56                 add     rcx, rdx
+				.text:0000000140018F59                 imul    rax, rcx, 88h ; 'ˆ'
+				.text:0000000140018F60                 jmp     loc_14001212F
+				
+				.text:000000014001212F loc_14001212F:                          ; CODE XREF: IoHandler_sub_140014450+4B10↓j
+				.text:000000014001212F                 lea     rcx, [rdi+rdi*8]
+				.text:0000000140012133                 jmp     loc_140041128
+				
+				.text:0000000140041128 loc_140041128:                          ; CODE XREF: PreOb_sub_14000D9A0+4793↑j
+				.text:0000000140041128                 shl     rcx, 4
+				.text:000000014004112C                 sub     rcx, rax
+				.text:000000014004112F                 add     rcx, r15
+				.text:0000000140041132                 mov     [rsp+arg_30], rcx
+				.text:0000000140041137                 mov     rdx, [rcx]
+				.text:000000014004113A                 mov     rcx, rdx
+				.text:000000014004113D                 jmp     loc_14003CC71
+				
+				.text:000000014003CC71 loc_14003CC71:                          ; CODE XREF: sub_140040C0A+533↓j
+				.text:000000014003CC71                 rol     rcx, 4
+				.text:000000014003CC75                 mov     rdi, [rsp+arg_28]
+				.text:000000014003CC7A                 shr     rdi, 20h
+				.text:000000014003CC7E                 mov     rax, rdi
+				.text:000000014003CC81                 and     rax, [rsp+arg_48]
+				.text:000000014003CC86                 mov     [rsp+arg_40], rax
+				.text:000000014003CC8B                 jmp     loc_140042E89
+				
+				.text:0000000140042E89 loc_140042E89:                          ; CODE XREF: sub_14003800C+4C7F↑j
+				.text:0000000140042E89                 or      rdi, [rsp+arg_48]
+				.text:0000000140042E8E                 sub     rdi, rax
+				.text:0000000140042E91                 mov     rax, rcx
+				.text:0000000140042E94                 not     rax
+				.text:0000000140042E97                 and     rax, 0FFFFFFFFFFFFFFFEh
+				.text:0000000140042E9B                 add     rax, 2
+				.text:0000000140042E9F                 add     rax, rcx
+				.text:0000000140042EA2                 jz      loc_14001474A
+				.text:0000000140042EA8                 jmp     loc_14001715F
+				
+					.text:000000014001474A loc_14001474A:                          ; CODE XREF: PreOb_sub_14000D9A0+1FE8↑j
+					.text:000000014001474A                                         ; PreOb_sub_14000D9A0+2BF2↑j ...
+					.text:000000014001474A                 jmp     loc_1400427C8
+					
+					.text:00000001400427C8 loc_1400427C8:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001474A↑j
+					.text:00000001400427C8                 mov     rcx, rdx
+					.text:00000001400427CB                 not     rcx
+					.text:00000001400427CE                 or      rcx, r8
+					.text:00000001400427D1                 mov     r11, 0EFFFFFFFFFFFFFFFh
+					.text:00000001400427DB                 and     rdx, r11
+					.text:00000001400427DE                 mov     rbx, 1000000000000001h
+					.text:00000001400427E8                 add     rcx, rbx
+					.text:00000001400427EB                 add     rcx, rdx
+					.text:00000001400427EE                 mov     rax, rcx
+					.text:00000001400427F1                 or      rax, rdi
+					.text:00000001400427F4                 and     rcx, rdi
+					.text:00000001400427F7                 jmp     loc_140014779
+	
+	.text:00000001400171E1 loc_1400171E1:                          ; CODE XREF: IoHandler_sub_140014450:loc_140014580↑j
+	.text:00000001400171E1                 jmp     loc_14001977F
+	
+	.text:000000014001977F loc_14001977F:                          ; CODE XREF: IoHandler_sub_140014450:loc_1400171E1↑j
+	.text:000000014001977F                 mov     rax, cs:P
+	.text:0000000140019786                 mov     r10, 0AA2D145923EC7F30h
+	.text:0000000140019790                 lea     rsi, cs:140000000h
+	.text:0000000140019797                 mov     r9, 0A25E5851D18A813Bh
+	.text:00000001400197A1                 mov     r12, 85BF37612CEE3C9Bh
+	.text:00000001400197AB                 mov     r14, 0F0F0F0F0F0F0F0F1h
+	.text:00000001400197B5                 lea     r15, unk_14002B760
+	.text:00000001400197BC                 mov     r8, 0FFFFFFFF00000000h
+	.text:00000001400197C6                 test    rax, rax
+	.text:00000001400197C9                 jz      loc_14001820E
+	.text:00000001400197CF                 jmp     loc_140013B20
+	
+		.text:0000000140013B20 loc_140013B20:                          ; CODE XREF: IoHandler_sub_140014450+537F↓j
+		.text:0000000140013B20                 cmp     dword ptr [rax], 7D0h
+		.text:0000000140013B26                 mov     rax, 2262427FC07A8175h
+		.text:0000000140013B30                 jnb     loc_140014797
+		.text:0000000140013B36                 jmp     loc_140018329
+		
+			.text:0000000140018329 loc_140018329:                          ; CODE XREF: PreOb_sub_14000D9A0+6196↑j
+			.text:0000000140018329                 mov     [rsp+arg_28], r10
+			.text:000000014001832E                 mov     rcx, r13
+			.text:0000000140018331                 mov     rbx, 4E5E0A72F0539783h
+			.text:000000014001833B                 mov     r11, 0F08DE3B14D94C2BFh
+			.text:0000000140018345                 jmp     loc_140017263
+			
+			.text:0000000140017263 loc_140017263:                          ; CODE XREF: IoHandler_sub_140014450+3EF5↓j
+			.text:0000000140017263                                         ; sub_14003800C+5457↓j
+			.text:0000000140017263                 jmp     loc_14000F857
+			
+			.text:000000014000F857 loc_14000F857:                          ; CODE XREF: IoHandler_sub_140014450:loc_140017263↓j
+			.text:000000014000F857                 mov     [rsp+arg_168], rcx
+			.text:000000014000F85F                 imul    rcx, 7D0h
+			.text:000000014000F866                 mul     rcx
+			.text:000000014000F869                 mov     rax, rcx
+			.text:000000014000F86C                 sub     rax, rdx
+			.text:000000014000F86F                 shr     rax, 1
+			.text:000000014000F872                 add     rax, rdx
+			.text:000000014000F875                 shr     rax, 0Bh
+			.text:000000014000F879                 imul    rax, 0E1Bh
+			.text:000000014000F880                 sub     rcx, rax
+			.text:000000014000F883                 imul    rdi, rcx, 0E1Bh
+			.text:000000014000F88A                 mov     rax, r11
+			.text:000000014000F88D                 mul     rdi
+			.text:000000014000F890                 shr     rdx, 0Ch
+			.text:000000014000F894                 imul    rax, rdx, 1107h
+			.text:000000014000F89B                 sub     rdi, rax
+			.text:000000014000F89E                 mov     rax, rbx
+			.text:000000014000F8A1                 mul     rdi
+			.text:000000014000F8A4                 mov     rax, rdi
+			.text:000000014000F8A7                 sub     rax, rdx
+			.text:000000014000F8AA                 shr     rax, 1
+			.text:000000014000F8AD                 add     rax, rdx
+			.text:000000014000F8B0                 shr     rax, 6
+			.text:000000014000F8B4                 imul    rcx, rax, 62h ; 'b'
+			.text:000000014000F8B8                 mov     rax, 0A0A0A0A0A0A0A0A1h
+			.text:000000014000F8C2                 mul     rdi
+			.text:000000014000F8C5                 shr     rdx, 5
+			.text:000000014000F8C9                 add     rcx, rdx
+			.text:000000014000F8CC                 imul    rax, rcx, 66h ; 'f'
+			.text:000000014000F8D0                 imul    rcx, rdi, 68h ; 'h'
+			.text:000000014000F8D4                 sub     rcx, rax
+			.text:000000014000F8D7                 movzx   eax, word ptr [rcx+rsi+29050h]
+			.text:000000014000F8DF                 imul    rcx, rax, 7D0h
+			.text:000000014000F8E6                 mov     rax, r9
+			.text:000000014000F8E9                 mul     rcx
+			.text:000000014000F8EC                 shr     rdx, 0Bh
+			.text:000000014000F8F0                 imul    rax, rdx, 0C9Dh
+			.text:000000014000F8F7                 sub     rcx, rax
+			.text:000000014000F8FA                 imul    rdi, rcx, 0E35h
+			.text:000000014000F901                 mov     rax, r9
+			.text:000000014000F904                 mul     rdi
+			.text:000000014000F907                 shr     rdx, 0Bh
+			.text:000000014000F90B                 imul    rax, rdx, 0C9Dh
+			.text:000000014000F912                 sub     rdi, rax
+			.text:000000014000F915                 mov     rax, r12
+			.text:000000014000F918                 mul     rdi
+			.text:000000014000F91B                 shr     rdx, 7
+			.text:000000014000F91F                 imul    rcx, rdx, 0F5h ; 'õ'
+			.text:000000014000F926                 mov     rax, r14
+			.text:000000014000F929                 mul     rdi
+			.text:000000014000F92C                 shr     rdx, 4
+			.text:000000014000F930                 add     rcx, rdx
+			.text:000000014000F933                 imul    rax, rcx, 88h ; 'ˆ'
+			.text:000000014000F93A                 lea     rcx, [rdi+rdi*8]
+			.text:000000014000F93E                 shl     rcx, 4
+			.text:000000014000F942                 sub     rcx, rax
+			.text:000000014000F945                 add     rcx, r15
+			.text:000000014000F948                 mov     [rsp+ByteOffset], rcx
+			.text:000000014000F94D                 mov     rdx, [rcx]
+			.text:000000014000F950                 mov     rcx, rdx
+			.text:000000014000F953                 rol     rcx, 4
+			.text:000000014000F957                 mov     rdi, qword ptr [rsp+Length]
+			.text:000000014000F95C                 shr     rdi, 20h
+			.text:000000014000F960                 mov     rax, rdi
+			.text:000000014000F963                 and     eax, 48263782h
+			.text:000000014000F968                 mov     [rsp+arg_40], rax
+			.text:000000014000F96D                 or      rdi, 48263782h
+			.text:000000014000F974                 sub     rdi, rax
+			.text:000000014000F977                 mov     rax, rcx
+			.text:000000014000F97A                 not     rax
+			.text:000000014000F97D                 and     rax, 0FFFFFFFFFFFFFFFEh
+			.text:000000014000F981                 add     rax, 2
+			.text:000000014000F985                 add     rax, rcx
+			.text:000000014000F988                 jz      loc_14001474A
+			.text:000000014000F98E                 jmp     loc_14001739A
+			
+				.text:000000014001739A loc_14001739A:                          ; CODE XREF: PreOb_sub_14000D9A0+1FEE↑j
+				.text:000000014001739A                 jmp     loc_140013503
+				
+				.text:0000000140013503 loc_140013503:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001739A↓j
+				.text:0000000140013503                 mov     rcx, qword ptr [rsp+Length]
+				.text:0000000140013508                 and     rcx, r8
+				.text:000000014001350B                 mov     rax, 4826378200000000h
+				.text:0000000140013515                 or      rcx, rax
+				.text:0000000140013518                 mov     rax, [rsp+arg_40]
+				.text:000000014001351D                 shl     rax, 20h
+				.text:0000000140013521                 sub     rcx, rax
+				.text:0000000140013524                 mov     rax, rdx
+				.text:0000000140013527                 shl     rax, 20h
+				.text:000000014001352B                 or      rcx, rax
+				.text:000000014001352E                 mov     rax, rdx
+				.text:0000000140013531                 and     rax, rdi
+				.text:0000000140013534                 shl     rax, 20h
+				.text:0000000140013538                 cmp     rcx, rax
+				.text:000000014001353B                 jz      loc_140014740
+				.text:0000000140013541                 jmp     loc_1400109F2
+				
+					.text:00000001400109F2 loc_1400109F2:                          ; CODE XREF: PreOb_sub_14000D9A0+5BA1↓j
+					.text:00000001400109F2                 mov     rdi, qword ptr [rsp+Length]
+					.text:00000001400109F7                 mov     rcx, rdi
+					.text:00000001400109FA                 not     rcx
+					.text:00000001400109FD                 or      rcx, rdx
+					.text:0000000140010A00                 mov     rax, rdx
+					.text:0000000140010A03                 not     rax
+					.text:0000000140010A06                 jmp     loc_14003D438
+					
+					.text:000000014003D438 loc_14003D438:                          ; CODE XREF: PreOb_sub_14000D9A0+3066↑j
+					.text:000000014003D438                 and     rax, rdi
+					.text:000000014003D43B                 sub     rax, rcx
+					.text:000000014003D43E                 sub     rax, rdi
+					.text:000000014003D441                 lea     rax, [rax-1]
+					.text:000000014003D445                 lea     rax, [rax+rdx]
+					.text:000000014003D449                 mov     [rsp+arg_28], rax
+					.text:000000014003D44E                 mov     rcx, [rsp+arg_168]
+					.text:000000014003D456                 inc     rcx
+					.text:000000014003D459                 mov     rax, 2262427FC07A8175h
+					.text:000000014003D463                 jmp     loc_140017263
 
 .text:000000014001741C loc_14001741C:                          ; CODE XREF: sub_14001D640+7B4A↓j
 .text:000000014001741C                 jmp     loc_140041441
@@ -49,7 +1303,195 @@
 .text:0000000140041441 loc_140041441:                          ; CODE XREF: IoHandler_sub_140014450:loc_14001741C↑j
 .text:0000000140041441                 sub     ecx, 16h
 .text:0000000140041444                 jz      loc_140017F80
-> .text:000000014004144A                 jmp     loc_140011E35
+.text:000000014004144A                 jmp     loc_140011E35
+
+	.text:0000000140011E35 loc_140011E35:                          ; CODE XREF: sub_140040C0A+840↓j
+	.text:0000000140011E35                 sub     ecx, 1
+	.text:0000000140011E38                 jz      loc_140017D48
+	.text:0000000140011E3E                 jmp     loc_14000DA6D
+	
+		.text:000000014000DA6D loc_14000DA6D:                          ; CODE XREF: PreOb_sub_14000D9A0+449E↓j
+		.text:000000014000DA6D                 sub     ecx, 1
+		.text:000000014000DA70                 jz      loc_140017B08
+		> .text:000000014000DA76                 jmp     sub_140026457
+	
+	.text:0000000140017D48 loc_140017D48:                          ; CODE XREF: PreOb_sub_14000D9A0+4498↑j
+	.text:0000000140017D48                 jmp     loc_140015416
+	
+	.text:0000000140015416 loc_140015416:                          ; CODE XREF: IoHandler_sub_140014450:loc_140017D48↓j
+	.text:0000000140015416                 mov     rax, cs:P
+	.text:000000014001541D                 mov     r10, 0AA2D145923EC7F30h
+	.text:0000000140015427                 lea     rsi, cs:140000000h
+	.text:000000014001542E                 mov     r9, 0A25E5851D18A813Bh
+	.text:0000000140015438                 mov     r12, 85BF37612CEE3C9Bh
+	.text:0000000140015442                 mov     r14, 0F0F0F0F0F0F0F0F1h
+	.text:000000014001544C                 lea     r15, unk_14002B760
+	.text:0000000140015453                 mov     r8, 0FFFFFFFF00000000h
+	.text:000000014001545D                 test    rax, rax
+	.text:0000000140015460                 jz      loc_14001820E
+	.text:0000000140015466                 jmp     loc_140010F97
+	
+		.text:0000000140010F97 loc_140010F97:                          ; CODE XREF: IoHandler_sub_140014450+1016↓j
+		.text:0000000140010F97                 cmp     dword ptr [rax], 7D0h
+		.text:0000000140010F9D                 mov     rax, 2262427FC07A8175h
+		.text:0000000140010FA7                 jnb     loc_140014797
+		.text:0000000140010FAD                 jmp     loc_140014F55
+		
+			.text:0000000140014F55 loc_140014F55:                          ; CODE XREF: PreOb_sub_14000D9A0+360D↑j
+			.text:0000000140014F55                 mov     [rsp+arg_28], r10
+			.text:0000000140014F5A                 mov     rcx, r13
+			.text:0000000140014F5D                 mov     rbx, 4E5E0A72F0539783h
+			.text:0000000140014F67                 mov     r11, 0F08DE3B14D94C2BFh
+			.text:0000000140014F71                 jmp     loc_140017DCA
+			
+			.text:0000000140017DCA loc_140017DCA:                          ; CODE XREF: IoHandler_sub_140014450+B21↑j
+			.text:0000000140017DCA                                         ; sub_14003DD84+3F7↓j
+			.text:0000000140017DCA                 jmp     loc_1400134C5
+			
+			.text:00000001400134C5 loc_1400134C5:                          ; CODE XREF: IoHandler_sub_140014450:loc_140017DCA↓j
+			.text:00000001400134C5                 mov     [rsp+arg_190], rcx
+			.text:00000001400134CD                 imul    rcx, 7D0h
+			.text:00000001400134D4                 mul     rcx
+			.text:00000001400134D7                 mov     rax, rcx
+			.text:00000001400134DA                 sub     rax, rdx
+			.text:00000001400134DD                 shr     rax, 1
+			.text:00000001400134E0                 add     rax, rdx
+			.text:00000001400134E3                 shr     rax, 0Bh
+			.text:00000001400134E7                 jmp     loc_14001505D
+			
+			.text:000000014001505D loc_14001505D:                          ; CODE XREF: PreOb_sub_14000D9A0+5B47↑j
+			.text:000000014001505D                 imul    rax, 0E1Bh
+			.text:0000000140015064                 sub     rcx, rax
+			.text:0000000140015067                 imul    rdi, rcx, 0E1Bh
+			.text:000000014001506E                 mov     rax, r11
+			.text:0000000140015071                 mul     rdi
+			.text:0000000140015074                 shr     rdx, 0Ch
+			.text:0000000140015078                 imul    rax, rdx, 1107h
+			.text:000000014001507F                 jmp     loc_140041B07
+			
+			.text:0000000140041B07 loc_140041B07:                          ; CODE XREF: IoHandler_sub_140014450+C2F↑j
+			.text:0000000140041B07                 sub     rdi, rax
+			.text:0000000140041B0A                 mov     rax, rbx
+			.text:0000000140041B0D                 mul     rdi
+			.text:0000000140041B10                 mov     rax, rdi
+			.text:0000000140041B13                 sub     rax, rdx
+			.text:0000000140041B16                 jmp     loc_14001BE59
+			
+			.text:000000014001BE59 loc_14001BE59:                          ; CODE XREF: sub_14004185D+2B9↓j
+			.text:000000014001BE59                 shr     rax, 1
+			.text:000000014001BE5C                 add     rax, rdx
+			.text:000000014001BE5F                 shr     rax, 6
+			.text:000000014001BE63                 imul    rcx, rax, 62h ; 'b'
+			.text:000000014001BE67                 mov     rax, 0A0A0A0A0A0A0A0A1h
+			.text:000000014001BE71                 jmp     loc_14001F068
+			
+			.text:000000014001F068 loc_14001F068:                          ; CODE XREF: IoHandler_sub_140014450+7A21↑j
+			.text:000000014001F068                 mul     rdi
+			.text:000000014001F06B                 jmp     loc_14000F412
+			
+			.text:000000014000F412 loc_14000F412:                          ; CODE XREF: sub_14001D640+1A2B↓j
+			.text:000000014000F412                 shr     rdx, 5
+			.text:000000014000F416                 add     rcx, rdx
+			.text:000000014000F419                 imul    rax, rcx, 66h ; 'f'
+			.text:000000014000F41D                 jmp     loc_14003C66F
+			
+			.text:000000014003C66F loc_14003C66F:                          ; CODE XREF: PreOb_sub_14000D9A0+1A7D↑j
+			.text:000000014003C66F                 imul    rcx, rdi, 68h ; 'h'
+			.text:000000014003C673                 sub     rcx, rax
+			.text:000000014003C676                 movzx   eax, word ptr [rcx+rsi+29050h]
+			.text:000000014003C67E                 imul    rcx, rax, 7D0h
+			.text:000000014003C685                 mov     rax, r9
+			.text:000000014003C688                 mul     rcx
+			.text:000000014003C68B                 shr     rdx, 0Bh
+			.text:000000014003C68F                 imul    rax, rdx, 0C9Dh
+			.text:000000014003C696                 sub     rcx, rax
+			.text:000000014003C699                 jmp     loc_14000FFF7
+			
+			.text:000000014000FFF7 loc_14000FFF7:                          ; CODE XREF: sub_14003800C+468D↓j
+			.text:000000014000FFF7                 imul    rdi, rcx, 0E35h
+			.text:000000014000FFFE                 mov     rax, r9
+			.text:0000000140010001                 mul     rdi
+			.text:0000000140010004                 shr     rdx, 0Bh
+			.text:0000000140010008                 imul    rax, rdx, 0C9Dh
+			.text:000000014001000F                 sub     rdi, rax
+			.text:0000000140010012                 mov     rax, r12
+			.text:0000000140010015                 mul     rdi
+			.text:0000000140010018                 shr     rdx, 7
+			.text:000000014001001C                 imul    rcx, rdx, 0F5h ; 'õ'
+			.text:0000000140010023                 jmp     loc_14003ABB4
+			
+			.text:000000014003ABB4 loc_14003ABB4:                          ; CODE XREF: PreOb_sub_14000D9A0+2683↑j
+			.text:000000014003ABB4                 mov     rax, r14
+			.text:000000014003ABB7                 mul     rdi
+			.text:000000014003ABBA                 shr     rdx, 4
+			.text:000000014003ABBE                 add     rcx, rdx
+			.text:000000014003ABC1                 imul    rax, rcx, 88h ; 'ˆ'
+			.text:000000014003ABC8                 lea     rcx, [rdi+rdi*8]
+			.text:000000014003ABCC                 shl     rcx, 4
+			.text:000000014003ABD0                 sub     rcx, rax
+			.text:000000014003ABD3                 add     rcx, r15
+			.text:000000014003ABD6                 mov     [rsp+arg_30], rcx
+			.text:000000014003ABDB                 jmp     loc_140042860
+			
+			.text:0000000140042860 loc_140042860:                          ; CODE XREF: sub_14003800C+2BCF↑j
+			.text:0000000140042860                 mov     rdi, [rcx]
+			.text:0000000140042863                 mov     rcx, rdi
+			.text:0000000140042866                 rol     rcx, 4
+			.text:000000014004286A                 mov     rdx, [rsp+arg_28]
+			.text:000000014004286F                 shr     rdx, 20h
+			.text:0000000140042873                 mov     rax, rdx
+			.text:0000000140042876                 and     eax, 16B0524Dh
+			.text:000000014004287B                 mov     [rsp+arg_40], rax
+			.text:0000000140042880                 jmp     loc_14003864C
+			
+			.text:000000014003864C loc_14003864C:                          ; CODE XREF: sub_14004185D+1023↓j
+			.text:000000014003864C                 or      rdx, 16B0524Dh
+			.text:0000000140038653                 sub     rdx, rax
+			.text:0000000140038656                 mov     rax, rcx
+			.text:0000000140038659                 not     rax
+			.text:000000014003865C                 and     rax, 0FFFFFFFFFFFFFFFEh
+			.text:0000000140038660                 add     rax, 2
+			.text:0000000140038664                 add     rax, rcx
+			.text:0000000140038667                 jz      loc_140014F99
+			.text:000000014003866D                 jmp     loc_140017F01
+			
+				.text:0000000140017F01 loc_140017F01:                          ; CODE XREF: sub_14003800C+661↓j
+				.text:0000000140017F01                 jmp     loc_140013A25
+				
+				.text:0000000140013A25 loc_140013A25:                          ; CODE XREF: IoHandler_sub_140014450:loc_140017F01↓j
+				.text:0000000140013A25                 mov     rcx, qword ptr [rsp+Length]
+				.text:0000000140013A2A                 and     rcx, r8
+				.text:0000000140013A2D                 mov     rax, 16B0524D00000000h
+				.text:0000000140013A37                 or      rcx, rax
+				.text:0000000140013A3A                 mov     rax, [rsp+arg_40]
+				.text:0000000140013A3F                 shl     rax, 20h
+				.text:0000000140013A43                 sub     rcx, rax
+				.text:0000000140013A46                 mov     rax, rdi
+				.text:0000000140013A49                 shl     rax, 20h
+				.text:0000000140013A4D                 or      rcx, rax
+				.text:0000000140013A50                 and     rdx, rdi
+				.text:0000000140013A53                 shl     rdx, 20h
+				.text:0000000140013A57                 cmp     rcx, rdx
+				.text:0000000140013A5A                 jz      loc_140014740
+				.text:0000000140013A60                 jmp     loc_14003E13C
+				
+					.text:000000014003E13C loc_14003E13C:                          ; CODE XREF: PreOb_sub_14000D9A0+60C0↑j
+					.text:000000014003E13C                 mov     rdx, [rsp+arg_28]
+					.text:000000014003E141                 mov     rcx, rdx
+					.text:000000014003E144                 not     rcx
+					.text:000000014003E147                 or      rcx, rdi
+					.text:000000014003E14A                 mov     rax, rdi
+					.text:000000014003E14D                 not     rax
+					.text:000000014003E150                 and     rax, rdx
+					.text:000000014003E153                 sub     rax, rcx
+					.text:000000014003E156                 sub     rax, rdx
+					.text:000000014003E159                 lea     rax, [rax-1]
+					.text:000000014003E15D                 lea     rax, [rax+rdi]
+					.text:000000014003E161                 mov     [rsp+arg_28], rax
+					.text:000000014003E166                 mov     rcx, [rsp+arg_190]
+					.text:000000014003E16E                 inc     rcx
+					.text:000000014003E171                 mov     rax, 2262427FC07A8175h
+					.text:000000014003E17B                 jmp     loc_140017DCA
 
 .text:0000000140017F80 loc_140017F80:                          ; CODE XREF: sub_140040C0A+83A↓j
 .text:0000000140017F80                 jmp     loc_14003A485
