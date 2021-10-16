@@ -226,7 +226,7 @@ No post operation (because post operation does not have an ability to strip gran
 
 ### Process Callbacks
 
-`HookedPsSetCreateProcessNotifyRoutineEx` is called at the initialization phase of the driver as well as object callbacks.
+`PsSetCreateProcessNotifyRoutineEx` is called at the initialization phase of the driver as well as object callbacks.
 
 ```
 [DEBUGGER] PsSetCreateProcessNotifyRoutineEx: FFFFF80313374060(Aurum+0x14060) 0
