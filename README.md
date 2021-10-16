@@ -48,6 +48,12 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 - Packed by original packer
     - jmp control flow obfuscation, can mitigate by writing some code.
 
+### PE Packer
+
+The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.
+
+Packed but it's totally human-readable.
+
 ### PE Sections
 
 ```
