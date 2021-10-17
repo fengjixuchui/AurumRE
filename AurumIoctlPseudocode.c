@@ -52,7 +52,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   byte bStack520;
   char *pcStack512;
   ulonglong uStack504;
-  byte *pbStack496;
+  byte *irp_sp;
   ulonglong uStack488;
   uint uStack480;
   ulonglong uStack472;
@@ -119,9 +119,9 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   uStack56 = DAT_1400339d0 ^ (ulonglong)auStack648;
   lVar11 = 0;
   uStack480 = 0;
-  *(undefined8 *)(irp + 0x38) = 0;     // irp->IoStatus.Information = 0;
-  pbStack496 = *(byte **)(irp + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
-  bVar9 = *pbStack496;
+  *(undefined8 *)(irp + 0x38) = 0; // irp->IoStatus.Information = 0;
+  irp_sp = *(byte **)(irp + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
+  bVar9 = *irp_sp;
   if (bVar9 < 0xf)
   {
     if (bVar9 == 0xe)
@@ -1212,7 +1212,7 @@ LAB_1400127c3:
   uVar12 = 0xaa2d145923ec7f30;
   lStack584 = irp;
   lStack88 = irp;
-  if (*pbStack496 != 0xe)
+  if (*irp_sp != 0xe)
     goto LAB_14001a24a;
   uStack560 = 0xe0000001;
   uStack556 = 0xe0000001;
@@ -1280,18 +1280,18 @@ LAB_1400127c3:
     uVar22 = ~uVar13 ^ uVar12;
     auStack544 = CONCAT88(uVar22, uVar12);
     uStack448 = (ulonglong)uStack524;
-    pbStack496 = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
-                               uVar12 >> 0x10 & 0xff)
-                                  << 8 |
-                              uVar12 >> 0x18 & 0xff)
-                                 << 8 |
-                             uVar12 >> 0x20 & 0xff)
-                                << 8 |
-                            uVar12 >> 0x28 & 0xff)
-                               << 8 |
-                           uVar12 >> 0x30 & 0xff)
+    irp_sp = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
+                           uVar12 >> 0x10 & 0xff)
                               << 8 |
-                          uVar12 >> 0x38);
+                          uVar12 >> 0x18 & 0xff)
+                             << 8 |
+                         uVar12 >> 0x20 & 0xff)
+                            << 8 |
+                        uVar12 >> 0x28 & 0xff)
+                           << 8 |
+                       uVar12 >> 0x30 & 0xff)
+                          << 8 |
+                      uVar12 >> 0x38);
     puStack568 = (ulonglong *)((((((((uVar22 & 0xff) << 8 | uVar22 >> 8 & 0xff) << 8 | uVar22 >> 0x10 & 0xff) << 8 | uVar22 >> 0x18 & 0xff) << 8 | uVar22 >> 0x20 & 0xff) << 8 |
                                  uVar22 >> 0x28 & 0xff)
                                     << 8 |
@@ -1332,12 +1332,12 @@ LAB_1400127c3:
     else
     {
       uVar14 = uVar13 ^ 0x80400c0600000000;
-      uVar22 = (ulonglong)puStack568 ^ (ulonglong)pbStack496 ^ 0xf0;
+      uVar22 = (ulonglong)puStack568 ^ (ulonglong)irp_sp ^ 0xf0;
       uVar13 = uVar13 ^ uVar12;
-      uVar26 = uVar14 ^ ~(ulonglong)pbStack496 & uVar22;
+      uVar26 = uVar14 ^ ~(ulonglong)irp_sp & uVar22;
       uVar27 = ~uVar12 & uVar13 ^ uVar22;
-      uVar24 = ~uVar14 & (ulonglong)pbStack496 ^ uVar13;
-      uVar25 = ~uVar22 & uVar12 ^ uVar26 ^ (ulonglong)pbStack496;
+      uVar24 = ~uVar14 & (ulonglong)irp_sp ^ uVar13;
+      uVar25 = ~uVar22 & uVar12 ^ uVar26 ^ (ulonglong)irp_sp;
       uVar22 = uVar25 >> 0x27 | uVar25 << 0x19;
       uVar12 = ~uVar13 & uVar14 ^ uVar27 ^ uVar12;
       uVar13 = uVar27 >> 1 | (ulonglong)((uVar27 & 1) != 0) << 0x3f;
@@ -1535,7 +1535,7 @@ LAB_1400127c3:
       uStack464 = (uVar15 >> 0x16 | (uVar24 >> 0x27) << 0x2a) ^ uVar24 ^ uVar15;
       uVar12 = uVar27 >> 0x13 | uVar27 << 0x2d;
       uVar15 = (uVar12 >> 9 | (uVar27 >> 0x13) << 0x37) ^ uVar27 ^ uVar12;
-      uVar12 = (uVar14 >> 7 | (uVar13 >> 10) << 0x39) ^ uVar13 ^ uVar14 ^ (ulonglong)pbStack496;
+      uVar12 = (uVar14 >> 7 | (uVar13 >> 10) << 0x39) ^ uVar13 ^ uVar14 ^ (ulonglong)irp_sp;
       uStack472 = (uVar25 >> 0x22 | (uVar22 >> 7) << 0x1e) ^ uVar22 ^ uVar25 ^ (ulonglong)puStack568 ^ 1;
       uStack552 = uStack448 - 0x10;
       for (uStack448 = uStack552; 7 < uStack448; uStack448 = uStack448 - 8)
@@ -1682,7 +1682,7 @@ LAB_1400127c3:
         uVar13 = (ulonglong)bStack520;
         puStack440 = puStack592;
       }
-      uVar13 = uStack464 ^ (ulonglong)pbStack496;
+      uVar13 = uStack464 ^ (ulonglong)irp_sp;
       uVar15 = uVar15 ^ uStack472;
       uVar14 = ~uVar26 ^ uVar13 ^ (ulonglong)puStack568 ^ 0xf0;
       uVar22 = uStack472 ^ uVar12;
@@ -1898,7 +1898,7 @@ LAB_1400127c3:
                                       *(undefined *)((longlong)puStack440 + 5)),
                              *(undefined *)((longlong)puStack440 + 6)),
                     *(undefined *)((longlong)puStack440 + 7)) ^
-               (uVar24 >> 7 | (uVar14 >> 10) << 0x39) ^ uVar14 ^ uVar24 ^ (ulonglong)pbStack496) == 0)
+               (uVar24 >> 7 | (uVar14 >> 10) << 0x39) ^ uVar14 ^ uVar24 ^ (ulonglong)irp_sp) == 0)
       {
         puVar21 = puStack440;
         for (lVar11 = 0x10; lVar11 != 0; lVar11 = lVar11 + -1)
@@ -2097,7 +2097,7 @@ LAB_1400127c3:
           }
           else
           {
-            pbStack496 = (byte *)((ulonglong)uVar17 << 2);
+            irp_sp = (byte *)((ulonglong)uVar17 << 2);
             uStack560 = uVar19;
             puStack568 = (ulonglong *)ExAllocatePoolWithTag();
             if (puStack568 != (ulonglong *)0x0)
@@ -2184,7 +2184,7 @@ LAB_1400127c3:
               *(uint *)puStack600 = uVar20;
               *(ulonglong *)(lStack584 + 0x38) = (ulonglong)uVar19;
               puVar23 = (undefined *)puStack568;
-              for (lVar11 = (longlong)pbStack496; lVar11 != 0; lVar11 = lVar11 + -1)
+              for (lVar11 = (longlong)irp_sp; lVar11 != 0; lVar11 = lVar11 + -1)
               {
                 *puVar23 = 0;
                 puVar23 = puVar23 + 1;
@@ -2389,18 +2389,18 @@ LAB_1400127c3:
       auStack544 = CONCAT88(uVar13, uVar12);
       puStack96 = *(ulonglong **)(lStack584 + 0x38);
       puStack168 = puStack600;
-      pbStack496 = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
-                                 uVar12 >> 0x10 & 0xff)
-                                    << 8 |
-                                uVar12 >> 0x18 & 0xff)
-                                   << 8 |
-                               uVar12 >> 0x20 & 0xff)
-                                  << 8 |
-                              uVar12 >> 0x28 & 0xff)
-                                 << 8 |
-                             uVar12 >> 0x30 & 0xff)
+      irp_sp = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
+                             uVar12 >> 0x10 & 0xff)
                                 << 8 |
-                            uVar12 >> 0x38);
+                            uVar12 >> 0x18 & 0xff)
+                               << 8 |
+                           uVar12 >> 0x20 & 0xff)
+                              << 8 |
+                          uVar12 >> 0x28 & 0xff)
+                             << 8 |
+                         uVar12 >> 0x30 & 0xff)
+                            << 8 |
+                        uVar12 >> 0x38);
       uStack464 = (((((((uVar13 & 0xff) << 8 | uVar13 >> 8 & 0xff) << 8 | uVar13 >> 0x10 & 0xff) << 8 | uVar13 >> 0x18 & 0xff) << 8 | uVar13 >> 0x20 & 0xff) << 8 |
                     uVar13 >> 0x28 & 0xff)
                        << 8 |
@@ -2427,12 +2427,12 @@ LAB_1400127c3:
       if (puStack592 <= (ulonglong *)(ulonglong) * (uint *)(puStack576 + 1))
       {
         uVar14 = uVar13 ^ 0x80400c0600000000;
-        uVar22 = uStack464 ^ (ulonglong)pbStack496 ^ 0xf0;
+        uVar22 = uStack464 ^ (ulonglong)irp_sp ^ 0xf0;
         uVar13 = uVar13 ^ uVar12;
-        uVar15 = uVar14 ^ ~(ulonglong)pbStack496 & uVar22;
+        uVar15 = uVar14 ^ ~(ulonglong)irp_sp & uVar22;
         uVar26 = ~uVar12 & uVar13 ^ uVar22;
-        uVar24 = ~uVar14 & (ulonglong)pbStack496 ^ uVar13;
-        uVar25 = ~uVar22 & uVar12 ^ uVar15 ^ (ulonglong)pbStack496;
+        uVar24 = ~uVar14 & (ulonglong)irp_sp ^ uVar13;
+        uVar25 = ~uVar22 & uVar12 ^ uVar15 ^ (ulonglong)irp_sp;
         uVar22 = uVar25 >> 0x27 | uVar25 << 0x19;
         uVar12 = ~uVar13 & uVar14 ^ uVar26 ^ uVar12;
         uVar14 = uVar26 >> 1 | (ulonglong)((uVar26 & 1) != 0) << 0x3f;
@@ -2641,7 +2641,7 @@ LAB_1400127c3:
         uStack552 = (uVar28 >> 0x16 | (uVar24 >> 0x27) << 0x2a) ^ uVar24 ^ uVar28;
         uVar12 = uVar26 >> 0x13 | uVar26 << 0x2d;
         uVar24 = (uVar12 >> 9 | (uVar26 >> 0x13) << 0x37) ^ uVar26 ^ uVar12;
-        uVar12 = (uVar15 >> 7 | (uVar14 >> 10) << 0x39) ^ uVar14 ^ uVar15 ^ (ulonglong)pbStack496;
+        uVar12 = (uVar15 >> 7 | (uVar14 >> 10) << 0x39) ^ uVar14 ^ uVar15 ^ (ulonglong)irp_sp;
         uVar13 = (uVar13 >> 0x22 | (uVar22 >> 7) << 0x1e) ^ uVar22 ^ uVar13 ^ uStack464 ^ 1;
         for (; (ulonglong *)0x7 < puStack96; puStack96 = puStack96 + -1)
         {
@@ -2787,7 +2787,7 @@ LAB_1400127c3:
           puVar21 = (ulonglong *)(ulonglong)(byte)(cStack527 + 1);
           puStack168 = puStack576;
         }
-        uStack552 = uStack552 ^ (ulonglong)pbStack496;
+        uStack552 = uStack552 ^ (ulonglong)irp_sp;
         uVar24 = uVar24 ^ uVar13;
         uVar22 = ~uVar25 ^ uStack552 ^ uStack464 ^ 0xf0;
         uVar13 = uVar13 ^ uVar12;
@@ -2996,7 +2996,7 @@ LAB_1400127c3:
         uVar22 = uVar24 >> 7 | uVar24 << 0x39;
         uVar12 = uVar14 >> 0x13 | uVar14 << 0x2d;
         uStack608 = (uVar12 >> 9 | (uVar14 >> 0x13) << 0x37) ^ uVar14 ^ uVar12;
-        uVar12 = (uVar13 >> 7 | (uVar15 >> 10) << 0x39) ^ uVar15 ^ uVar13 ^ (ulonglong)pbStack496;
+        uVar12 = (uVar13 >> 7 | (uVar15 >> 10) << 0x39) ^ uVar15 ^ uVar13 ^ (ulonglong)irp_sp;
         uVar13 = (uVar22 >> 0x22 | (uVar24 >> 7) << 0x1e) ^ uVar24 ^ uVar22 ^ uStack464;
         *(char *)puStack168 = (char)(uVar12 >> 0x38);
         *(char *)puStack576 = (char)(uVar12 >> 0x30);
