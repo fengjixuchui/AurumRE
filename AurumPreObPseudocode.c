@@ -3,14 +3,14 @@
 /* WARNING: Could not reconcile some variable overlaps */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
+void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
 
 {
   short sVar1;
   ushort uVar2;
   ushort *puVar3;
   undefined uVar4;
-  int iVar5;
+  int ntstatus;
   int iVar6;
   char *pcVar7;
   undefined8 uVar8;
@@ -55,11 +55,11 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   ulonglong *puVar47;
   undefined uVar48;
   ulonglong uVar49;
-  int iVar50;
-  int iVar51;
+  int ntstatus0;
+  int ntstatus1;
   bool bVar52;
   bool bVar53;
-  undefined auStack1656 [32];
+  undefined auStack1656[32];
   undefined8 uStack1624;
   undefined8 uStack1616;
   undefined4 uStack1608;
@@ -83,7 +83,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   int iStack1500;
   undefined8 *puStack1496;
   undefined8 uStack1488;
-  ushort *puStack1480;
+  ushort *image_name;
   uint uStack1472;
   ulonglong uStack1464;
   undefined8 *puStack1456;
@@ -93,20 +93,20 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   ulonglong uStack1424;
   ulonglong uStack1416;
   ulonglong uStack1408;
-  undefined auStack1400 [16];
+  undefined auStack1400[16];
   undefined8 uStack1384;
   undefined8 uStack1376;
-  undefined auStack1368 [16];
-  undefined4 auStack1352 [2];
+  undefined auStack1368[16];
+  undefined4 auStack1352[2];
   undefined8 uStack1344;
   ushort *puStack1336;
   undefined4 uStack1328;
-  undefined auStack1320 [16];
+  undefined auStack1320[16];
   undefined4 uStack1304;
   undefined8 uStack1296;
   ushort *puStack1288;
   undefined4 uStack1280;
-  undefined auStack1272 [16];
+  undefined auStack1272[16];
   int iStack1256;
   int iStack1252;
   int iStack1248;
@@ -152,12 +152,12 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   uint uStack1164;
   uint uStack1160;
   uint uStack1156;
-  undefined auStack1144 [8];
+  undefined auStack1144[8];
   undefined8 *puStack1136;
   undefined8 uStack1120;
   uint uStack1112;
   uint uStack1108;
-  uint auStack1096 [4];
+  uint auStack1096[4];
   int iStack1080;
   int iStack1076;
   int iStack1072;
@@ -218,7 +218,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   int iStack852;
   int iStack848;
   int iStack844;
-  uint auStack840 [4];
+  uint auStack840[4];
   int iStack824;
   int iStack820;
   int iStack816;
@@ -279,7 +279,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   int iStack596;
   int iStack592;
   int iStack588;
-  uint auStack584 [4];
+  uint auStack584[4];
   int iStack568;
   int iStack564;
   int iStack560;
@@ -340,7 +340,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   int iStack340;
   int iStack336;
   int iStack332;
-  uint auStack328 [4];
+  uint auStack328[4];
   int iStack312;
   int iStack308;
   int iStack304;
@@ -401,68 +401,82 @@ void UndefinedFunction_14000d9a0(undefined8 param_1,ulonglong param_2)
   int iStack84;
   int iStack80;
   int iStack76;
-  undefined auStack72 [8];
+  undefined auStack72[8];
   undefined4 uStack64;
   undefined4 uStack60;
   ulonglong uStack56;
-  
+
   uStack56 = DAT_1400339d0 ^ (ulonglong)auStack1656;
   uStack1408 = 0;
   pcVar16 = *(char **)(DAT_140033a38 + 8);
   uStack1464 = param_2;
-  if (pcVar16 == (char *)0x0) goto code_r0x000140013d59;
+  if (pcVar16 == (char *)0x0)
+    goto code_r0x000140013d59;
   uStack1448 = 0xba869539;
   uVar28 = 0x764b00dcd21ffe8;
   uVar20 = 0xdd6bdb01af7b1da0;
   puStack1512 = (undefined8 *)0xc8c4d3bc;
   uStack1424 = 0xc99be339;
   puStack1496 = (undefined8 *)0xd4edab0c;
-  puStack1480 = (ushort *)0xeb1dcc20;
+  image_name = (ushort *)0xeb1dcc20;
   uStack1488 = 0xf3e6dd1d;
 LAB_14000da8c:
   uVar28 = uVar28 * uVar20;
   uVar11 = uVar28 >> 0x20;
-  if (uVar11 < 0x7bd902ed) {
-    if (uVar11 != 0x7bd902ec) {
-      if (uVar11 == 0x15ada54e) {
+  if (uVar11 < 0x7bd902ed)
+  {
+    if (uVar11 != 0x7bd902ec)
+    {
+      if (uVar11 == 0x15ada54e)
+      {
         uVar20 = uVar20 ^ 0x90b63036b1ff9830;
         puStack1528 = (undefined8 *)0x1d391e168fce2d86;
         pcVar16 = (char *)((longlong)pcVar16 * -0x5825a6e154a3713b ^
-                          (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
+                           (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
         uVar28 = uVar28 ^ 0x91cefa3e77b24337;
         uVar11 = (ulonglong)pcVar16 >> 0xe;
       }
-      else {
-        if (uVar11 == 0x2dc0de0a) {
+      else
+      {
+        if (uVar11 == 0x2dc0de0a)
+        {
           uVar34 = 0xbbaefbc1dae28ff2;
           uVar11 = (longlong)pcVar16 * *(longlong *)(DAT_140029024 + 9) + 0xa9659e4ab5032db0;
           pcVar16 = (char *)(uVar11 ^ uVar11 >> 0x16 ^ uVar11 >> 0x2c);
           uVar11 = 0xf05f2251e30332bc;
           goto LAB_14000dbf7;
         }
-        if (uVar11 == 0x2e017652) {
+        if (uVar11 == 0x2e017652)
+        {
           uVar28 = uVar28 ^ 0x581c5a11d6e456d8;
           puStack1528 = (undefined8 *)0xd9c97c789e217836;
           uVar20 = uVar20 ^ 0xa257a27f1fdae773;
           uVar11 = (ulonglong)pcVar16 >> 0x38;
         }
-        else {
-          if (uVar11 == 0x3225ef6a) {
+        else
+        {
+          if (uVar11 == 0x3225ef6a)
+          {
             pcVar16 = pcVar16 + -0x5b7d22fd9d34fad7;
             uVar20 = uVar20 ^ 0x5ae0fb43662fbc29;
             uVar28 = uVar28 ^ 0xef568673d016503f;
             uVar11 = (ulonglong)pcVar16 >> 0x34;
           }
-          else {
-            if (uVar11 == 0x4ec984c5) {
+          else
+          {
+            if (uVar11 == 0x4ec984c5)
+            {
               uStack1540 = 0x687ac958;
               uVar20 = uVar20 ^ 0x5ec8090740dbe88;
               uVar28 = uVar28 ^ 0x421e74fdf3683449;
               uVar11 = (ulonglong)pcVar16 >> 0x3e;
             }
-            else {
-              if (uVar11 != 0x74e9ac19) {
-                if (uVar11 != 0x7a3cf8c6) goto LAB_140018af8;
+            else
+            {
+              if (uVar11 != 0x74e9ac19)
+              {
+                if (uVar11 != 0x7a3cf8c6)
+                  goto LAB_140018af8;
                 uVar20 = uVar20 ^ 0xba71a1ca63e88ea7;
                 pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1a);
                 uVar28 = uVar28 ^ 0x8405bb926c678f09;
@@ -483,46 +497,52 @@ LAB_14000da8c:
     pcVar16 = IMAGE_DOS_HEADER_140000000.e_magic + (longlong)pcVar16;
     goto LAB_14000da8c;
   }
-  if (uVar11 == 0xba869539) {
+  if (uVar11 == 0xba869539)
+  {
     pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1c);
     uVar28 = uVar28 ^ 0xa5b810c69ee2691f;
     uVar11 = 0x5df3f14001ca060;
-LAB_14000dd8b:
+  LAB_14000dd8b:
     uVar20 = uVar20 ^ uVar11;
     goto LAB_14000da8c;
   }
-  if (uVar11 == 0xc8c4d3bc) {
+  if (uVar11 == 0xc8c4d3bc)
+  {
     puStack1528 = (undefined8 *)0xa57ec92e80cb5f14;
     pcVar16 = (char *)((longlong)pcVar16 * *(longlong *)(DAT_140029024 + 0x11));
     uVar28 = uVar28 ^ 0x36e2cd68f0bc1a44;
     uVar11 = 0x8dcea67a29a9e9e2;
     goto LAB_14000dd8b;
   }
-  if (uVar11 == 0xc99be339) {
+  if (uVar11 == 0xc99be339)
+  {
     pcVar16 = (char *)((longlong)pcVar16 * 0x3d17c99a1c186399);
     uVar28 = uVar28 ^ 0x5856f0edfa42987b;
     uVar11 = 0xf2d8f7f875b30;
     goto LAB_14000dd8b;
   }
-  if (uVar11 == 0xd4edab0c) {
+  if (uVar11 == 0xd4edab0c)
+  {
     uVar20 = uVar20 ^ 0xd68b1e893b33811a;
     uVar28 = uVar28 ^ 0x269a12add6d92d7e;
     uStack1540 = 0xc691575c;
     goto LAB_14000da8c;
   }
-  if (uVar11 == 0xeb1dcc20) {
+  if (uVar11 == 0xeb1dcc20)
+  {
     uVar28 = uVar28 ^ 0xfb06ee87d4dc33d9;
     uVar20 = uVar20 ^ 0xe55ba3afd0c267f6;
     puStack1528 = (undefined8 *)0x4a846b8125f217ff;
     goto LAB_14000da8c;
   }
-  if (uVar11 == 0xf3e6dd1d) {
+  if (uVar11 == 0xf3e6dd1d)
+  {
     uVar34 = 0xe50b6eeb7ee5d9a1;
     uStack1540 = 0x77b16f32;
     pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1f);
     puStack1528 = (undefined8 *)0x3a8d86142e1a436e;
     uVar11 = 0x9a38ffeeaa33b4ed;
-LAB_14000dbf7:
+  LAB_14000dbf7:
     uVar20 = uVar20 ^ uVar34;
     uVar28 = uVar28 ^ uVar11;
     goto LAB_14000da8c;
@@ -530,47 +550,59 @@ LAB_14000dbf7:
 LAB_140018af8:
   uVar20 = 0x764b00dcd21ffe8;
   uVar28 = 0xdd6bdb01af7b1da0;
-  if ((pcVar16 == (char *)0x0) || (param_2 == 0)) goto code_r0x000140013d59;
+  if ((pcVar16 == (char *)0x0) || (param_2 == 0))
+    goto code_r0x000140013d59;
   pcVar16 = *(char **)(DAT_140033a38 + 8);
-  if (pcVar16 != (char *)0x0) {
-LAB_14000de25:
-    do {
+  if (pcVar16 != (char *)0x0)
+  {
+  LAB_14000de25:
+    do
+    {
       uVar20 = uVar20 * uVar28;
       uVar11 = uVar20 >> 0x20;
-      if (0x7bd902ec < uVar11) {
-        if (uVar11 == 0xba869539) {
+      if (0x7bd902ec < uVar11)
+      {
+        if (uVar11 == 0xba869539)
+        {
           pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1c);
           uVar20 = uVar20 ^ 0xa5b810c69ee2691f;
           uVar11 = 0x5df3f14001ca060;
         }
-        else {
-          if (uVar11 == 0xc8c4d3bc) {
+        else
+        {
+          if (uVar11 == 0xc8c4d3bc)
+          {
             puStack1528 = (undefined8 *)0xa57ec92e80cb5f14;
             pcVar16 = (char *)((longlong)pcVar16 * *(longlong *)(DAT_140029024 + 0x11));
             uVar20 = uVar20 ^ 0x36e2cd68f0bc1a44;
             uVar11 = 0x8dcea67a29a9e9e2;
           }
-          else {
-            if (uVar11 != 0xc99be339) {
-              if (uVar11 == 0xd4edab0c) {
+          else
+          {
+            if (uVar11 != 0xc99be339)
+            {
+              if (uVar11 == 0xd4edab0c)
+              {
                 uVar28 = uVar28 ^ 0xd68b1e893b33811a;
                 uVar20 = uVar20 ^ 0x269a12add6d92d7e;
                 uStack1540 = 0xc691575c;
                 goto LAB_14000de25;
               }
-              if (uVar11 == 0xeb1dcc20) {
+              if (uVar11 == 0xeb1dcc20)
+              {
                 uVar20 = uVar20 ^ 0xfb06ee87d4dc33d9;
                 uVar28 = uVar28 ^ 0xe55ba3afd0c267f6;
                 puStack1528 = (undefined8 *)0x4a846b8125f217ff;
                 goto LAB_14000de25;
               }
-              if (uVar11 == 0xf3e6dd1d) {
+              if (uVar11 == 0xf3e6dd1d)
+              {
                 uVar11 = 0xe50b6eeb7ee5d9a1;
                 uStack1540 = 0x77b16f32;
                 pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1f);
                 puStack1528 = (undefined8 *)0x3a8d86142e1a436e;
                 uVar34 = 0x9a38ffeeaa33b4ed;
-LAB_14000df90:
+              LAB_14000df90:
                 uVar28 = uVar28 ^ uVar11;
                 uVar20 = uVar20 ^ uVar34;
                 goto LAB_14000de25;
@@ -585,46 +617,58 @@ LAB_14000df90:
         uVar28 = uVar28 ^ uVar11;
         goto LAB_14000de25;
       }
-      if (uVar11 != 0x7bd902ec) {
-        if (uVar11 == 0x15ada54e) {
+      if (uVar11 != 0x7bd902ec)
+      {
+        if (uVar11 == 0x15ada54e)
+        {
           uVar28 = uVar28 ^ 0x90b63036b1ff9830;
           puStack1528 = (undefined8 *)0x1d391e168fce2d86;
           pcVar16 = (char *)((longlong)pcVar16 * -0x5825a6e154a3713b ^
-                            (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
+                             (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
           uVar20 = uVar20 ^ 0x91cefa3e77b24337;
           uVar11 = (ulonglong)pcVar16 >> 0xe;
         }
-        else {
-          if (uVar11 == 0x2dc0de0a) {
+        else
+        {
+          if (uVar11 == 0x2dc0de0a)
+          {
             uVar11 = 0xbbaefbc1dae28ff2;
             uVar34 = (longlong)pcVar16 * *(longlong *)(DAT_140029024 + 9) + 0xa9659e4ab5032db0;
             pcVar16 = (char *)(uVar34 ^ uVar34 >> 0x16 ^ uVar34 >> 0x2c);
             uVar34 = 0xf05f2251e30332bc;
             goto LAB_14000df90;
           }
-          if (uVar11 == 0x2e017652) {
+          if (uVar11 == 0x2e017652)
+          {
             uVar20 = uVar20 ^ 0x581c5a11d6e456d8;
             puStack1528 = (undefined8 *)0xd9c97c789e217836;
             uVar28 = uVar28 ^ 0xa257a27f1fdae773;
             uVar11 = (ulonglong)pcVar16 >> 0x38;
           }
-          else {
-            if (uVar11 == 0x3225ef6a) {
+          else
+          {
+            if (uVar11 == 0x3225ef6a)
+            {
               pcVar16 = pcVar16 + -0x5b7d22fd9d34fad7;
               uVar28 = uVar28 ^ 0x5ae0fb43662fbc29;
               uVar20 = uVar20 ^ 0xef568673d016503f;
               uVar11 = (ulonglong)pcVar16 >> 0x34;
             }
-            else {
-              if (uVar11 == 0x4ec984c5) {
+            else
+            {
+              if (uVar11 == 0x4ec984c5)
+              {
                 uStack1540 = 0x687ac958;
                 uVar28 = uVar28 ^ 0x5ec8090740dbe88;
                 uVar20 = uVar20 ^ 0x421e74fdf3683449;
                 uVar11 = (ulonglong)pcVar16 >> 0x3e;
               }
-              else {
-                if (uVar11 != 0x74e9ac19) {
-                  if (uVar11 != 0x7a3cf8c6) break;
+              else
+              {
+                if (uVar11 != 0x74e9ac19)
+                {
+                  if (uVar11 != 0x7a3cf8c6)
+                    break;
                   uVar28 = uVar28 ^ 0xba71a1ca63e88ea7;
                   pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1a);
                   uVar20 = uVar20 ^ 0x8405bb926c678f09;
@@ -643,64 +687,80 @@ LAB_14000df90:
       uVar20 = uVar20 ^ 0x10e26fbb4ebbbd51;
       uVar28 = uVar28 ^ 0x2dfd74a65d3db070;
       pcVar16 = IMAGE_DOS_HEADER_140000000.e_magic + (longlong)pcVar16;
-    } while( true );
+    } while (true);
   }
   uVar28 = 0xdd6bdb01af7b1da0;
   uVar20 = 0x764b00dcd21ffe8;
-  if (pcVar16 != *(char **)(param_2 + 8)) goto code_r0x000140013d59;
+  if (pcVar16 != *(char **)(param_2 + 8))
+    goto code_r0x000140013d59;
   pcVar16 = *(char **)(DAT_140033a38 + 8);
-  if (pcVar16 != (char *)0x0) {
-LAB_14000e1a2:
+  if (pcVar16 != (char *)0x0)
+  {
+  LAB_14000e1a2:
     uVar20 = uVar20 * uVar28;
     uVar11 = uVar20 >> 0x20;
-    if (uVar11 < 0x7bd902ed) {
-      if (uVar11 == 0x7bd902ec) {
+    if (uVar11 < 0x7bd902ed)
+    {
+      if (uVar11 == 0x7bd902ec)
+      {
         uVar20 = uVar20 ^ 0x10e26fbb4ebbbd51;
         uVar28 = uVar28 ^ 0x2dfd74a65d3db070;
         pcVar16 = IMAGE_DOS_HEADER_140000000.e_magic + (longlong)pcVar16;
       }
-      else {
-        if (uVar11 == 0x15ada54e) {
+      else
+      {
+        if (uVar11 == 0x15ada54e)
+        {
           uVar28 = uVar28 ^ 0x90b63036b1ff9830;
           puStack1528 = (undefined8 *)0x1d391e168fce2d86;
           pcVar16 = (char *)((longlong)pcVar16 * -0x5825a6e154a3713b ^
-                            (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
+                             (ulonglong)((longlong)pcVar16 * -0x5825a6e154a3713b) >> 7);
           uVar20 = uVar20 ^ 0x91cefa3e77b24337;
           uVar11 = (ulonglong)pcVar16 >> 0xe;
         }
-        else {
-          if (uVar11 == 0x2dc0de0a) {
+        else
+        {
+          if (uVar11 == 0x2dc0de0a)
+          {
             uVar28 = uVar28 ^ 0xbbaefbc1dae28ff2;
             uVar11 = (longlong)pcVar16 * *(longlong *)(DAT_140029024 + 9) + 0xa9659e4ab5032db0;
             pcVar16 = (char *)(uVar11 ^ uVar11 >> 0x16 ^ uVar11 >> 0x2c);
             uVar11 = 0xf05f2251e30332bc;
-LAB_14000e21d:
+          LAB_14000e21d:
             uVar20 = uVar20 ^ uVar11;
             goto LAB_14000e1a2;
           }
-          if (uVar11 == 0x2e017652) {
+          if (uVar11 == 0x2e017652)
+          {
             uVar20 = uVar20 ^ 0x581c5a11d6e456d8;
             puStack1528 = (undefined8 *)0xd9c97c789e217836;
             uVar28 = uVar28 ^ 0xa257a27f1fdae773;
             uVar11 = (ulonglong)pcVar16 >> 0x38;
           }
-          else {
-            if (uVar11 == 0x3225ef6a) {
+          else
+          {
+            if (uVar11 == 0x3225ef6a)
+            {
               pcVar16 = pcVar16 + -0x5b7d22fd9d34fad7;
               uVar28 = uVar28 ^ 0x5ae0fb43662fbc29;
               uVar20 = uVar20 ^ 0xef568673d016503f;
               uVar11 = (ulonglong)pcVar16 >> 0x34;
             }
-            else {
-              if (uVar11 == 0x4ec984c5) {
+            else
+            {
+              if (uVar11 == 0x4ec984c5)
+              {
                 uStack1540 = 0x687ac958;
                 uVar28 = uVar28 ^ 0x5ec8090740dbe88;
                 uVar20 = uVar20 ^ 0x421e74fdf3683449;
                 uVar11 = (ulonglong)pcVar16 >> 0x3e;
               }
-              else {
-                if (uVar11 != 0x74e9ac19) {
-                  if (uVar11 == 0x7a3cf8c6) {
+              else
+              {
+                if (uVar11 != 0x74e9ac19)
+                {
+                  if (uVar11 == 0x7a3cf8c6)
+                  {
                     pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1a);
                     uVar28 = uVar28 ^ 0xba71a1ca63e88ea7;
                     uVar11 = 0x8405bb926c678f09;
@@ -719,33 +779,41 @@ LAB_14000e21d:
       }
       goto LAB_14000e1a2;
     }
-    if (uVar11 == 0xba869539) {
+    if (uVar11 == 0xba869539)
+    {
       pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1c);
       uVar20 = uVar20 ^ 0xa5b810c69ee2691f;
       uVar11 = 0x5df3f14001ca060;
     }
-    else {
-      if (uVar11 == 0xc8c4d3bc) {
+    else
+    {
+      if (uVar11 == 0xc8c4d3bc)
+      {
         puStack1528 = (undefined8 *)0xa57ec92e80cb5f14;
         pcVar16 = (char *)((longlong)pcVar16 * *(longlong *)(DAT_140029024 + 0x11));
         uVar20 = uVar20 ^ 0x36e2cd68f0bc1a44;
         uVar11 = 0x8dcea67a29a9e9e2;
       }
-      else {
-        if (uVar11 != 0xc99be339) {
-          if (uVar11 == 0xd4edab0c) {
+      else
+      {
+        if (uVar11 != 0xc99be339)
+        {
+          if (uVar11 == 0xd4edab0c)
+          {
             uVar28 = uVar28 ^ 0xd68b1e893b33811a;
             uStack1540 = 0xc691575c;
             uVar20 = uVar20 ^ 0x269a12add6d92d7e;
             goto LAB_14000e1a2;
           }
-          if (uVar11 == 0xeb1dcc20) {
+          if (uVar11 == 0xeb1dcc20)
+          {
             uVar20 = uVar20 ^ 0xfb06ee87d4dc33d9;
             uVar28 = uVar28 ^ 0xe55ba3afd0c267f6;
             puStack1528 = (undefined8 *)0x4a846b8125f217ff;
             goto LAB_14000e1a2;
           }
-          if (uVar11 == 0xf3e6dd1d) {
+          if (uVar11 == 0xf3e6dd1d)
+          {
             uStack1540 = 0x77b16f32;
             uVar28 = uVar28 ^ 0xe50b6eeb7ee5d9a1;
             pcVar16 = (char *)((ulonglong)pcVar16 ^ (ulonglong)pcVar16 >> 0x1f);
@@ -765,20 +833,23 @@ LAB_14000e21d:
   }
 LAB_14000e4e7:
   pcVar7 = (char *)IoGetCurrentProcess();
-  if (pcVar16 == pcVar7) goto code_r0x000140013d59;
-  puStack1480 = (ushort *)0x0;
+  if (pcVar16 == pcVar7)
+    goto code_r0x000140013d59;
+  image_name = (ushort *)0x0;
   uVar8 = IoGetCurrentProcess();
-  iVar5 = SeLocateProcessImageName(uVar8,&puStack1480);
-  if (iVar5 < 0) goto code_r0x000140013d59;
+  ntstatus = SeLocateProcessImageName(uVar8, &image_name);
+  if (ntstatus < 0)
+    goto code_r0x000140013d59;
   uStack1440 = 0x20;
   _auStack72 = ZEXT816(0);
-  if (puStack1480 != (ushort *)0x0) {
+  if (image_name != (ushort *)0x0)
+  {
     uStack1576 = 0;
     uStack1584 = 0;
-    uStack1592 = CONCAT44(uStack1592._4_4_,0x20);
-    uStack1600 = CONCAT44(uStack1600._4_4_,3);
+    uStack1592 = CONCAT44(uStack1592._4_4_, 0x20);
+    uStack1600 = CONCAT44(uStack1600._4_4_, 3);
     uStack1608 = 1;
-    uStack1616 = (undefined8 *)CONCAT44(uStack1616._4_4_,0x80);
+    uStack1616 = (undefined8 *)CONCAT44(uStack1616._4_4_, 0x80);
     uStack1624 = (undefined *)0x0;
     uStack1488 = 0;
     auStack1400 = ZEXT816(0);
@@ -786,28 +857,32 @@ LAB_14000e4e7:
     uStack1344 = 0;
     uStack1328 = 0x200;
     auStack1320 = ZEXT816(0);
-    puStack1336 = puStack1480;
-    iVar5 = ZwCreateFile(&uStack1488,0x120089,auStack1352);
-    if (-1 < iVar5) {
-      uStack1624 = (undefined *)CONCAT44(uStack1624._4_4_,5);
-      iVar5 = ZwQueryInformationFile(uStack1488,auStack1400,auStack1144);
-      if ((iVar5 < 0) ||
-         (puStack1432 = (undefined8 *)ExAllocatePoolWithTag(0,0x100000,0x656e6f4e),
-         puStack1432 == (undefined8 *)0x0)) {
+    puStack1336 = image_name;
+    ntstatus = ZwCreateFile(&uStack1488, 0x120089, auStack1352);
+    if (-1 < ntstatus)
+    {
+      uStack1624 = (undefined *)CONCAT44(uStack1624._4_4_, 5);
+      ntstatus = ZwQueryInformationFile(uStack1488, auStack1400, auStack1144);
+      if ((ntstatus < 0) ||
+          (puStack1432 = (undefined8 *)ExAllocatePoolWithTag(0, 0x100000, 0x656e6f4e),
+           puStack1432 == (undefined8 *)0x0))
+      {
         ZwClose(uStack1488);
       }
-      else {
+      else
+      {
         puVar9 = &uStack1120;
         uStack1120 = 0xc951d840eb73fa62;
         uStack1112 = 0x148c059d;
         uStack1108 = 0x36ae1fbf;
         uVar20 = 0;
-        do {
+        do
+        {
           uVar26 = *(uint *)puVar9;
           puVar9 = (undefined8 *)((longlong)puVar9 + 4);
           uVar17 = (uint)uVar20;
           *(uint *)((longlong)&uStack1120 + uVar20 * 4) =
-               ~(uVar26 << 0x16 | uVar26 >> 10) - uVar17 ^ uVar17;
+              ~(uVar26 << 0x16 | uVar26 >> 10) - uVar17 ^ uVar17;
           uVar20 = (ulonglong)(uVar17 + 1);
         } while ((int)(uVar17 + 1) < 4);
         uStack1176 = 0;
@@ -817,33 +892,39 @@ LAB_14000e4e7:
         uStack1156 = uStack1108;
         puVar9 = puStack1432;
         for (puStack1456 = puStack1136; 0 < (longlong)puStack1456;
-            puStack1456 = (undefined8 *)((longlong)puStack1456 - (longlong)puVar10)) {
-          iVar5 = 0;
+             puStack1456 = (undefined8 *)((longlong)puStack1456 - (longlong)puVar10))
+        {
+          ntstatus = 0;
           uStack1592 = 0;
           uStack1600 = 0;
           puVar10 = puStack1456;
-          if ((undefined8 *)0x100000 < puStack1456) {
+          if ((undefined8 *)0x100000 < puStack1456)
+          {
             puVar10 = (undefined8 *)0x100000;
           }
-          uStack1608 = SUB84(puVar10,0);
+          uStack1608 = SUB84(puVar10, 0);
           uStack1624 = auStack1400;
           uStack1616 = puVar9;
           puStack1528 = puVar10;
-          iVar6 = ZwReadFile(uStack1488,0);
-          if (iVar6 < 0) break;
+          iVar6 = ZwReadFile(uStack1488, 0);
+          if (iVar6 < 0)
+            break;
           puStack1512 = puVar10;
-          if (puVar10 != (undefined8 *)0x0) {
+          if (puVar10 != (undefined8 *)0x0)
+          {
             uVar20 = uStack1176 >> 3;
             uStack1176 = uStack1176 + (longlong)puVar10 * 8;
             uVar28 = (ulonglong)((uint)uVar20 & 0x3f);
-            if ((uVar20 & 0x3f) != 0) {
+            if ((uVar20 & 0x3f) != 0)
+            {
               puVar21 = (undefined8 *)(0x40 - uVar28);
               puVar32 = (undefined8 *)((longlong)&uStack1240 + uVar28);
-              if (puVar10 < puVar21) {
-                thunk_FUN_14001504b(puVar32,puVar9,(ulonglong)puVar10);
+              if (puVar10 < puVar21)
+              {
+                thunk_FUN_14001504b(puVar32, puVar9, (ulonglong)puVar10);
                 goto LAB_140010167;
               }
-              thunk_FUN_14001504b(puVar32,puVar9,(ulonglong)puVar21);
+              thunk_FUN_14001504b(puVar32, puVar9, (ulonglong)puVar21);
               puVar9 = (undefined8 *)((longlong)puVar21 + (longlong)puVar9);
               auStack1096[0] = 0x5cd49ad2;
               auStack1096[1] = 0x64100008;
@@ -910,55 +991,54 @@ LAB_14000e4e7:
               iStack852 = -0x731001d0;
               iStack848 = -0x2e0a37bb;
               iStack844 = 0x79278e5e;
-              do {
+              do
+              {
                 uVar26 = ~(*puVar18 ^ 0x3119f6b5) + 0xd74e0540;
-                bVar12 = (byte)iVar5 & 0x1f;
-                iVar5 = iVar5 + 1;
+                bVar12 = (byte)ntstatus & 0x1f;
+                ntstatus = ntstatus + 1;
                 *puVar18 = uVar26 << bVar12 | uVar26 >> 0x20 - bVar12;
                 puVar18 = puVar18 + 1;
-              } while (iVar5 < 0x40);
+              } while (ntstatus < 0x40);
               iStack1504 = (int)uStack1240;
               uVar26 = ((uStack1156 ^ uStack1160) & uStack1164 ^ uStack1156) + iStack1168 +
                        iStack1040 + (int)uStack1240;
               uVar35 = (uVar26 * 0x80 | uVar26 >> 0x19) + uStack1164;
-              iStack1560 = CONCAT31(CONCAT21(uStack1240._6_2_,uStack1240._5_1_),uStack1240._4_1_);
+              iStack1560 = CONCAT31(CONCAT21(uStack1240._6_2_, uStack1240._5_1_), uStack1240._4_1_);
               uVar26 = ((uStack1160 ^ uStack1164) & uVar35 ^ uStack1160) + uStack1156 + iStack968 +
                        iStack1560;
               uVar26 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar35;
-              iStack1532 = CONCAT31(CONCAT21(CONCAT11(uStack1229,uStack1230),uStack1231),uStack1232)
-              ;
+              iStack1532 = CONCAT31(CONCAT21(CONCAT11(uStack1229, uStack1230), uStack1231), uStack1232);
               uVar17 = ((uStack1164 ^ uVar35) & uVar26 ^ uStack1164) + uStack1160 + iStack1072 +
                        iStack1532;
               uVar17 = (uVar17 * 0x20000 | uVar17 >> 0xf) + uVar26;
-              iStack1516 = CONCAT31(CONCAT21(uStack1226,uStack1227),uStack1228);
+              iStack1516 = CONCAT31(CONCAT21(uStack1226, uStack1227), uStack1228);
               uVar24 = ((uVar26 ^ uVar35) & uVar17 ^ uVar35) + uStack1164 + iStack1516 + iStack1024;
               iStack1548 = iStack1224;
               uVar24 = (uVar24 * 0x400000 | uVar24 >> 10) + uVar17;
               uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + iStack1224 + uVar35 + iStack940;
               uVar35 = (uVar35 * 0x80 | uVar35 >> 0x19) + uVar24;
-              iStack1536 = CONCAT31(CONCAT21(uStack1218,uStack1219),uStack1220);
+              iStack1536 = CONCAT31(CONCAT21(uStack1218, uStack1219), uStack1220);
               uVar26 = ((uVar17 ^ uVar24) & uVar35 ^ uVar17) + iStack1536 + uVar26 + iStack844;
               uVar36 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar35;
-              iStack1552 = CONCAT31(CONCAT21(uStack1214,uStack1215),uStack1216);
+              iStack1552 = CONCAT31(CONCAT21(uStack1214, uStack1215), uStack1216);
               uVar26 = ((uVar24 ^ uVar35) & uVar36 ^ uVar24) + iStack1552 + uVar17 + iStack1032;
               uVar26 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar36;
-              iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1209,uStack1210),uStack1211),uStack1212);
+              iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1209, uStack1210), uStack1211), uStack1212);
               uVar17 = ((uVar36 ^ uVar35) & uVar26 ^ uVar35) + iVar6 + uVar24 + iStack1036;
               uVar17 = (uVar17 * 0x400000 | uVar17 >> 10) + uVar26;
               iStack1556 = iStack1208;
               uVar24 = ((uVar36 ^ uVar26) & uVar17 ^ uVar36) + iStack1208 + uVar35 + auStack1096[0];
               uVar24 = (uVar24 * 0x80 | uVar24 >> 0x19) + uVar17;
-              iStack1544 = CONCAT31(CONCAT21(CONCAT11(uStack1201,uStack1202),uStack1203),uStack1204)
-              ;
+              iStack1544 = CONCAT31(CONCAT21(CONCAT11(uStack1201, uStack1202), uStack1203), uStack1204);
               uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + iStack1544 + uVar36 + iStack1008;
               uVar35 = (uVar35 * 0x1000 | uVar35 >> 0x14) + uVar24;
-              iVar5 = CONCAT31(CONCAT21(CONCAT11(uStack1197,uStack1198),uStack1199),uStack1200);
-              uVar26 = ((uVar17 ^ uVar24) & uVar35 ^ uVar17) + iVar5 + uVar26 + iStack1044;
+              ntstatus = CONCAT31(CONCAT21(CONCAT11(uStack1197, uStack1198), uStack1199), uStack1200);
+              uVar26 = ((uVar17 ^ uVar24) & uVar35 ^ uVar17) + ntstatus + uVar26 + iStack1044;
               iStack1500 = iStack1196;
               uVar36 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar35;
               uVar26 = ((uVar35 ^ uVar24) & uVar36 ^ uVar24) + iStack1196 + uVar17 + iStack988;
               uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar36;
-              iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1189,uStack1190),uStack1191),uStack1192);
+              iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1189, uStack1190), uStack1191), uStack1192);
               uVar17 = ((uVar35 ^ uVar36) & uVar26 ^ uVar35) + iVar25 + uVar24 + iStack1000;
               uVar17 = (uVar17 * 0x80 | uVar17 >> 0x19) + uVar26;
               uVar24 = ((uVar36 ^ uVar26) & uVar17 ^ uVar36) + iStack1188 + uVar35 + iStack848;
@@ -977,7 +1057,7 @@ LAB_14000e4e7:
               uVar36 = (uVar26 * 0x100000 | uVar26 >> 0xc) + uVar35;
               uVar26 = ((uVar35 ^ uVar36) & uVar24 ^ uVar35) + iStack1536 + uVar17 + iStack924;
               uVar41 = (uVar26 * 0x20 | uVar26 >> 0x1b) + uVar36;
-              uVar26 = ((uVar36 ^ uVar41) & uVar35 ^ uVar36) + iVar5 + uVar24 + iStack908;
+              uVar26 = ((uVar36 ^ uVar41) & uVar35 ^ uVar36) + ntstatus + uVar24 + iStack908;
               uVar37 = (uVar26 * 0x200 | uVar26 >> 0x17) + uVar41;
               uVar26 = ((uVar37 ^ uVar41) & uVar36 ^ uVar41) + uStack1180 + uVar35 + iStack928;
               uVar26 = (uVar26 * 0x4000 | uVar26 >> 0x12) + uVar37;
@@ -1013,7 +1093,7 @@ LAB_14000e4e7:
               uVar26 = (uVar26 * 0x800 | uVar26 >> 0x15) + uVar24;
               uVar35 = (uVar26 ^ uVar17 ^ uVar24) + iVar6 + uVar36 + iStack900;
               uVar35 = (uVar35 * 0x10000 | uVar35 >> 0x10) + uVar26;
-              uVar17 = (uVar24 ^ uVar26 ^ uVar35) + iVar5 + uVar17 + iStack912;
+              uVar17 = (uVar24 ^ uVar26 ^ uVar35) + ntstatus + uVar17 + iStack912;
               uVar36 = (uVar17 * 0x800000 | uVar17 >> 9) + uVar35;
               uVar17 = (uVar36 ^ uVar26 ^ uVar35) + iStack1188 + uVar24 + iStack880;
               uVar24 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar36;
@@ -1043,7 +1123,7 @@ LAB_14000e4e7:
               uVar24 = (uVar24 * 0x40 | uVar24 >> 0x1a) + uVar26;
               uVar17 = ((~uVar35 | uVar24) ^ uVar26) + uVar17 + iStack872 + iStack1516;
               uVar36 = (uVar17 * 0x400 | uVar17 >> 0x16) + uVar24;
-              uVar17 = ((~uVar26 | uVar36) ^ uVar24) + iVar5 + uVar35 + iStack1016;
+              uVar17 = ((~uVar26 | uVar36) ^ uVar24) + ntstatus + uVar35 + iStack1016;
               uVar17 = (uVar17 * 0x8000 | uVar17 >> 0x11) + uVar36;
               uVar26 = ((~uVar24 | uVar17) ^ uVar36) + uVar26 + iStack932 + iStack1560;
               uVar35 = (uVar26 * 0x200000 | uVar26 >> 0xb) + uVar17;
@@ -1070,14 +1150,15 @@ LAB_14000e4e7:
               puStack1496 = puVar9;
             }
             puVar10 = puStack1512;
-            if ((undefined8 *)0x3f < puStack1512) {
+            if ((undefined8 *)0x3f < puStack1512)
+            {
               auStack840[0] = 0x5cd49ad2;
               auStack840[1] = 0x64100008;
               auStack840[2] = 0x6d75a6ee;
               uStack1120 = (ulonglong)puStack1512 & 0xffffffc0;
               puVar18 = auStack840;
               auStack840[3] = -0x27befc3d;
-              iVar5 = 0;
+              ntstatus = 0;
               iStack824 = -0x69a868e2;
               iStack820 = 0x5303cd96;
               iStack816 = 0x5ba475c9;
@@ -1138,14 +1219,16 @@ LAB_14000e4e7:
               iStack596 = -0x731001d0;
               iStack592 = -0x2e0a37bb;
               iStack588 = 0x79278e5e;
-              do {
+              do
+              {
                 uVar26 = ~(*puVar18 ^ 0x3119f6b5) + 0xd74e0540;
-                bVar12 = (byte)iVar5 & 0x1f;
-                iVar5 = iVar5 + 1;
+                bVar12 = (byte)ntstatus & 0x1f;
+                ntstatus = ntstatus + 1;
                 *puVar18 = uVar26 << bVar12 | uVar26 >> 0x20 - bVar12;
                 puVar18 = puVar18 + 1;
-              } while (iVar5 < 0x40);
-              do {
+              } while (ntstatus < 0x40);
+              do
+              {
                 uStack1540 = uStack1156;
                 iStack1500 = iStack1168;
                 uStack1472 = uStack1160;
@@ -1156,15 +1239,13 @@ LAB_14000e4e7:
                 uVar17 = (uVar26 * 0x80 | uVar26 >> 0x19) + uStack1164;
                 uStack1416 = uStack1416 & 0xffffffff00000000 | (ulonglong)uStack1164;
                 iStack1536 = *(int *)(puVar9 + 1);
-                uVar26 = ((uStack1472 ^ uStack1164) & uVar17 ^ uStack1472) + iStack1556 + uStack1540
-                         + iStack712;
+                uVar26 = ((uStack1472 ^ uStack1164) & uVar17 ^ uStack1472) + iStack1556 + uStack1540 + iStack712;
                 iStack1552 = *(int *)((longlong)puVar9 + 0xc);
                 uVar24 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar17;
                 uVar26 = ((uStack1164 ^ uVar17) & uVar24 ^ uStack1164) + iStack816 + iStack1536 +
                          uStack1472;
                 uVar35 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar24;
-                uVar26 = ((uVar24 ^ uVar17) & uVar35 ^ uVar17) + iStack768 + iStack1552 + uStack1164
-                ;
+                uVar26 = ((uVar24 ^ uVar17) & uVar35 ^ uVar17) + iStack768 + iStack1552 + uStack1164;
                 iStack1504 = *(int *)(puVar9 + 2);
                 uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar35;
                 uVar17 = ((uVar24 ^ uVar35) & uVar26 ^ uVar24) + iStack1504 + uVar17 + iStack684;
@@ -1179,20 +1260,19 @@ LAB_14000e4e7:
                 uVar26 = ((uVar36 ^ uVar17) & uVar24 ^ uVar17) + iStack780 + iVar6 + uVar26;
                 uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar24;
                 iStack1560 = *(int *)(puVar9 + 4);
-                uVar17 = ((uVar36 ^ uVar24) & uVar26 ^ uVar36) + iStack1560 + auStack840[0] + uVar17
-                ;
+                uVar17 = ((uVar36 ^ uVar24) & uVar26 ^ uVar36) + iStack1560 + auStack840[0] + uVar17;
                 uVar17 = (uVar17 * 0x80 | uVar17 >> 0x19) + uVar26;
                 iStack1532 = *(int *)((longlong)puVar9 + 0x24);
                 uVar36 = ((uVar24 ^ uVar26) & uVar17 ^ uVar24) + iStack752 + iStack1532 + uVar36;
                 iVar31 = *(int *)(puVar9 + 5);
                 uVar35 = (uVar36 * 0x1000 | uVar36 >> 0x14) + uVar17;
                 uVar24 = ((uVar26 ^ uVar17) & uVar35 ^ uVar26) + iStack788 + iVar31 + uVar24;
-                iVar5 = *(int *)((longlong)puVar9 + 0x2c);
+                ntstatus = *(int *)((longlong)puVar9 + 0x2c);
                 uVar36 = (uVar24 * 0x20000 | uVar24 >> 0xf) + uVar35;
-                uVar26 = ((uVar35 ^ uVar17) & uVar36 ^ uVar17) + iVar5 + uVar26 + iStack732;
+                uVar26 = ((uVar35 ^ uVar17) & uVar36 ^ uVar17) + ntstatus + uVar26 + iStack732;
                 uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar36;
-                iVar50 = *(int *)(puVar9 + 6);
-                uVar17 = ((uVar35 ^ uVar36) & uVar26 ^ uVar35) + iStack744 + iVar50 + uVar17;
+                ntstatus0 = *(int *)(puVar9 + 6);
+                uVar17 = ((uVar35 ^ uVar36) & uVar26 ^ uVar35) + iStack744 + ntstatus0 + uVar17;
                 iVar40 = *(int *)((longlong)puVar9 + 0x34);
                 uVar17 = (uVar17 * 0x80 | uVar17 >> 0x19) + uVar26;
                 uVar24 = ((uVar36 ^ uVar26) & uVar17 ^ uVar36) + iVar40 + uVar35 + iStack592;
@@ -1207,7 +1287,7 @@ LAB_14000e4e7:
                 uVar17 = (uVar17 * 0x20 | uVar17 >> 0x1b) + uVar26;
                 uVar24 = ((uVar26 ^ uVar17) & uVar35 ^ uVar26) + iStack1516 + uVar24 + iStack692;
                 uVar24 = (uVar24 * 0x200 | uVar24 >> 0x17) + uVar17;
-                uVar35 = ((uVar24 ^ uVar17) & uVar26 ^ uVar17) + iVar5 + uVar35 + iStack620;
+                uVar35 = ((uVar24 ^ uVar17) & uVar26 ^ uVar17) + ntstatus + uVar35 + iStack620;
                 uVar35 = (uVar35 * 0x4000 | uVar35 >> 0x12) + uVar24;
                 uVar26 = ((uVar24 ^ uVar35) & uVar17 ^ uVar24) + iStack1544 + uVar26 + iStack636;
                 uVar36 = (uVar26 * 0x100000 | uVar26 >> 0xc) + uVar35;
@@ -1233,13 +1313,13 @@ LAB_14000e4e7:
                 uVar35 = (uVar26 * 0x200 | uVar26 >> 0x17) + uVar36;
                 uVar26 = ((uVar35 ^ uVar36) & uVar24 ^ uVar36) + iVar6 + uVar17 + iStack612;
                 uVar26 = (uVar26 * 0x4000 | uVar26 >> 0x12) + uVar35;
-                uVar24 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + iStack764 + iVar50 + uVar24;
+                uVar24 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + iStack764 + ntstatus0 + uVar24;
                 uVar17 = (uVar24 * 0x100000 | uVar24 >> 0xc) + uVar26;
                 uVar36 = (uVar35 ^ uVar26 ^ uVar17) + iStack824 + iStack1548 + uVar36;
                 uVar36 = (uVar36 * 0x10 | uVar36 >> 0x1c) + uVar17;
                 uVar35 = (uVar26 ^ uVar17 ^ uVar36) + iStack792 + iStack1560 + uVar35;
                 uVar24 = (uVar35 * 0x800 | uVar35 >> 0x15) + uVar36;
-                uVar26 = (uVar24 ^ uVar17 ^ uVar36) + iVar5 + uVar26 + iStack600;
+                uVar26 = (uVar24 ^ uVar17 ^ uVar36) + ntstatus + uVar26 + iStack600;
                 uVar35 = (uVar26 * 0x10000 | uVar26 >> 0x10) + uVar24;
                 uVar26 = (uVar24 ^ uVar35 ^ uVar36) + iVar25 + uVar17 + iStack720;
                 uVar26 = (uVar26 * 0x800000 | uVar26 >> 9) + uVar35;
@@ -1261,7 +1341,7 @@ LAB_14000e4e7:
                 uVar26 = (uVar26 * 0x800000 | uVar26 >> 9) + uVar24;
                 uVar17 = (uVar35 ^ uVar24 ^ uVar26) + iStack1532 + uVar36 + iStack688;
                 uVar17 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar26;
-                uVar35 = (uVar24 ^ uVar26 ^ uVar17) + iVar50 + uVar35 + iStack660;
+                uVar35 = (uVar24 ^ uVar26 ^ uVar17) + ntstatus0 + uVar35 + iStack660;
                 uVar35 = (uVar35 * 0x800 | uVar35 >> 0x15) + uVar17;
                 uVar24 = (uVar35 ^ uVar26 ^ uVar17) + iVar46 + uVar24 + iStack728;
                 uVar36 = (uVar24 * 0x10000 | uVar24 >> 0x10) + uVar35;
@@ -1275,7 +1355,7 @@ LAB_14000e4e7:
                 uVar26 = (uVar26 * 0x8000 | uVar26 >> 0x11) + uVar35;
                 uVar24 = ((~uVar17 | uVar26) ^ uVar35) + iStack1548 + uVar24 + iStack704;
                 uVar36 = (uVar24 * 0x200000 | uVar24 >> 0xb) + uVar26;
-                uVar17 = ((~uVar35 | uVar36) ^ uVar26) + iVar50 + uVar17 + iStack736;
+                uVar17 = ((~uVar35 | uVar36) ^ uVar26) + ntstatus0 + uVar17 + iStack736;
                 uVar24 = (uVar17 * 0x40 | uVar17 >> 0x1a) + uVar36;
                 uVar17 = ((~uVar26 | uVar24) ^ uVar36) + iStack1552 + uVar35 + iStack616;
                 uVar35 = (uVar17 * 0x400 | uVar17 >> 0x16) + uVar24;
@@ -1293,12 +1373,11 @@ LAB_14000e4e7:
                 uVar26 = (uVar17 * 0x200000 | uVar17 >> 0xb) + uVar35;
                 uVar36 = ((~uVar24 | uVar26) ^ uVar35) + iStack772 + iStack1504 + uVar36;
                 uVar17 = (uVar36 * 0x40 | uVar36 >> 0x1a) + uVar26;
-                uVar24 = ((~uVar35 | uVar17) ^ uVar26) + iStack804 + iVar5 + uVar24;
+                uVar24 = ((~uVar35 | uVar17) ^ uVar26) + iStack804 + ntstatus + uVar24;
                 uStack1156 = (uVar24 * 0x400 | uVar24 >> 0x16) + uVar17;
                 uVar35 = ((~uVar26 | uStack1156) ^ uVar17) + iStack808 + iStack1536 + uVar35;
                 uStack1160 = (uVar35 * 0x8000 | uVar35 >> 0x11) + uStack1156;
-                uVar26 = ((~uVar17 | uStack1160) ^ uStack1156) + iStack1532 + auStack840[2] + uVar26
-                ;
+                uVar26 = ((~uVar17 | uStack1160) ^ uStack1156) + iStack1532 + auStack840[2] + uVar26;
                 uStack1164 = (uVar26 * 0x200000 | uVar26 >> 0xb) + uStack1160 + uStack1164;
                 puVar9 = puVar9 + 8;
                 iStack1168 = uVar17 + iStack1500;
@@ -1309,23 +1388,25 @@ LAB_14000e4e7:
               puVar10 = (undefined8 *)(ulonglong)((uint)puStack1512 & 0x3f);
               puStack1496 = puVar9;
             }
-            thunk_FUN_14001504b(&uStack1240,puVar9,(ulonglong)puVar10);
+            thunk_FUN_14001504b(&uStack1240, puVar9, (ulonglong)puVar10);
             puVar9 = puStack1432;
             puVar10 = puStack1528;
           }
-LAB_140010167:
+        LAB_140010167:
         }
-        iVar5 = 0;
+        ntstatus = 0;
         uVar20 = (ulonglong)((uint)(uStack1176 >> 3) & 0x3f);
         *(undefined *)((longlong)&uStack1240 + uVar20) = 0x80;
         lVar14 = uVar20 + 1;
         uVar28 = 0x40 - lVar14;
-        if (uVar28 < 8) {
+        if (uVar28 < 8)
+        {
           auStack584[0] = 0x5cd49ad2;
           auStack584[1] = 0x64100008;
           auStack584[2] = 0x6d75a6ee;
           puVar30 = (undefined *)((longlong)&uStack1240 + uVar20 + 1);
-          for (; uVar28 != 0; uVar28 = uVar28 - 1) {
+          for (; uVar28 != 0; uVar28 = uVar28 - 1)
+          {
             *puVar30 = 0;
             puVar30 = puVar30 + 1;
           }
@@ -1391,48 +1472,49 @@ LAB_140010167:
           iStack340 = -0x731001d0;
           iStack336 = -0x2e0a37bb;
           iStack332 = 0x79278e5e;
-          do {
+          do
+          {
             uVar26 = ~(*puVar18 ^ 0x3119f6b5) + 0xd74e0540;
-            bVar12 = (byte)iVar5 & 0x1f;
-            iVar5 = iVar5 + 1;
+            bVar12 = (byte)ntstatus & 0x1f;
+            ntstatus = ntstatus + 1;
             *puVar18 = uVar26 << bVar12 | uVar26 >> 0x20 - bVar12;
             puVar18 = puVar18 + 1;
-          } while (iVar5 < 0x40);
+          } while (ntstatus < 0x40);
           uVar26 = ((uStack1156 ^ uStack1160) & uStack1164 ^ uStack1156) + iStack528 + iStack1168 +
                    (int)uStack1240;
           uVar35 = (uVar26 * 0x80 | uVar26 >> 0x19) + uStack1164;
-          iVar5 = CONCAT31(CONCAT21(uStack1240._6_2_,uStack1240._5_1_),uStack1240._4_1_);
+          ntstatus = CONCAT31(CONCAT21(uStack1240._6_2_, uStack1240._5_1_), uStack1240._4_1_);
           uVar26 = ((uStack1160 ^ uStack1164) & uVar35 ^ uStack1160) + iStack456 + uStack1156 +
-                   iVar5;
+                   ntstatus;
           uVar26 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar35;
-          iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1229,uStack1230),uStack1231),uStack1232);
+          iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1229, uStack1230), uStack1231), uStack1232);
           uVar17 = ((uVar35 ^ uStack1164) & uVar26 ^ uStack1164) + iStack560 + uStack1160 + iVar25;
           uVar17 = (uVar17 * 0x20000 | uVar17 >> 0xf) + uVar26;
-          iVar31 = CONCAT31(CONCAT21(uStack1226,uStack1227),uStack1228);
+          iVar31 = CONCAT31(CONCAT21(uStack1226, uStack1227), uStack1228);
           uVar24 = ((uVar26 ^ uVar35) & uVar17 ^ uVar35) + iStack512 + uStack1164 + iVar31;
           uVar24 = (uVar24 * 0x400000 | uVar24 >> 10) + uVar17;
           uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + uVar35 + iStack428 + iStack1224;
           uVar35 = (uVar35 * 0x80 | uVar35 >> 0x19) + uVar24;
-          iVar40 = CONCAT31(CONCAT21(uStack1218,uStack1219),uStack1220);
+          iVar40 = CONCAT31(CONCAT21(uStack1218, uStack1219), uStack1220);
           uVar26 = ((uVar17 ^ uVar24) & uVar35 ^ uVar17) + uVar26 + iStack332 + iVar40;
           uVar36 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar35;
-          iStack1500 = CONCAT31(CONCAT21(uStack1214,uStack1215),uStack1216);
+          iStack1500 = CONCAT31(CONCAT21(uStack1214, uStack1215), uStack1216);
           uVar26 = ((uVar24 ^ uVar35) & uVar36 ^ uVar24) + uVar17 + iStack520 + iStack1500;
           uVar26 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar36;
-          iVar46 = CONCAT31(CONCAT21(CONCAT11(uStack1209,uStack1210),uStack1211),uStack1212);
+          iVar46 = CONCAT31(CONCAT21(CONCAT11(uStack1209, uStack1210), uStack1211), uStack1212);
           uVar17 = ((uVar36 ^ uVar35) & uVar26 ^ uVar35) + uVar24 + iStack524 + iVar46;
           uVar17 = (uVar17 * 0x400000 | uVar17 >> 10) + uVar26;
           uVar24 = ((uVar36 ^ uVar26) & uVar17 ^ uVar36) + uVar35 + auStack584[0] + iStack1208;
           uVar24 = (uVar24 * 0x80 | uVar24 >> 0x19) + uVar17;
-          iStack1516 = CONCAT31(CONCAT21(CONCAT11(uStack1201,uStack1202),uStack1203),uStack1204);
+          iStack1516 = CONCAT31(CONCAT21(CONCAT11(uStack1201, uStack1202), uStack1203), uStack1204);
           uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + uVar36 + iStack496 + iStack1516;
           uVar36 = (uVar35 * 0x1000 | uVar35 >> 0x14) + uVar24;
-          iVar50 = CONCAT31(CONCAT21(CONCAT11(uStack1197,uStack1198),uStack1199),uStack1200);
-          uVar26 = ((uVar17 ^ uVar24) & uVar36 ^ uVar17) + uVar26 + iStack532 + iVar50;
+          ntstatus0 = CONCAT31(CONCAT21(CONCAT11(uStack1197, uStack1198), uStack1199), uStack1200);
+          uVar26 = ((uVar17 ^ uVar24) & uVar36 ^ uVar17) + uVar26 + iStack532 + ntstatus0;
           uVar35 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar36;
           uVar26 = ((uVar36 ^ uVar24) & uVar35 ^ uVar24) + uVar17 + iStack476 + iStack1196;
           uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar35;
-          iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1189,uStack1190),uStack1191),uStack1192);
+          iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1189, uStack1190), uStack1191), uStack1192);
           uVar17 = ((uVar36 ^ uVar35) & uVar26 ^ uVar36) + uVar24 + iStack488 + iVar6;
           uVar17 = (uVar17 * 0x80 | uVar17 >> 0x19) + uVar26;
           uVar24 = ((uVar35 ^ uVar26) & uVar17 ^ uVar35) + uVar36 + iStack336 + iStack1188;
@@ -1441,7 +1523,7 @@ LAB_140010167:
           uVar35 = (uVar24 * 0x20000 | uVar24 >> 0xf) + uVar36;
           uVar26 = ((uVar36 ^ uVar17) & uVar35 ^ uVar17) + uStack1180 + uVar26 + iStack544;
           uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar35;
-          uVar17 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + uVar17 + iStack376 + iVar5;
+          uVar17 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + uVar17 + iStack376 + ntstatus;
           uVar17 = (uVar17 * 0x20 | uVar17 >> 0x1b) + uVar26;
           uVar24 = ((uVar26 ^ uVar17) & uVar35 ^ uVar26) + uVar36 + iStack436 + iStack1500;
           uVar24 = (uVar24 * 0x200 | uVar24 >> 0x17) + uVar17;
@@ -1451,7 +1533,7 @@ LAB_140010167:
           uVar35 = (uVar26 * 0x100000 | uVar26 >> 0xc) + uVar36;
           uVar26 = ((uVar36 ^ uVar35) & uVar24 ^ uVar36) + uVar17 + iStack412 + iVar40;
           uVar26 = (uVar26 * 0x20 | uVar26 >> 0x1b) + uVar35;
-          uVar17 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + uVar24 + iStack396 + iVar50;
+          uVar17 = ((uVar35 ^ uVar26) & uVar36 ^ uVar35) + uVar24 + iStack396 + ntstatus0;
           uVar17 = (uVar17 * 0x200 | uVar17 >> 0x17) + uVar26;
           uVar24 = ((uVar17 ^ uVar26) & uVar35 ^ uVar26) + uStack1180 + uVar36 + iStack416;
           uVar24 = (uVar24 * 0x4000 | uVar24 >> 0x12) + uVar17;
@@ -1481,13 +1563,13 @@ LAB_140010167:
           uVar36 = (uVar17 * 0x10000 | uVar17 >> 0x10) + uVar35;
           uVar17 = (uVar26 ^ uVar35 ^ uVar36) + uVar24 + iStack1184 + iStack464;
           uVar17 = (uVar17 * 0x800000 | uVar17 >> 9) + uVar36;
-          uVar26 = (uVar17 ^ uVar35 ^ uVar36) + uVar26 + iStack468 + iVar5;
+          uVar26 = (uVar17 ^ uVar35 ^ uVar36) + uVar26 + iStack468 + ntstatus;
           uVar24 = (uVar26 * 0x10 | uVar26 >> 0x1c) + uVar17;
           uVar26 = (uVar36 ^ uVar17 ^ uVar24) + uVar35 + iStack372 + iStack1224;
           uVar26 = (uVar26 * 0x800 | uVar26 >> 0x15) + uVar24;
           uVar35 = (uVar26 ^ uVar17 ^ uVar24) + uVar36 + iStack388 + iVar46;
           uVar41 = (uVar35 * 0x10000 | uVar35 >> 0x10) + uVar26;
-          uVar17 = (uVar24 ^ uVar26 ^ uVar41) + uVar17 + iStack400 + iVar50;
+          uVar17 = (uVar24 ^ uVar26 ^ uVar41) + uVar17 + iStack400 + ntstatus0;
           uVar36 = (uVar17 * 0x800000 | uVar17 >> 9) + uVar41;
           uVar17 = (uVar36 ^ uVar26 ^ uVar41) + uVar24 + iStack368 + iStack1188;
           uVar24 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar36;
@@ -1517,9 +1599,9 @@ LAB_140010167:
           uVar35 = (uVar17 * 0x40 | uVar17 >> 0x1a) + uVar24;
           uVar17 = ((~uVar26 | uVar35) ^ uVar24) + uVar36 + iStack360 + iVar31;
           uVar36 = (uVar17 * 0x400 | uVar17 >> 0x16) + uVar35;
-          uVar26 = ((~uVar24 | uVar36) ^ uVar35) + uVar26 + iStack504 + iVar50;
+          uVar26 = ((~uVar24 | uVar36) ^ uVar35) + uVar26 + iStack504 + ntstatus0;
           uVar17 = (uVar26 * 0x8000 | uVar26 >> 0x11) + uVar36;
-          uVar26 = ((~uVar35 | uVar17) ^ uVar36) + uVar24 + iStack420 + iVar5;
+          uVar26 = ((~uVar35 | uVar17) ^ uVar36) + uVar24 + iStack420 + ntstatus;
           uVar26 = (uVar26 * 0x200000 | uVar26 >> 0xb) + uVar17;
           uVar24 = ((~uVar36 | uVar26) ^ uVar17) + uVar35 + auStack584[3] + iStack1208;
           uVar24 = (uVar24 * 0x40 | uVar24 >> 0x1a) + uVar26;
@@ -1543,13 +1625,14 @@ LAB_140010167:
           lVar14 = 0;
           uVar28 = 0x40;
         }
-        iVar5 = 0;
+        ntstatus = 0;
         auStack328[0] = 0x5cd49ad2;
         auStack328[1] = 0x64100008;
         auStack328[2] = 0x6d75a6ee;
         auStack328[3] = -0x27befc3d;
         puVar30 = (undefined *)((longlong)&uStack1240 + lVar14);
-        for (lVar15 = uVar28 - 8; lVar15 != 0; lVar15 = lVar15 + -1) {
+        for (lVar15 = uVar28 - 8; lVar15 != 0; lVar15 = lVar15 + -1)
+        {
           *puVar30 = 0;
           puVar30 = puVar30 + 1;
         }
@@ -1621,47 +1704,48 @@ LAB_140010167:
         iStack84 = -0x731001d0;
         iStack80 = -0x2e0a37bb;
         iStack76 = 0x79278e5e;
-        do {
+        do
+        {
           uVar26 = ~(*puVar18 ^ 0x3119f6b5) + 0xd74e0540;
-          bVar12 = (byte)iVar5 & 0x1f;
-          iVar5 = iVar5 + 1;
+          bVar12 = (byte)ntstatus & 0x1f;
+          ntstatus = ntstatus + 1;
           *puVar18 = uVar26 << bVar12 | uVar26 >> 0x20 - bVar12;
           puVar18 = puVar18 + 1;
-        } while (iVar5 < 0x40);
+        } while (ntstatus < 0x40);
         uVar26 = ((uStack1156 ^ uStack1160) & uStack1164 ^ uStack1156) + iStack272 + iStack1168 +
                  (int)uStack1240;
         uVar35 = (uVar26 * 0x80 | uVar26 >> 0x19) + uStack1164;
-        iVar5 = CONCAT31(CONCAT21(uStack1240._6_2_,uStack1240._5_1_),uStack1240._4_1_);
-        uVar26 = ((uStack1160 ^ uStack1164) & uVar35 ^ uStack1160) + iStack200 + uStack1156 + iVar5;
+        ntstatus = CONCAT31(CONCAT21(uStack1240._6_2_, uStack1240._5_1_), uStack1240._4_1_);
+        uVar26 = ((uStack1160 ^ uStack1164) & uVar35 ^ uStack1160) + iStack200 + uStack1156 + ntstatus;
         uVar26 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar35;
-        iVar31 = CONCAT31(CONCAT21(CONCAT11(uStack1229,uStack1230),uStack1231),uStack1232);
+        iVar31 = CONCAT31(CONCAT21(CONCAT11(uStack1229, uStack1230), uStack1231), uStack1232);
         uVar17 = ((uVar35 ^ uStack1164) & uVar26 ^ uStack1164) + iStack304 + uStack1160 + iVar31;
         uVar17 = (uVar17 * 0x20000 | uVar17 >> 0xf) + uVar26;
-        iVar40 = CONCAT31(CONCAT21(uStack1226,uStack1227),uStack1228);
+        iVar40 = CONCAT31(CONCAT21(uStack1226, uStack1227), uStack1228);
         uVar24 = ((uVar26 ^ uVar35) & uVar17 ^ uVar35) + iStack256 + uStack1164 + iVar40;
         uVar24 = (uVar24 * 0x400000 | uVar24 >> 10) + uVar17;
         uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + uVar35 + iStack172 + iStack1224;
         uVar36 = (uVar35 * 0x80 | uVar35 >> 0x19) + uVar24;
-        uStack1540 = CONCAT31(CONCAT21(uStack1218,uStack1219),uStack1220);
+        uStack1540 = CONCAT31(CONCAT21(uStack1218, uStack1219), uStack1220);
         uVar26 = ((uVar17 ^ uVar24) & uVar36 ^ uVar17) + uVar26 + iStack76 + uStack1540;
         uVar35 = (uVar26 * 0x1000 | uVar26 >> 0x14) + uVar36;
-        iVar46 = CONCAT31(CONCAT21(uStack1214,uStack1215),uStack1216);
+        iVar46 = CONCAT31(CONCAT21(uStack1214, uStack1215), uStack1216);
         uVar26 = ((uVar24 ^ uVar36) & uVar35 ^ uVar24) + uVar17 + iStack264 + iVar46;
         uVar26 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar35;
-        iVar50 = CONCAT31(CONCAT21(CONCAT11(uStack1209,uStack1210),uStack1211),uStack1212);
-        uVar17 = ((uVar35 ^ uVar36) & uVar26 ^ uVar36) + iVar50 + uVar24 + iStack268;
+        ntstatus0 = CONCAT31(CONCAT21(CONCAT11(uStack1209, uStack1210), uStack1211), uStack1212);
+        uVar17 = ((uVar35 ^ uVar36) & uVar26 ^ uVar36) + ntstatus0 + uVar24 + iStack268;
         uVar24 = (uVar17 * 0x400000 | uVar17 >> 10) + uVar26;
         uVar36 = ((uVar35 ^ uVar26) & uVar24 ^ uVar35) + auStack328[0] + iStack1208 + uVar36;
         uVar36 = (uVar36 * 0x80 | uVar36 >> 0x19) + uVar24;
-        iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1201,uStack1202),uStack1203),uStack1204);
+        iVar25 = CONCAT31(CONCAT21(CONCAT11(uStack1201, uStack1202), uStack1203), uStack1204);
         uVar17 = ((uVar26 ^ uVar24) & uVar36 ^ uVar26) + iVar25 + uVar35 + iStack240;
         uVar41 = (uVar17 * 0x1000 | uVar17 >> 0x14) + uVar36;
-        iVar51 = CONCAT31(CONCAT21(CONCAT11(uStack1197,uStack1198),uStack1199),uStack1200);
-        uVar26 = ((uVar24 ^ uVar36) & uVar41 ^ uVar24) + iVar51 + uVar26 + iStack276;
+        ntstatus1 = CONCAT31(CONCAT21(CONCAT11(uStack1197, uStack1198), uStack1199), uStack1200);
+        uVar26 = ((uVar24 ^ uVar36) & uVar41 ^ uVar24) + ntstatus1 + uVar26 + iStack276;
         uVar17 = (uVar26 * 0x20000 | uVar26 >> 0xf) + uVar41;
         uVar26 = ((uVar41 ^ uVar36) & uVar17 ^ uVar36) + iStack1196 + uVar24 + iStack220;
         uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar17;
-        iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1189,uStack1190),uStack1191),uStack1192);
+        iVar6 = CONCAT31(CONCAT21(CONCAT11(uStack1189, uStack1190), uStack1191), uStack1192);
         uVar24 = ((uVar41 ^ uVar17) & uVar26 ^ uVar41) + iVar6 + uVar36 + iStack232;
         uVar35 = (uVar24 * 0x80 | uVar24 >> 0x19) + uVar26;
         uVar24 = ((uVar17 ^ uVar26) & uVar35 ^ uVar17) + iStack1188 + uVar41 + iStack80;
@@ -1670,11 +1754,13 @@ LAB_140010167:
         uVar17 = ((uVar26 ^ uVar35) & uVar36 ^ uVar26) + iStack308 + iStack1184 + uVar17;
         uVar24 = (uVar17 * 0x20000 | uVar17 >> 0xf) + uVar36;
         uVar37 = (((uStack1180 >> 0x18) << 8 | (uint)(byte)uStack1120) << 8 |
-                 (uint)(byte)(uStack1176 >> 0x28)) << 8 | (uint)(byte)(uStack1176 >> 0x20);
+                  (uint)(byte)(uStack1176 >> 0x28))
+                     << 8 |
+                 (uint)(byte)(uStack1176 >> 0x20);
         puStack1496 = (undefined8 *)(ulonglong)uVar37;
         uVar26 = ((uVar36 ^ uVar35) & uVar24 ^ uVar35) + uVar37 + uVar26 + iStack288;
         uVar26 = (uVar26 * 0x400000 | uVar26 >> 10) + uVar24;
-        uVar17 = ((uVar24 ^ uVar26) & uVar36 ^ uVar24) + uVar35 + iStack120 + iVar5;
+        uVar17 = ((uVar24 ^ uVar26) & uVar36 ^ uVar24) + uVar35 + iStack120 + ntstatus;
         uVar17 = (uVar17 * 0x20 | uVar17 >> 0x1b) + uVar26;
         uVar35 = ((uVar26 ^ uVar17) & uVar24 ^ uVar26) + uVar36 + iStack180 + iVar46;
         uVar35 = (uVar35 * 0x200 | uVar35 >> 0x17) + uVar17;
@@ -1684,7 +1770,7 @@ LAB_140010167:
         uVar24 = (uVar26 * 0x100000 | uVar26 >> 0xc) + uVar36;
         uVar26 = ((uVar36 ^ uVar24) & uVar35 ^ uVar36) + uVar17 + iStack156 + uStack1540;
         uVar41 = (uVar26 * 0x20 | uVar26 >> 0x1b) + uVar24;
-        uVar26 = ((uVar24 ^ uVar41) & uVar36 ^ uVar24) + iVar51 + uVar35 + iStack140;
+        uVar26 = ((uVar24 ^ uVar41) & uVar36 ^ uVar24) + ntstatus1 + uVar35 + iStack140;
         uVar39 = (uVar26 * 0x200 | uVar26 >> 0x17) + uVar41;
         uVar26 = ((uVar39 ^ uVar41) & uVar24 ^ uVar41) + uVar37 + uVar36 + iStack160;
         uVar26 = (uVar26 * 0x4000 | uVar26 >> 0x12) + uVar39;
@@ -1702,7 +1788,7 @@ LAB_140010167:
         uVar26 = (uVar26 * 0x20 | uVar26 >> 0x1b) + uVar41;
         uVar17 = ((uVar41 ^ uVar26) & uVar36 ^ uVar41) + uVar17 + iStack92 + iVar31;
         uVar35 = (uVar17 * 0x200 | uVar17 >> 0x17) + uVar26;
-        uVar17 = ((uVar35 ^ uVar26) & uVar41 ^ uVar26) + iVar50 + uVar36 + iStack100;
+        uVar17 = ((uVar35 ^ uVar26) & uVar41 ^ uVar26) + ntstatus0 + uVar36 + iStack100;
         uVar17 = (uVar17 * 0x4000 | uVar17 >> 0x12) + uVar35;
         uVar24 = ((uVar35 ^ uVar17) & uVar26 ^ uVar35) + iVar6 + uVar41 + iStack252;
         uVar24 = (uVar24 * 0x100000 | uVar24 >> 0xc) + uVar17;
@@ -1714,13 +1800,13 @@ LAB_140010167:
         uVar35 = (uVar17 * 0x10000 | uVar17 >> 0x10) + uVar26;
         uVar17 = (uVar26 ^ uVar35 ^ uVar36) + iStack1184 + uVar24 + iStack208;
         uVar17 = (uVar17 * 0x800000 | uVar17 >> 9) + uVar35;
-        uVar24 = (uVar26 ^ uVar35 ^ uVar17) + uVar36 + iStack212 + iVar5;
+        uVar24 = (uVar26 ^ uVar35 ^ uVar17) + uVar36 + iStack212 + ntstatus;
         uVar36 = (uVar24 * 0x10 | uVar24 >> 0x1c) + uVar17;
         uVar26 = (uVar35 ^ uVar17 ^ uVar36) + uVar26 + iStack116 + iStack1224;
         uVar24 = (uVar26 * 0x800 | uVar26 >> 0x15) + uVar36;
-        uVar26 = (uVar24 ^ uVar17 ^ uVar36) + iVar50 + uVar35 + iStack132;
+        uVar26 = (uVar24 ^ uVar17 ^ uVar36) + ntstatus0 + uVar35 + iStack132;
         uVar26 = (uVar26 * 0x10000 | uVar26 >> 0x10) + uVar24;
-        uVar17 = (uVar24 ^ uVar26 ^ uVar36) + iVar51 + uVar17 + iStack144;
+        uVar17 = (uVar24 ^ uVar26 ^ uVar36) + ntstatus1 + uVar17 + iStack144;
         uVar35 = (uVar17 * 0x800000 | uVar17 >> 9) + uVar26;
         uVar17 = (uVar24 ^ uVar26 ^ uVar35) + iStack1188 + uVar36 + iStack112;
         uVar36 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar35;
@@ -1740,7 +1826,7 @@ LAB_140010167:
         uVar24 = (uVar26 * 0x800000 | uVar26 >> 9) + uVar17;
         uVar26 = ((~uVar35 | uVar24) ^ uVar17) + uVar36 + iStack300 + (int)uStack1240;
         uVar41 = (uVar26 * 0x40 | uVar26 >> 0x1a) + uVar24;
-        uVar26 = ((~uVar17 | uVar41) ^ uVar24) + iVar50 + uVar35 + iStack84;
+        uVar26 = ((~uVar17 | uVar41) ^ uVar24) + ntstatus0 + uVar35 + iStack84;
         uVar26 = (uVar26 * 0x400 | uVar26 >> 0x16) + uVar41;
         uVar17 = ((~uVar24 | uVar26) ^ uVar41) + iStack1184 + uVar17 + iStack188;
         uVar36 = (uVar17 * 0x8000 | uVar17 >> 0x11) + uVar26;
@@ -1750,9 +1836,9 @@ LAB_140010167:
         uVar17 = (uVar17 * 0x40 | uVar17 >> 0x1a) + uVar24;
         uVar26 = ((~uVar36 | uVar17) ^ uVar24) + uVar26 + iStack104 + iVar40;
         uVar35 = (uVar26 * 0x400 | uVar26 >> 0x16) + uVar17;
-        uVar26 = ((~uVar24 | uVar35) ^ uVar17) + iVar51 + uVar36 + iStack248;
+        uVar26 = ((~uVar24 | uVar35) ^ uVar17) + ntstatus1 + uVar36 + iStack248;
         uVar26 = (uVar26 * 0x8000 | uVar26 >> 0x11) + uVar35;
-        uVar24 = ((~uVar17 | uVar26) ^ uVar35) + uVar24 + iStack164 + iVar5;
+        uVar24 = ((~uVar17 | uVar26) ^ uVar35) + uVar24 + iStack164 + ntstatus;
         uVar36 = (uVar24 * 0x200000 | uVar24 >> 0xb) + uVar26;
         uVar17 = ((~uVar35 | uVar36) ^ uVar26) + auStack328[3] + iStack1208 + uVar17;
         uVar17 = (uVar17 * 0x40 | uVar17 >> 0x1a) + uVar36;
@@ -1778,24 +1864,25 @@ LAB_140010167:
         uStack1164 = iStack1252;
         uStack1160 = iStack1248;
         uStack1156 = iStack1244;
-        for (lVar14 = 0x58; lVar14 != 0; lVar14 = lVar14 + -1) {
+        for (lVar14 = 0x58; lVar14 != 0; lVar14 = lVar14 + -1)
+        {
           *(undefined *)puVar29 = 0;
           puVar29 = (undefined4 *)((longlong)puVar29 + 1);
         }
-        _auStack72 = CONCAT412(iStack1244,CONCAT48(iStack1248,CONCAT44(iStack1252,iStack1256)));
-        ExFreePoolWithTag(puStack1432,0);
+        _auStack72 = CONCAT412(iStack1244, CONCAT48(iStack1248, CONCAT44(iStack1252, iStack1256)));
+        ExFreePoolWithTag(puStack1432, 0);
         ZwClose(uStack1488);
       }
     }
   }
   uVar20 = 0;
-  puStack1288 = puStack1480;
+  puStack1288 = image_name;
   uStack1576 = 0;
   uStack1584 = 0;
-  uStack1592 = CONCAT44(uStack1592._4_4_,0x20);
-  uStack1600 = CONCAT44(uStack1600._4_4_,3);
+  uStack1592 = CONCAT44(uStack1592._4_4_, 0x20);
+  uStack1600 = CONCAT44(uStack1600._4_4_, 3);
   uStack1608 = 1;
-  uStack1616 = (undefined8 *)CONCAT44(uStack1616._4_4_,0x80);
+  uStack1616 = (undefined8 *)CONCAT44(uStack1616._4_4_, 0x80);
   uStack1624 = (undefined *)0x0;
   uStack1520 = 0;
   uStack1448 = 0;
@@ -1804,27 +1891,32 @@ LAB_140010167:
   uStack1296 = 0;
   uStack1280 = 0x200;
   auStack1272 = ZEXT816(0);
-  iVar5 = ZwCreateFile(&uStack1448,0x120089);
+  ntstatus = ZwCreateFile(&uStack1448, 0x120089);
   puStack1456 = (undefined8 *)0x41;
-  if (iVar5 < 0) {
-LAB_140011e1c:
+  if (ntstatus < 0)
+  {
+  LAB_140011e1c:
     uVar48 = 0;
     bVar53 = false;
     KeAcquireGuardedMutex(&DAT_140033a48);
-    if ((DAT_140033a80 != (ulonglong *)0x0) && (*DAT_140033a80 != 0)) {
+    if ((DAT_140033a80 != (ulonglong *)0x0) && (*DAT_140033a80 != 0))
+    {
       puVar19 = DAT_140033a80 + 1;
       uVar28 = uVar20;
-      do {
+      do
+      {
         uVar11 = puVar19[1];
         pbVar33 = auStack72;
         lVar14 = 0x10;
-        do {
+        do
+        {
           bVar12 = *pbVar33;
           pbVar33 = pbVar33 + 1;
           uVar11 = (uVar11 ^ bVar12) * 0x100000001b3;
           lVar14 = lVar14 + -1;
         } while (lVar14 != 0);
-        if (uVar11 - *puVar19 == 0) {
+        if (uVar11 - *puVar19 == 0)
+        {
           bVar53 = true;
           break;
         }
@@ -1833,91 +1925,115 @@ LAB_140011e1c:
       } while (uVar28 < *DAT_140033a80);
     }
     KeReleaseGuardedMutex();
-    puVar3 = puStack1480;
+    puVar3 = image_name;
     uVar4 = 0;
-    if (!bVar53) {
+    if (!bVar53)
+    {
       bVar53 = false;
-      puVar9 = (undefined8 *)ExAllocatePoolWithTag(0,(ulonglong)*puStack1480 + 2);
+      puVar9 = (undefined8 *)ExAllocatePoolWithTag(0, (ulonglong)*image_name + 2);
       puStack1512 = puVar9;
-      if (puVar9 != (undefined8 *)0x0) {
+      if (puVar9 != (undefined8 *)0x0)
+      {
         puVar10 = puVar9;
-        for (lVar14 = (ulonglong)*puVar3 + 2; lVar14 != 0; lVar14 = lVar14 + -1) {
+        for (lVar14 = (ulonglong)*puVar3 + 2; lVar14 != 0; lVar14 = lVar14 + -1)
+        {
           *(undefined *)puVar10 = 0;
           puVar10 = (undefined8 *)((longlong)puVar10 + 1);
         }
-        thunk_FUN_14001504b(puVar9,*(undefined8 **)(puVar3 + 4),(ulonglong)*puVar3);
+        thunk_FUN_14001504b(puVar9, *(undefined8 **)(puVar3 + 4), (ulonglong)*puVar3);
         sVar1 = *(short *)puVar9;
         puVar10 = puVar9;
-        if (sVar1 != 0) {
-          do {
+        if (sVar1 != 0)
+        {
+          do
+          {
             uVar28 = 0x59350163907c8ef3;
             puVar10 = puVar9;
             lVar14 = 9;
-            do {
-              if (lVar14 == 0) break;
+            do
+            {
+              if (lVar14 == 0)
+                break;
               uVar2 = *(ushort *)puVar10;
               puVar10 = (undefined8 *)((longlong)puVar10 + 2);
               uVar13 = uVar2 + (short)uStack1440;
-              if (0x19 < (ushort)(uVar2 - 0x41)) {
+              if (0x19 < (ushort)(uVar2 - 0x41))
+              {
                 uVar13 = uVar2;
               }
               uVar28 = ((uVar28 ^ (ulonglong)uVar13 & 0xff) * 0x100000001b3 ^
-                       (ulonglong)(uVar13 >> 8)) * 0x100000001b3;
+                        (ulonglong)(uVar13 >> 8)) *
+                       0x100000001b3;
               lVar14 = lVar14 + -1;
             } while (*(short *)puVar10 != 0);
-            if (uVar28 == 0xfe9c0294720b18f1) {
+            if (uVar28 == 0xfe9c0294720b18f1)
+            {
               puVar10 = puStack1512;
-              if (puVar9 == (undefined8 *)0x0) goto LAB_140011f96;
+              if (puVar9 == (undefined8 *)0x0)
+                goto LAB_140011f96;
               goto LAB_14001ea3a;
             }
             puVar9 = (undefined8 *)((longlong)puVar9 + 2);
             puVar10 = puStack1512;
           } while (*(short *)puVar9 != 0);
-LAB_140011fa3:
-          do {
+        LAB_140011fa3:
+          do
+          {
             uVar28 = 0xd29d4db0f2a4842f;
             puVar9 = puVar10;
             lVar14 = 6;
-            do {
-              if (lVar14 == 0) break;
+            do
+            {
+              if (lVar14 == 0)
+                break;
               uVar2 = *(ushort *)puVar9;
               puVar9 = (undefined8 *)((longlong)puVar9 + 2);
               uVar13 = uVar2 + (short)uStack1440;
-              if (0x19 < (ushort)(uVar2 - 0x41)) {
+              if (0x19 < (ushort)(uVar2 - 0x41))
+              {
                 uVar13 = uVar2;
               }
               uVar28 = ((uVar28 ^ (ulonglong)uVar13 & 0xff) * 0x100000001b3 ^
-                       (ulonglong)(uVar13 >> 8)) * 0x100000001b3;
+                        (ulonglong)(uVar13 >> 8)) *
+                       0x100000001b3;
               lVar14 = lVar14 + -1;
             } while (*(short *)puVar9 != 0);
-            if (uVar28 == 0x44fda98461a673eb) goto LAB_14001c7e5;
+            if (uVar28 == 0x44fda98461a673eb)
+              goto LAB_14001c7e5;
             puVar10 = (undefined8 *)((longlong)puVar10 + 2);
             puVar32 = puStack1512;
-            if (*(short *)puVar10 == 0) goto LAB_140012047;
-          } while( true );
+            if (*(short *)puVar10 == 0)
+              goto LAB_140012047;
+          } while (true);
         }
-LAB_140011f96:
+      LAB_140011f96:
         puVar9 = puVar10;
-        if (sVar1 != 0) goto LAB_140011fa3;
+        if (sVar1 != 0)
+          goto LAB_140011fa3;
         goto joined_r0x00014001a34b;
       }
       goto LAB_14000fb75;
     }
   }
-  else {
+  else
+  {
     uStack1384 = uStack1448;
     uStack1376 = 2;
     uStack1424 = uStack1424 & 0xffffffff00000000;
-    iVar5 = ZwQuerySystemInformation(0xb7,&uStack1384);
+    ntstatus = ZwQuerySystemInformation(0xb7, &uStack1384);
     ZwClose(uStack1448);
     uVar4 = 1;
-    if (iVar5 != -0x3ffffbd8) {
-      if (iVar5 == -0x3ffff9fb) {
+    if (ntstatus != -0x3ffffbd8)
+    {
+      if (ntstatus == -0x3ffff9fb)
+      {
         uVar4 = 2;
       }
-      else {
+      else
+      {
         uVar4 = 3;
-        if (iVar5 != -0x3ffff9fd) goto LAB_140011e1c;
+        if (ntstatus != -0x3ffff9fd)
+          goto LAB_140011e1c;
       }
     }
   }
@@ -1931,26 +2047,32 @@ LAB_14001c7e5:
   bVar52 = puVar10 == (undefined8 *)0x0;
   puVar10 = puStack1512;
   puVar9 = puStack1512;
-  if (bVar52) {
-joined_r0x00014001a34b:
-    while (puVar32 = puVar10, sVar1 != 0) {
-LAB_140012047:
+  if (bVar52)
+  {
+  joined_r0x00014001a34b:
+    while (puVar32 = puVar10, sVar1 != 0)
+    {
+    LAB_140012047:
       uVar28 = 0x4e7c04f2b60b8943;
       puVar9 = puVar32;
       lVar14 = 0xb;
-      do {
-        if (lVar14 == 0) break;
+      do
+      {
+        if (lVar14 == 0)
+          break;
         uVar2 = *(ushort *)puVar9;
         puVar9 = (undefined8 *)((longlong)puVar9 + 2);
         uVar13 = uVar2 + 0x20;
-        if (0x19 < (ushort)(uVar2 - 0x41)) {
+        if (0x19 < (ushort)(uVar2 - 0x41))
+        {
           uVar13 = uVar2;
         }
         uVar28 = ((uVar28 ^ (ulonglong)uVar13 & 0xff) * 0x100000001b3 ^ (ulonglong)(uVar13 >> 8)) *
                  0x100000001b3;
         lVar14 = lVar14 + -1;
       } while (*(short *)puVar9 != 0);
-      if (uVar28 == 0xd60d2c8ef27b1d6c) {
+      if (uVar28 == 0xd60d2c8ef27b1d6c)
+      {
         bVar53 = puVar32 != (undefined8 *)0x0;
         puVar9 = puStack1512;
         break;
@@ -1960,53 +2082,53 @@ LAB_140012047:
       sVar1 = *(short *)(undefined8 *)((longlong)puVar32 + 2);
     }
   }
-  else {
-LAB_14001ea3a:
+  else
+  {
+  LAB_14001ea3a:
     bVar53 = true;
     puVar9 = puStack1512;
   }
-  ExFreePoolWithTag(puVar9,0);
-  if (bVar53) goto LAB_1400120e6;
+  ExFreePoolWithTag(puVar9, 0);
+  if (bVar53)
+    goto LAB_1400120e6;
 LAB_14000fb75:
   KeAcquireGuardedMutex(&DAT_1400339e0);
-  puVar3 = puStack1480;
+  puVar3 = image_name;
   if ((((DAT_140033a18 < 0x1000) && (DAT_140033a28 != (undefined8 *)0x0)) &&
-      (puStack1480 != (ushort *)0x0)) &&
-     ((*(longlong *)(puStack1480 + 4) != 0 && (*puStack1480 < 0x208)))) {
-    if (DAT_140033a18 == DAT_140033a20) {
+       (image_name != (ushort *)0x0)) &&
+      ((*(longlong *)(image_name + 4) != 0 && (*image_name < 0x208))))
+  {
+    if (DAT_140033a18 == DAT_140033a20)
+    {
       uVar28 = DAT_140033a20 * 0x23a;
       lVar14 = uVar28 + 0x11d00;
-      puVar10 = (undefined8 *)ExAllocatePoolWithTag(0,lVar14,0x656e6f4e);
+      puVar10 = (undefined8 *)ExAllocatePoolWithTag(0, lVar14, 0x656e6f4e);
       puVar9 = puVar10;
-      if (puVar10 == (undefined8 *)0x0) {
-        if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000)) {
+      if (puVar10 == (undefined8 *)0x0)
+      {
+        if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
+        {
           uVar11 = 0xaa2d145923ec7f30;
           uVar28 = ((((ulonglong)DAT_140029050 * 2000) % 0xc9d) * 0xe35) % 0xc9d;
-          puVar19 = (ulonglong *)
-                    ((longlong)&DAT_14002b760 +
-                    (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
+          puVar19 = (ulonglong *)((longlong)&DAT_14002b760 +
+                                  (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
           uVar28 = *puVar19;
           uVar34 = uVar28 << 4 | uVar28 >> 0x3c;
           lVar14 = (~uVar34 & 0xfffffffffffffffe) + 2 + uVar34;
-          while (uVar26 = (uint)(uVar11 >> 0x20), lVar14 != 0) {
+          while (uVar26 = (uint)(uVar11 >> 0x20), lVar14 != 0)
+          {
             uVar34 = (ulonglong)(uVar26 & 0x79ceed4f);
             if (((uVar11 & 0xffffffff00000000 | 0x79ceed4f00000000) - (uVar34 << 0x20) |
-                uVar28 << 0x20) == ((uVar11 >> 0x20 | 0x79ceed4f) - uVar34 & uVar28) << 0x20)
-            goto LAB_140013d3f;
+                 uVar28 << 0x20) == ((uVar11 >> 0x20 | 0x79ceed4f) - uVar34 & uVar28) << 0x20)
+              goto LAB_140013d3f;
             uVar20 = uVar20 + 2000;
-            lVar14 = SUB168(ZEXT816(0x2262427fc07a8175) * ZEXT816(uVar20) >> 0x40,0);
+            lVar14 = SUB168(ZEXT816(0x2262427fc07a8175) * ZEXT816(uVar20) >> 0x40, 0);
             uVar11 = (((~uVar28 & uVar11) - (~uVar11 | uVar28)) - uVar11) + -1 + uVar28;
-            uVar28 = ((uVar20 + ((uVar20 - lVar14 >> 1) + lVar14 >> 0xb) * -0xe1b) * 0xe1b) % 0x1107
-            ;
-            lVar14 = SUB168(ZEXT816(0x4e5e0a72f0539783) * ZEXT816(uVar28) >> 0x40,0);
-            uVar28 = ((((ulonglong)
-                        *(ushort *)
-                         ((longlong)&DAT_140029050 +
-                         ((((uVar28 - lVar14 >> 1) + lVar14 >> 6) * 0x62 + uVar28 / 0x33) * -0x33 +
-                         uVar28 * 0x34) * 2) * 2000) % 0xc9d) * 0xe35) % 0xc9d;
-            puVar19 = (ulonglong *)
-                      ((longlong)&DAT_14002b760 +
-                      (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
+            uVar28 = ((uVar20 + ((uVar20 - lVar14 >> 1) + lVar14 >> 0xb) * -0xe1b) * 0xe1b) % 0x1107;
+            lVar14 = SUB168(ZEXT816(0x4e5e0a72f0539783) * ZEXT816(uVar28) >> 0x40, 0);
+            uVar28 = ((((ulonglong) * (ushort *)((longlong)&DAT_140029050 + ((((uVar28 - lVar14 >> 1) + lVar14 >> 6) * 0x62 + uVar28 / 0x33) * -0x33 + uVar28 * 0x34) * 2) * 2000) % 0xc9d) * 0xe35) % 0xc9d;
+            puVar19 = (ulonglong *)((longlong)&DAT_14002b760 +
+                                    (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
             uVar28 = *puVar19;
             uVar34 = uVar28 << 4 | uVar28 >> 0x3c;
             lVar14 = (~uVar34 & 0xfffffffffffffffe) + 2 + uVar34;
@@ -2019,64 +2141,62 @@ LAB_14000fb75:
         }
         goto LAB_140013d3f;
       }
-      for (; lVar14 != 0; lVar14 = lVar14 + -1) {
+      for (; lVar14 != 0; lVar14 = lVar14 + -1)
+      {
         *(undefined *)puVar9 = 0;
         puVar9 = (undefined8 *)((longlong)puVar9 + 1);
       }
-      thunk_FUN_14001504b(puVar10,DAT_140033a28,uVar28);
+      thunk_FUN_14001504b(puVar10, DAT_140033a28, uVar28);
       DAT_140033a20 = DAT_140033a20 + 0x80;
       if (((DAT_140033a20 == 0x1000) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
       {
         uVar34 = 0xaa2d145923ec7f30;
         uVar28 = ((((ulonglong)DAT_140029050 * 2000) % 0xc9d) * 0xe35) % 0xc9d;
-        puVar19 = (ulonglong *)
-                  ((longlong)&DAT_14002b760 +
-                  (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
+        puVar19 = (ulonglong *)((longlong)&DAT_14002b760 +
+                                (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
         uVar28 = *puVar19;
         uVar11 = uVar28 << 4 | uVar28 >> 0x3c;
-        if ((~uVar11 & 0xfffffffffffffffe) + 2 + uVar11 != 0) {
+        if ((~uVar11 & 0xfffffffffffffffe) + 2 + uVar11 != 0)
+        {
           puStack1432 = (undefined8 *)0x0;
-          do {
+          do
+          {
             uVar11 = (ulonglong)((uint)(uVar34 >> 0x20) & 0x44e03b64);
             if (((uVar34 & 0xffffffff00000000 | 0x44e03b6400000000) - (uVar11 << 0x20) |
-                uVar28 << 0x20) == ((uVar34 >> 0x20 | 0x44e03b64) - uVar11 & uVar28) << 0x20)
-            goto LAB_1400124ac;
+                 uVar28 << 0x20) == ((uVar34 >> 0x20 | 0x44e03b64) - uVar11 & uVar28) << 0x20)
+              goto LAB_1400124ac;
             puStack1432 = puStack1432 + 0xfa;
-            lVar14 = SUB168(ZEXT816(0x2262427fc07a8175) * ZEXT816(puStack1432) >> 0x40,0);
+            lVar14 = SUB168(ZEXT816(0x2262427fc07a8175) * ZEXT816(puStack1432) >> 0x40, 0);
             uVar34 = (((~uVar28 & uVar34) - (~uVar34 | uVar28)) - uVar34) + -1 + uVar28;
-            uVar28 = (ulonglong)
-                     ((longlong)
-                      ((longlong)puStack1432 +
-                      (((ulonglong)((longlong)puStack1432 - lVar14) >> 1) + lVar14 >> 0xb) * -0xe1b)
-                     * 0xe1b) % 0x1107;
-            lVar14 = SUB168(ZEXT816(0x4e5e0a72f0539783) * ZEXT816(uVar28) >> 0x40,0);
-            uVar28 = ((((ulonglong)
-                        *(ushort *)
-                         ((longlong)&DAT_140029050 +
-                         ((((uVar28 - lVar14 >> 1) + lVar14 >> 6) * 0x62 + uVar28 / 0x33) * -0x33 +
-                         uVar28 * 0x34) * 2) * 2000) % 0xc9d) * 0xe35) % 0xc9d;
-            puVar19 = (ulonglong *)
-                      ((longlong)&DAT_14002b760 +
-                      (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
+            uVar28 = (ulonglong)((longlong)((longlong)puStack1432 +
+                                            (((ulonglong)((longlong)puStack1432 - lVar14) >> 1) + lVar14 >> 0xb) * -0xe1b) *
+                                 0xe1b) %
+                     0x1107;
+            lVar14 = SUB168(ZEXT816(0x4e5e0a72f0539783) * ZEXT816(uVar28) >> 0x40, 0);
+            uVar28 = ((((ulonglong) * (ushort *)((longlong)&DAT_140029050 + ((((uVar28 - lVar14 >> 1) + lVar14 >> 6) * 0x62 + uVar28 / 0x33) * -0x33 + uVar28 * 0x34) * 2) * 2000) % 0xc9d) * 0xe35) % 0xc9d;
+            puVar19 = (ulonglong *)((longlong)&DAT_14002b760 +
+                                    (((uVar28 / 0xf5) * 0xf5 + uVar28 / 0x11) * -0x11 + uVar28 * 0x12) * 8);
             uVar28 = *puVar19;
             uVar11 = uVar28 << 4 | uVar28 >> 0x3c;
           } while ((~uVar11 & 0xfffffffffffffffe) + 2 + uVar11 != 0);
         }
-        uVar28 = (~uVar28 | 0xffffffff00000000) + 0x1000000000000001 + (uVar28 & 0xefffffffffffffff)
-        ;
+        uVar28 = (~uVar28 | 0xffffffff00000000) + 0x1000000000000001 + (uVar28 & 0xefffffffffffffff);
         uVar11 = (uVar34 >> 0x20 | 0x44e03b64) - (ulonglong)((uint)(uVar34 >> 0x20) & 0x44e03b64);
         *puVar19 = (uVar28 | uVar11) - (uVar28 & uVar11);
         *DAT_140033a40 = *DAT_140033a40 + 1;
       }
-LAB_1400124ac:
-      ExFreePoolWithTag(DAT_140033a28,0);
+    LAB_1400124ac:
+      ExFreePoolWithTag(DAT_140033a28, 0);
       DAT_140033a28 = puVar10;
     }
     uVar28 = uVar20;
-    if (DAT_140033a18 != 0) {
-      do {
-        lVar14 = RtlCompareMemory(auStack72,(longlong)DAT_140033a28 + uVar20 * 0x23a + 0x10);
-        if (lVar14 == 0x10) goto LAB_140013d3f;
+    if (DAT_140033a18 != 0)
+    {
+      do
+      {
+        lVar14 = RtlCompareMemory(auStack72, (longlong)DAT_140033a28 + uVar20 * 0x23a + 0x10);
+        if (lVar14 == 0x10)
+          goto LAB_140013d3f;
         uVar26 = (int)uVar28 + 1;
         uVar20 = SEXT48((int)uVar26);
         uVar28 = (ulonglong)uVar26;
@@ -2084,12 +2204,13 @@ LAB_1400124ac:
     }
     puVar22 = (ulonglong *)(DAT_140033a18 * 0x23a + (longlong)DAT_140033a28);
     puVar19 = puVar22;
-    for (lVar14 = 0x23a; lVar14 != 0; lVar14 = lVar14 + -1) {
+    for (lVar14 = 0x23a; lVar14 != 0; lVar14 = lVar14 + -1)
+    {
       *(undefined *)puVar19 = 0;
       puVar19 = (ulonglong *)((longlong)puVar19 + 1);
     }
     puVar47 = puVar22 + 4;
-    thunk_FUN_14001504b(puVar47,*(undefined8 **)(puVar3 + 4),(ulonglong)*puVar3);
+    thunk_FUN_14001504b(puVar47, *(undefined8 **)(puVar3 + 4), (ulonglong)*puVar3);
     puVar19 = puVar22 + 2;
     *(undefined4 *)puVar19 = auStack72._0_4_;
     *(undefined4 *)((longlong)puVar22 + 0x14) = auStack72._4_4_;
@@ -2097,56 +2218,53 @@ LAB_1400124ac:
     *(undefined4 *)((longlong)puVar22 + 0x1c) = uStack60;
     *(undefined *)((longlong)puVar22 + 0x229) = uStack1520;
     *(undefined *)(puVar22 + 0x45) = uVar48;
-    if (puVar19 != (ulonglong *)0x0) {
+    if (puVar19 != (ulonglong *)0x0)
+    {
       uVar20 = (SUB168((ZEXT416(_DAT_fffff78000000004) << 0x20) *
-                       ZEXT816((_DAT_fffff78000000320 & 0xffffffff) << 8) >> 0x40,0) - 0x3ffU >> 0xb
-               ) * (*puVar19 >> 8);
+                               ZEXT816((_DAT_fffff78000000320 & 0xffffffff) << 8) >>
+                           0x40,
+                       0) -
+                    0x3ffU >>
+                0xb) *
+               (*puVar19 >> 8);
       *puVar22 = uVar20;
       puVar22[1] = ~*puVar19 ^ uVar20;
     }
     uStack1464 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)
-                                                                                 puVar22,*(undefined
-                                                                                           *)((
-                                                  longlong)puVar22 + 1)),
-                                                  *(undefined *)((longlong)puVar22 + 2)),
-                                                  *(undefined *)((longlong)puVar22 + 3)),
-                                                  *(undefined *)((longlong)puVar22 + 4)),
+                                                                                    puVar22,
+                                                                                *(undefined
+                                                                                      *)((
+                                                                                             longlong)puVar22 +
+                                                                                         1)),
+                                                                       *(undefined *)((longlong)puVar22 + 2)),
+                                                              *(undefined *)((longlong)puVar22 + 3)),
+                                                     *(undefined *)((longlong)puVar22 + 4)),
                                             *(undefined *)((longlong)puVar22 + 5)),
                                    *(undefined *)((longlong)puVar22 + 6)),
                           *(undefined *)((longlong)puVar22 + 7));
     puStack1512 = (undefined8 *)
-                  CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)
-                                                                                  (puVar22 + 1),
-                                                                                 *(undefined *)
-                                                                                  ((longlong)puVar22
-                                                                                  + 9)),
-                                                                        *(undefined *)
-                                                                         ((longlong)puVar22 + 10)),
-                                                               *(undefined *)
-                                                                ((longlong)puVar22 + 0xb)),
-                                                      *(undefined *)((longlong)puVar22 + 0xc)),
-                                             *(undefined *)((longlong)puVar22 + 0xd)),
-                                    *(undefined *)((longlong)puVar22 + 0xe)),
-                           *(undefined *)((longlong)puVar22 + 0xf));
+        CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)(puVar22 + 1),
+                                                                       *(undefined *)((longlong)puVar22 + 9)),
+                                                              *(undefined *)((longlong)puVar22 + 10)),
+                                                     *(undefined *)((longlong)puVar22 + 0xb)),
+                                            *(undefined *)((longlong)puVar22 + 0xc)),
+                                   *(undefined *)((longlong)puVar22 + 0xd)),
+                          *(undefined *)((longlong)puVar22 + 0xe)),
+                 *(undefined *)((longlong)puVar22 + 0xf));
     uVar11 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)puVar19,
-                                                                            *(undefined *)
-                                                                             ((longlong)puVar22 +
-                                                                             0x11)),
-                                                                   *(undefined *)
-                                                                    ((longlong)puVar22 + 0x12)),
+                                                                            *(undefined *)((longlong)puVar22 +
+                                                                                           0x11)),
+                                                                   *(undefined *)((longlong)puVar22 + 0x12)),
                                                           *(undefined *)((longlong)puVar22 + 0x13)),
                                                  *(undefined *)((longlong)puVar22 + 0x14)),
                                         *(undefined *)((longlong)puVar22 + 0x15)),
                                *(undefined *)((longlong)puVar22 + 0x16)),
                       *(undefined *)((longlong)puVar22 + 0x17));
     uVar28 = (ulonglong)puStack1512 ^ uStack1464 ^ 0xf0;
-    uVar20 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)
-                                                                             (puVar22 + 3),
-                                                                            *(undefined *)
-                                                                             ((longlong)puVar22 +
-                                                                             0x19)),
-                                                                   *(undefined *)
-                                                                    ((longlong)puVar22 + 0x1a)),
+    uVar20 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)(puVar22 + 3),
+                                                                            *(undefined *)((longlong)puVar22 +
+                                                                                           0x19)),
+                                                                   *(undefined *)((longlong)puVar22 + 0x1a)),
                                                           *(undefined *)((longlong)puVar22 + 0x1b)),
                                                  *(undefined *)((longlong)puVar22 + 0x1c)),
                                         *(undefined *)((longlong)puVar22 + 0x1d)),
@@ -2356,21 +2474,17 @@ LAB_1400124ac:
     uVar38 = uVar38 ^ (uVar38 >> 0x16 | (uVar23 >> 0x27) << 0x2a) ^ uVar23;
     puStack1528 = (undefined8 *)~((uVar20 >> 5 | (uVar27 >> 1) << 0x3b) ^ uVar27 ^ uVar20);
     uVar28 = uVar28 ^ (uVar28 >> 9 | (uVar43 >> 0x13) << 0x37) ^ uVar43;
-    uVar20 = (uVar34 >> 0x22 | (uVar42 >> 7) << 0x1e) ^ uVar42 ^ uVar34 ^ (ulonglong)puStack1512 ^ 1
-    ;
-    do {
+    uVar20 = (uVar34 >> 0x22 | (uVar42 >> 7) << 0x1e) ^ uVar42 ^ uVar34 ^ (ulonglong)puStack1512 ^ 1;
+    do
+    {
       uVar34 = (ulonglong)puStack1528 ^ uVar38 ^ 0x96;
-      uVar28 = uVar28 ^ CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *
-                                                                                        )puVar47,
-                                                                                       *(undefined *
-                                                                                        )((longlong)
-                                                                                          puVar47 +
-                                                                                         1)),
-                                                                              *(undefined *)
-                                                                               ((longlong)puVar47 +
-                                                                               2)),
-                                                                     *(undefined *)
-                                                                      ((longlong)puVar47 + 3)),
+      uVar28 = uVar28 ^ CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)puVar47,
+                                                                                       *(undefined *)((longlong)
+                                                                                                          puVar47 +
+                                                                                                      1)),
+                                                                              *(undefined *)((longlong)puVar47 +
+                                                                                             2)),
+                                                                     *(undefined *)((longlong)puVar47 + 3)),
                                                             *(undefined *)((longlong)puVar47 + 4)),
                                                    *(undefined *)((longlong)puVar47 + 5)),
                                           *(undefined *)((longlong)puVar47 + 6)),
@@ -2401,8 +2515,7 @@ LAB_1400124ac:
       uVar20 = uVar42 >> 0x13 | uVar42 << 0x2d;
       uVar20 = (uVar20 >> 9 | (uVar42 >> 0x13) << 0x37) ^ uVar42 ^ uVar23 ^ uVar20;
       uVar23 = uVar23 ^ uVar34;
-      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff78
-      ;
+      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff78;
       uVar43 = ~uVar34 & uVar23 ^ uVar11;
       uVar42 = ~uVar28 & uVar11 ^ uVar20;
       uVar27 = ~uVar20 & uVar28 ^ uVar23;
@@ -2417,8 +2530,7 @@ LAB_1400124ac:
       uVar49 = uVar27 >> 7 | uVar27 << 0x39;
       uVar11 = uVar43 >> 1 | (ulonglong)((uVar43 & 1) != 0) << 0x3f;
       uVar49 = uVar49 ^ (uVar49 >> 0x22 | (uVar27 >> 7) << 0x1e) ^ uVar27;
-      uVar38 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff87
-      ;
+      uVar38 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff87;
       uVar20 = (uVar20 >> 9 | (uVar42 >> 0x13) << 0x37) ^ uVar42 ^ uVar49 ^ uVar20;
       uVar49 = uVar49 ^ uVar34;
       uVar42 = ~uVar28 & uVar38 ^ uVar20;
@@ -2435,8 +2547,7 @@ LAB_1400124ac:
       uVar20 = uVar42 >> 0x13 | uVar42 << 0x2d;
       uVar34 = uVar34 ^ (uVar34 >> 7 | (uVar49 >> 10) << 0x39) ^ uVar49;
       uVar23 = uVar23 ^ (uVar23 >> 0x22 | (uVar27 >> 7) << 0x1e) ^ uVar27;
-      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff96
-      ;
+      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffff96;
       uVar27 = uVar23 ^ uVar34;
       uVar20 = (uVar20 >> 9 | (uVar42 >> 0x13) << 0x37) ^ uVar42 ^ uVar23 ^ uVar20;
       uVar43 = ~uVar34 & uVar27 ^ uVar11;
@@ -2453,8 +2564,7 @@ LAB_1400124ac:
       uVar34 = uVar34 ^ (uVar34 >> 7 | (uVar20 >> 10) << 0x39) ^ uVar20;
       uVar20 = uVar42 >> 0x13 | uVar42 << 0x2d;
       uVar49 = uVar49 ^ (uVar49 >> 0x22 | (uVar23 >> 7) << 0x1e) ^ uVar23;
-      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffffa5
-      ;
+      uVar11 = (uVar11 >> 5 | (uVar43 >> 1) << 0x3b) ^ uVar43 ^ uVar11 ^ uVar28 ^ 0xffffffffffffffa5;
       uVar20 = (uVar20 >> 9 | (uVar42 >> 0x13) << 0x37) ^ uVar42 ^ uVar49 ^ uVar20;
       uVar49 = uVar49 ^ uVar34;
       uVar27 = ~uVar28 & uVar11 ^ uVar20;
@@ -2472,8 +2582,7 @@ LAB_1400124ac:
       uVar28 = (uVar28 >> 0x16 | (uVar20 >> 0x27) << 0x2a) ^ uVar20 ^ uVar28;
       uVar20 = uVar27 >> 0x13 | uVar27 << 0x2d;
       uVar20 = (uVar20 >> 9 | (uVar27 >> 0x13) << 0x37) ^ uVar27 ^ uVar34 ^ uVar20;
-      uVar38 = (uVar23 >> 5 | (uVar38 >> 1) << 0x3b) ^ uVar38 ^ uVar23 ^ uVar28 ^ 0xffffffffffffffb4
-      ;
+      uVar38 = (uVar23 >> 5 | (uVar38 >> 1) << 0x3b) ^ uVar38 ^ uVar23 ^ uVar28 ^ 0xffffffffffffffb4;
       uVar34 = uVar34 ^ uVar11;
       uVar43 = ~uVar20 & uVar28 ^ uVar34;
       uVar42 = ~uVar28 & uVar38 ^ uVar20;
@@ -2496,13 +2605,14 @@ LAB_1400124ac:
     } while (puStack1456 != (undefined8 *)0x0);
     uVar28 = uVar28 ^ 0x800000000000;
     uVar34 = uStack1408;
-    do {
+    do
+    {
       puVar19 = puVar47;
       cVar45 = (char)uVar34;
       bVar44 = cVar45 + 1;
       uVar34 = (ulonglong)bVar44;
       bVar12 = ('\a' - cVar45) * '\b';
-      uVar28 = uVar28 ^ (ulonglong)*(byte *)puVar19 << (bVar12 & 0x3f);
+      uVar28 = uVar28 ^ (ulonglong) * (byte *)puVar19 << (bVar12 & 0x3f);
       *(char *)puVar19 = (char)(uVar28 >> (bVar12 & 0x3f));
       puVar47 = (ulonglong *)((longlong)puVar19 + 1);
     } while (bVar44 < 2);
@@ -2723,7 +2833,7 @@ LAB_1400124ac:
   }
 LAB_140013d3f:
   KeReleaseGuardedMutex(&DAT_1400339e0);
-  ExFreePoolWithTag(puStack1480,0);
+  ExFreePoolWithTag(image_name, 0);
 code_r0x000140013d59:
   thunk_FUN_1400164f0(uStack56 ^ (ulonglong)auStack1656);
   return;
