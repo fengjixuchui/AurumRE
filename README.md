@@ -50,8 +50,22 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 
 ### PE PACKER
 
-The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
+The PE seems packed with not-known packer, 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.
+
+Packer's control flow obfuscation is quite simple and the control will be back in the original sub's epilogue.
+
+```asm
+; just like:
+sub_obfuscated_xxx proc
+jmp xxx ; jmp to the jumptable section and walk the jmp jungle
+; ...
+loc_epilogue:
+mov rax, cs:IofCompleteRequest
+call rax
+ret
+sub_obfuscated_xxx endp
+```
 
 The 2nd(at the last index) `.text` section looks like made by packer to store stubs of jmp tables where the specific functions are configured to obfuscate its control flows by abusing `jmp` trampoline.
 
