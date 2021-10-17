@@ -3,7 +3,7 @@ Reverse engineering of Aurum Ricochet anti-cheat driver
 
 # NOTES
 
-### Binary
+### BINARY
 
 ```
 Name: Aurum.sys
@@ -48,7 +48,7 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 - Packed by original packer
     - jmp control flow obfuscation, can mitigate by writing some code.
 
-### PE Packer
+### PE PACKER
 
 The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.
@@ -66,7 +66,7 @@ https://user-images.githubusercontent.com/37926134/137597435-5c8264ca-f68e-42cd-
 
 Looks like the obfuscation algorithm is quite simple?
 
-### PE Sections
+### PE SECTIONS
 
 ```
 [0] .text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
@@ -83,7 +83,7 @@ Looks like the obfuscation algorithm is quite simple?
 
 No potential abusable section.
 
-### Imports
+### IMPORTS
 
 - nt!RtlCompareMemory
 - nt!KeAcquireGuardedMutex
@@ -192,7 +192,7 @@ Device Object stacks:
 Processed 1 device objects.
 ```
 
-### DeviceIoControl Handler
+### DEVICE IOCTL HANDLER
 
 Now we know that the dispatch routine is at offset `0x14450`.
 
@@ -312,7 +312,9 @@ I am pretty sure the driver would have payload-encryption measure if any of IOCT
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
 See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
 
-### Object Callbacks
+# CALLBACKS
+
+### OBJECT CALLBACKS
 
 `ObRegisterCallbacks` is called at the initialization phase of the driver.
 
@@ -330,7 +332,7 @@ See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeob
 
 No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
 
-### Process Callbacks
+### PROCESS CALLBACKS
 
 `PsSetCreateProcessNotifyRoutineEx` is called at the initialization phase of the driver as well as object callbacks.
 
