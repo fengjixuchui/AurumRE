@@ -1,16 +1,3 @@
-; The entire control flow of the routine is in this file
-; but junky codes still remain, however this is totally
-; human-readable assembly.
-
-; Nice obfuscator Ricochet!
-;　　　　　（ 　´・ω）
-;　　　　γ/　 γ⌒ヽ　（´；ω；｀）
-;　　　　/ |　　　、 　ｲ（⌒　　　　⌒ヽ
-;　　　 .l　|　　　 l 　　}　）ヽ ､_､_,　＼ ＼
-;　　　 {　 |　　　 ｌ、　´⌒ヽ-'巛(　　/　/
-;　　　 .＼ |　　　　T ''' ――‐‐'＾　（､_ﾉ
-;　 　 　 　 |　　　　| 　　／　／/　 /
-
 .text:0000000140014450                               ; =============== S U B R O U T I N E =======================================
 .text:0000000140014450
 .text:0000000140014450                               ; Attributes: thunk
