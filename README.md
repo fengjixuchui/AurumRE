@@ -173,6 +173,28 @@ if (DAT_140033a18 != 0) {
 ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
 ```
 
+So what it is for? I assume it is to check NT's CI policy.  
+You can find more detail about `SystemCodeIntegrityCertificateInformation` at https://shhoya.github.io/antikernel_codeintegrity.html .
+
+TL;DR;
+
+- To check whether the testsigning is ON
+- To check whether the debug mode is ON
+
+```c
+#define CODEINTEGRITY_OPTION_ENABLED 0x00000001                // 6.0 and higher
+#define CODEINTEGRITY_OPTION_TESTSIGN 0x00000002               // 6.0 and higher
+#define CODEINTEGRITY_OPTION_UMCI_ENABLED 0x00000004           // 6.2 and higher
+#define CODEINTEGRITY_OPTION_UMCI_AUDITMODE_ENABLED 0x00000008 // 6.2 and higher
+#define CODEINTEGRITY_OPTION_UMCI_EXCLUSIONPATHS_ENABLED 0x00000010  // 6.2 and higher
+#define CODEINTEGRITY_OPTION_DEBUGMODE_ENABLED 0x00000080            // 6.3 and higher
+#define CODEINTEGRITY_OPTION_FLIGHTING_ENABLED 0x00000200            // 10.0 and higher
+#define CODEINTEGRITY_OPTION_HVCI_KMCI_ENABLED 0x00000400            // 10.0 and higher (x64)
+#define CODEINTEGRITY_OPTION_HVCI_KMCI_AUDITMODE_ENABLED 0x00000800  // 10.0 and higher (x64)
+#define CODEINTEGRITY_OPTION_HVCI_KMCI_STRICTMODE_ENABLED 0x00001000 // 10.0 and higher (x64)
+#define CODEINTEGRITY_OPTION_HVCI_IUM_ENABLED 0x00002000
+```
+
 # DRIVER INITIALIZATION
 
 ### FUNCTION
