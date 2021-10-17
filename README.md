@@ -397,3 +397,11 @@ No post operation (because post operation does not have an ability to strip gran
 ```
 
 See disassembly at [AurumProcessCallback.asm](AurumProcessCallback.asm)
+
+# MISCELLANEOUS
+
+### DRIVER GLOBAL VARIABLES
+
+- Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
+- Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
+- Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
