@@ -155,6 +155,22 @@ if (puVar7 != (undefined8 *)0x0)
 }
 ```
 
+# DRIVER INTEGRITY CHECK
+
+The Aurum driver implements integrity check measure, which executed at the [Pre-operation object callbacks](#object-callbacks):
+
+```c
+if (DAT_140033a18 != 0) {
+    do {
+        lVar14 = RtlCompareMemory(auStack72,(longlong)DAT_140033a28 + uVar20 * 0x23a + 0x10);
+        if (lVar14 == 0x10) goto LAB_140013d3f;
+        uVar26 = (int)uVar28 + 1;
+        uVar20 = SEXT48((int)uVar26);
+        uVar28 = (ulonglong)uVar26;
+    } while (uVar20 < DAT_140033a18);
+}
+```
+
 # DRIVER INITIALIZATION
 
 ### FUNCTION
