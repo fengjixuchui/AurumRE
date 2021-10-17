@@ -124,7 +124,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   mj_function = *irp_sp;           // irp_sp->MajorFunction
   if (mj_function < 0xf)
   {
-    if (mj_function == 0xe)
+    if (mj_function == IRP_MJ_QUERY_SECURITY)
     {
       if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
       {
@@ -161,7 +161,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
     {
       if (mj_function < 8)
       {
-        if (mj_function == 7)
+        if (mj_function == IRP_MJ_QUERY_EA)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -197,7 +197,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (mj_function == 0)
+          if (mj_function == IRP_MJ_CREATE)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -236,7 +236,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (mj_function == 1)
+            if (mj_function == IRP_MJ_CREATE_NAMED_PIPE)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -274,7 +274,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (mj_function == 2)
+              if (mj_function == IRP_MJ_CLOSE)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -312,7 +312,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (mj_function == 3)
+                if (mj_function == IRP_MJ_READ)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -350,7 +350,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (mj_function == 4)
+                  if (mj_function == IRP_MJ_WRITE)
                   {
                     if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                     {
@@ -391,7 +391,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                   }
                   else
                   {
-                    if (mj_function == 5)
+                    if (mj_function == IRP_MJ_QUERY_INFORMATION)
                     {
                       if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                       {
@@ -432,7 +432,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                     }
                     else
                     {
-                      if (((mj_function == 6) && (DAT_140033a40 != (uint *)0x0)) &&
+                      if (((mj_function == IRP_MJ_SET_INFORMATION) && (DAT_140033a40 != (uint *)0x0)) &&
                           (*DAT_140033a40 < 2000))
                       {
                         puStack600 = (ulonglong *)0xaa2d145923ec7f30;
@@ -479,7 +479,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (mj_function == 8)
+        if (mj_function == IRP_MJ_SET_EA)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -514,7 +514,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (mj_function == 9)
+          if (mj_function == IRP_MJ_FLUSH_BUFFERS)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -553,7 +553,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (mj_function == 10)
+            if (mj_function == IRP_MJ_QUERY_VOLUME_INFORMATION)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -592,7 +592,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (mj_function == 0xb)
+              if (mj_function == IRP_MJ_SET_VOLUME_INFORMATION)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -629,7 +629,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (mj_function == 0xc)
+                if (mj_function == IRP_MJ_DIRECTORY_CONTROL)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -666,7 +666,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (((mj_function == 0xd) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                  if (((mj_function == IRP_MJ_FILE_SYSTEM_CONTROL) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                   {
                     puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                     puStack568 = (ulonglong *)0xa7db1bfb;
@@ -711,7 +711,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   {
     if (mj_function < 0x16)
     {
-      if (mj_function == 0x15)
+      if (mj_function == IRP_MJ_SET_SECURITY)
       {
         if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
         {
@@ -746,7 +746,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (mj_function == 0xf)
+        if (mj_function == IRP_MJ_INTERNAL_DEVICE_CONTROL)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -781,7 +781,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (mj_function == 0x10)
+          if (mj_function == IRP_MJ_SHUTDOWN)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -819,7 +819,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (mj_function == 0x11)
+            if (mj_function == IRP_MJ_LOCK_CONTROL)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -858,7 +858,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (mj_function == 0x12)
+              if (mj_function == IRP_MJ_CLEANUP)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -897,7 +897,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (mj_function == 0x13)
+                if (mj_function == IRP_MJ_CREATE_MAILSLOT)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -934,7 +934,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (((mj_function == 0x14) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                  if (((mj_function == IRP_MJ_QUERY_SECURITY) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                   {
                     puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                     lStack328 = lVar11;
@@ -975,7 +975,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
     }
     else
     {
-      if (mj_function == 0x16)
+      if (mj_function == IRP_MJ_POWER)
       {
         if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
         {
@@ -1019,7 +1019,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (mj_function == 0x17)
+        if (mj_function == IRP_MJ_SYSTEM_CONTROL)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -1053,7 +1053,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (mj_function == 0x18)
+          if (mj_function == IRP_MJ_DEVICE_CHANGE)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -1089,7 +1089,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (mj_function == 0x19)
+            if (mj_function == IRP_MJ_QUERY_QUOTA)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -1126,7 +1126,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (mj_function == 0x1a)
+              if (mj_function == IRP_MJ_SET_QUOTA)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -1163,7 +1163,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (((mj_function == 0x1b) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                if (((mj_function == IRP_MJ_PNP) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                 {
                   puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                   puStack568 = (ulonglong *)0x99e15c84;
