@@ -328,7 +328,7 @@ I am pretty sure the driver would have payload-encryption measure if any of IOCT
 </details>
 
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
-See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
+See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)  
 See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
 # CALLBACKS
