@@ -87,7 +87,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
   uint uStack1472;
   ulonglong uStack1464;
   undefined8 *puStack1456;
-  undefined8 uStack1448;
+  undefined8 filehandle;
   undefined4 uStack1440;
   undefined8 *puStack1432;
   ulonglong uStack1424;
@@ -412,7 +412,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
   uStack1464 = param_2;
   if (pcVar16 == (char *)0x0)
     goto code_r0x000140013d59;
-  uStack1448 = 0xba869539;
+  filehandle = 0xba869539;
   uVar28 = 0x764b00dcd21ffe8;
   uVar20 = 0xdd6bdb01af7b1da0;
   puStack1512 = (undefined8 *)0xc8c4d3bc;
@@ -1885,13 +1885,13 @@ LAB_14000e4e7:
   uStack1616 = (undefined8 *)CONCAT44(uStack1616._4_4_, 0x80);
   uStack1624 = (undefined *)0x0;
   uStack1520 = 0;
-  uStack1448 = 0;
+  filehandle = 0;
   auStack1368 = ZEXT816(0);
   uStack1304 = 0x30;
   uStack1296 = 0;
   uStack1280 = 0x200;
   auStack1272 = ZEXT816(0);
-  ntstatus = ZwCreateFile(&uStack1448, 0x120089);
+  ntstatus = ZwCreateFile(&filehandle, 0x120089);
   puStack1456 = (undefined8 *)0x41;
   if (ntstatus < 0)
   {
@@ -2017,11 +2017,11 @@ LAB_14000e4e7:
   }
   else
   {
-    uStack1384 = uStack1448;
+    uStack1384 = filehandle;
     uStack1376 = 2;
     uStack1424 = uStack1424 & 0xffffffff00000000;
     ntstatus = ZwQuerySystemInformation(0xb7, &uStack1384);
-    ZwClose(uStack1448);
+    ZwClose(filehandle);
     uVar4 = 1;
     if (ntstatus != -0x3ffffbd8)
     {
