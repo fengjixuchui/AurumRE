@@ -131,7 +131,7 @@ No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low 
 
 ### LIVE MEMORY DUMP
 
-Dumped live memory of entire driver image but couldn't find any usefl information like strings expanded at the runtime.
+Dumped live memory of entire driver image but couldn't find any useful information like strings expanded at the runtime.
 
 # IOCTL
 
