@@ -864,7 +864,7 @@ LAB_14000e4e7:
       uStack1624 = (undefined *)CONCAT44(uStack1624._4_4_, 5);
       ntstatus = ZwQueryInformationFile(uStack1488, auStack1400, auStack1144);
       if ((ntstatus < 0) ||
-          (puStack1432 = (undefined8 *)ExAllocatePoolWithTag(0, 0x100000, 0x656e6f4e),
+          (puStack1432 = (undefined8 *)ExAllocatePoolWithTag(0, 0x100000, 'None'),
            puStack1432 == (undefined8 *)0x0))
       {
         ZwClose(uStack1488);
