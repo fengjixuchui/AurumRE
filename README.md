@@ -167,7 +167,7 @@ if (DAT_140033a18 != 0) {
 }
 ```
 
-`ZwQuerySystemInformation` is used to query `SystemCodeIntegrityCertificateInformation`.
+`ZwQuerySystemInformation` is used to query [`SystemCodeIntegrityCertificateInformation`](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L2024).
 
 ```
 ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
