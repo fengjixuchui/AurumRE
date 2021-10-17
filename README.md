@@ -61,7 +61,7 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 
 The PE seems packed with not-known packer, 2nd `.text` section is seemed made by packer to store stubs.  
 Packed but it's totally human-readable.  
-**UPDATE 17/10/21: Maybe LLVM Obfuscator or optimized.**
+**UPDATE 17/10/21: Maybe (optimized)LLVM Obfuscator.**
 
 Packer's control flow obfuscation is quite simple and the control will be back in the original sub's epilogue.
 
