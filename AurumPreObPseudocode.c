@@ -3,7 +3,7 @@
 /* WARNING: Could not reconcile some variable overlaps */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
+void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong ob_info)
 
 {
   short sVar1;
@@ -85,7 +85,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
   undefined8 uStack1488;
   ushort *image_name;
   uint uStack1472;
-  ulonglong uStack1464;
+  ulonglong ob_info_2;
   undefined8 *puStack1456;
   undefined8 filehandle;
   undefined4 uStack1440;
@@ -409,7 +409,7 @@ void UndefinedFunction_14000d9a0(undefined8 param_1, ulonglong param_2)
   uStack56 = DAT_1400339d0 ^ (ulonglong)auStack1656;
   uStack1408 = 0;
   probable_process = *(char **)(DAT_140033a38 + 8);
-  uStack1464 = param_2;
+  ob_info_2 = ob_info;
   if (probable_process == (char *)0x0)
     goto code_r0x000140013d59;
   filehandle = 0xba869539;
@@ -550,7 +550,7 @@ LAB_14000da8c:
 LAB_140018af8:
   uVar20 = 0x764b00dcd21ffe8;
   uVar28 = 0xdd6bdb01af7b1da0;
-  if ((probable_process == (char *)0x0) || (param_2 == 0))
+  if ((probable_process == (char *)0x0) || (ob_info == 0))
     goto code_r0x000140013d59;
   probable_process = *(char **)(DAT_140033a38 + 8);
   if (probable_process != (char *)0x0)
@@ -691,7 +691,7 @@ LAB_140018af8:
   }
   uVar28 = 0xdd6bdb01af7b1da0;
   uVar20 = 0x764b00dcd21ffe8;
-  if (probable_process != *(char **)(param_2 + 8))
+  if (probable_process != ob_info->Object) /* Check if the desired process is protected */
     goto code_r0x000140013d59;
   probable_process = *(char **)(DAT_140033a38 + 8);
   if (probable_process != (char *)0x0)
@@ -2040,8 +2040,8 @@ LAB_14000e4e7:
 LAB_1400120e6:
   uVar48 = uVar4;
   uStack1520 = 1;
-  **(undefined4 **)(uStack1464 + 0x20) = 0;
-  *(undefined4 *)(*(longlong *)(uStack1464 + 0x20) + 4) = 0;
+  **(undefined4 **)(ob_info_2 + 0x20) = 0;
+  *(undefined4 *)(*(longlong *)(ob_info_2 + 0x20) + 4) = 0;
   goto LAB_14000fb75;
 LAB_14001c7e5:
   bVar52 = puVar10 == (undefined8 *)0x0;
@@ -2230,18 +2230,18 @@ LAB_14000fb75:
       *puVar22 = uVar20;
       puVar22[1] = ~*puVar19 ^ uVar20;
     }
-    uStack1464 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)
-                                                                                    puVar22,
-                                                                                *(undefined
-                                                                                      *)((
-                                                                                             longlong)puVar22 +
-                                                                                         1)),
-                                                                       *(undefined *)((longlong)puVar22 + 2)),
-                                                              *(undefined *)((longlong)puVar22 + 3)),
-                                                     *(undefined *)((longlong)puVar22 + 4)),
-                                            *(undefined *)((longlong)puVar22 + 5)),
-                                   *(undefined *)((longlong)puVar22 + 6)),
-                          *(undefined *)((longlong)puVar22 + 7));
+    ob_info_2 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)
+                                                                                   puVar22,
+                                                                               *(undefined
+                                                                                     *)((
+                                                                                            longlong)puVar22 +
+                                                                                        1)),
+                                                                      *(undefined *)((longlong)puVar22 + 2)),
+                                                             *(undefined *)((longlong)puVar22 + 3)),
+                                                    *(undefined *)((longlong)puVar22 + 4)),
+                                           *(undefined *)((longlong)puVar22 + 5)),
+                                  *(undefined *)((longlong)puVar22 + 6)),
+                         *(undefined *)((longlong)puVar22 + 7));
     puStack1512 = (undefined8 *)
         CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)(puVar22 + 1),
                                                                        *(undefined *)((longlong)puVar22 + 9)),
@@ -2260,7 +2260,7 @@ LAB_14000fb75:
                                         *(undefined *)((longlong)puVar22 + 0x15)),
                                *(undefined *)((longlong)puVar22 + 0x16)),
                       *(undefined *)((longlong)puVar22 + 0x17));
-    uVar28 = (ulonglong)puStack1512 ^ uStack1464 ^ 0xf0;
+    uVar28 = (ulonglong)puStack1512 ^ ob_info_2 ^ 0xf0;
     uVar20 = CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)(puVar22 + 3),
                                                                             *(undefined *)((longlong)puVar22 +
                                                                                            0x19)),
@@ -2272,10 +2272,10 @@ LAB_14000fb75:
                       *(undefined *)((longlong)puVar22 + 0x1f));
     uVar34 = uVar20 ^ uVar11;
     uVar20 = uVar20 ^ 0x80400c0600000000;
-    uVar42 = ~uStack1464 & uVar28 ^ uVar20;
+    uVar42 = ~ob_info_2 & uVar28 ^ uVar20;
     uVar43 = ~uVar11 & uVar34 ^ uVar28;
-    uVar27 = ~uVar20 & uStack1464 ^ uVar34;
-    uVar38 = ~uVar28 & uVar11 ^ uVar42 ^ uStack1464;
+    uVar27 = ~uVar20 & ob_info_2 ^ uVar34;
+    uVar38 = ~uVar28 & uVar11 ^ uVar42 ^ ob_info_2;
     uVar42 = uVar42 ^ uVar27;
     uVar28 = uVar38 >> 0x27 | uVar38 << 0x19;
     uVar20 = ~uVar34 & uVar20 ^ uVar11 ^ uVar43;
@@ -2470,7 +2470,7 @@ LAB_14000fb75:
     uVar43 = uVar43 ^ uVar42;
     uVar34 = uVar42 >> 7 | uVar42 << 0x39;
     uVar28 = uVar43 >> 0x13 | uVar43 << 0x2d;
-    uVar11 = (uVar11 >> 7 | (uVar49 >> 10) << 0x39) ^ uVar49 ^ uVar11 ^ uStack1464;
+    uVar11 = (uVar11 >> 7 | (uVar49 >> 10) << 0x39) ^ uVar49 ^ uVar11 ^ ob_info_2;
     uVar38 = uVar38 ^ (uVar38 >> 0x16 | (uVar23 >> 0x27) << 0x2a) ^ uVar23;
     puStack1528 = (undefined8 *)~((uVar20 >> 5 | (uVar27 >> 1) << 0x3b) ^ uVar27 ^ uVar20);
     uVar28 = uVar28 ^ (uVar28 >> 9 | (uVar43 >> 0x13) << 0x37) ^ uVar43;
@@ -2616,7 +2616,7 @@ LAB_14000fb75:
       *(char *)puVar19 = (char)(uVar28 >> (bVar12 & 0x3f));
       puVar47 = (ulonglong *)((longlong)puVar19 + 1);
     } while (bVar44 < 2);
-    uVar38 = uVar38 ^ uStack1464;
+    uVar38 = uVar38 ^ ob_info_2;
     uVar28 = uVar20 ^ uVar28;
     uVar20 = uVar20 ^ uVar11;
     uVar27 = ~uVar28 & uVar38 ^ uVar20;
@@ -2811,7 +2811,7 @@ LAB_14000fb75:
     uVar11 = (uVar42 >> 5 | (uVar49 >> 1) << 0x3b) ^ ~uVar38 & uVar20 ^ (uVar38 | uVar23) ^ uVar49 ^
              uVar42 ^ uVar11 ^ 0xffffffffffffffb4;
     uVar20 = uVar11 >> 10 | uVar11 << 0x36;
-    uVar20 = (uVar20 >> 7 | (uVar11 >> 10) << 0x39) ^ uVar11 ^ uVar20 ^ uStack1464;
+    uVar20 = (uVar20 >> 7 | (uVar11 >> 10) << 0x39) ^ uVar11 ^ uVar20 ^ ob_info_2;
     uVar28 = (uVar28 >> 0x22 | (uVar34 >> 7) << 0x1e) ^ uVar34 ^ uVar28 ^ (ulonglong)puStack1512;
     *(char *)(ulonglong *)((longlong)puVar19 + 1) = (char)(uVar20 >> 0x38);
     *(char *)((longlong)puVar19 + 2) = (char)(uVar20 >> 0x30);
