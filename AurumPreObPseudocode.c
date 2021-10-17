@@ -2017,7 +2017,6 @@ LAB_14000e4e7:
   }
   else
   {
-    /* ZwCreateFile Failed */
     uStack1384 = filehandle;
     uStack1376 = 2;
     uStack1424 = uStack1424 & 0xffffffff00000000;
