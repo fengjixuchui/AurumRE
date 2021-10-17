@@ -59,32 +59,16 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 
 ### PE PACKER
 
-The PE seems packed with not-known packer, 2nd `.text` section is seemed made by packer to store stubs.  
-Packed but it's totally human-readable.  
 **UPDATE 17/10/21: Maybe (optimized)LLVM Obfuscator.**
 
 Packer's control flow obfuscation is quite simple and the control will be back in the original sub's epilogue.
 
-```asm
-; just like:
-sub_obfuscated_xxx proc
-jmp xxx ; jmp to the jumptable section and walk the jmp jungle
-; ...
-loc_epilogue:
-mov rax, cs:IofCompleteRequest
-call rax
-ret
-sub_obfuscated_xxx endp
-```
-
 The 2nd(at the last index) `.text` section looks like made by packer to store stubs of jmp tables where the specific functions are configured to obfuscate its control flows by abusing `jmp` trampoline.
 
 The following functions are heavily obfuscated (as I just know as of now):
-- Dispatch routine of IRPs: Aurum+0x14450
-- Process creation callback routine: Aurum+0x14060
-- Object pre-callback routine: Aurum+0xD9A0
-
-Looks like the obfuscation algorithm is quite simple?
+- Dispatch routine of IRPs: `Aurum+0x14450`
+- Process creation callback routine: `Aurum+0x14060`
+- Object pre-callback routine: `Aurum+0xD9A0`
 
 ### PE SECTIONS
 
@@ -133,26 +117,14 @@ No potential abusable section.
 - nt!PsProcessType
 - nt!__C_specific_handler
 
-No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.
-
-### LIVE MEMORY DUMP
-
-Dumped live memory of entire driver image but couldn't find any useful information like strings expanded at the runtime.
+~~No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.~~
 
 ### POOL TAG
 
-Pool tags are seem not defined.
+Pool tags are seem not defined. (`'None'`)
 
 ```c
 puVar7 = (undefined8 *)ExAllocatePoolWithTag(0, uVar12, 'None');
-if (puVar7 != (undefined8 *)0x0)
-{
-    thunk_FUN_14001504b(puVar7, puVar18 + 1, uVar12);
-    KeAcquireGuardedMutex(&DAT_140033a48);
-    ExFreePoolWithTag(DAT_140033a80);
-    DAT_140033a80 = puVar7;
-    goto LAB_14001a514;
-}
 ```
 
 ### STRINGS
