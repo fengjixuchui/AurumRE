@@ -167,6 +167,12 @@ if (DAT_140033a18 != 0) {
 }
 ```
 
+`ZwQuerySystemInformation` is used to query `SystemCodeIntegrityCertificateInformation`.
+
+```
+ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
+```
+
 # DRIVER INITIALIZATION
 
 ### FUNCTION
