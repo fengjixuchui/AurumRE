@@ -437,6 +437,10 @@ See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
 ### AURUM_IOCTL_REGISTER_PROCESS
 
+```c
+#define AURUM_IOCTL_REGISTER_PROCESS CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
+```
+
 This IOCTL command is to register a process which is desired to protect.  
 Indeed, the IRP caller (IoGetCurrentProcess) will be registered.
 
