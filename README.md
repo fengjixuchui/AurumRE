@@ -441,9 +441,26 @@ See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 [DEBUGGER] CallbackRegistration->OperationRegistration[0].PreOperation  : 0xFFFFF8067137D9A0 Aurum+0xd9a0
 ```
 
-No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
-
+No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.  
 See full pseudocode at [AurumPreObPseudocode.c](AurumPreObPseudocode.c)
+
+### PROTECTED PROCESS
+
+How Aurum acknowledges if the handle-opening process is the process to protect?  
+Firstly, in the PreObCallback,
+
+```c
+  if (probable_process != ob_info->Object) /* Check if the desired process is protected */
+    goto code_r0x000140013d59;
+```
+
+`probable_process` is the pointer of process structe, called `PEPROCESS` in NT, is set from the global variable at the prologue:
+
+```c
+probable_process = *(char **)(DAT_140033a38 + 8);
+```
+
+`Aurum+0x33a38 + 8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
 
 ### PROCESS CALLBACKS
 
@@ -466,6 +483,7 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1813
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
 - Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
+        - Contains ObCallback Protected Process Pointer at offset 0x8
     - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/ab1a2b8eeeb05a64a32faff2b437c10c2d3ef7b9/AurumPreObPseudocode.c#L411
 - Aurum+0x33a80: PVOID gAurumUnknownPool2 sizeof(0x28)
