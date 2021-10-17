@@ -339,8 +339,7 @@ See full pseudocode at [AurumPreObPseudocode.c](AurumPreObPseudocode.c)
 
 ### PROTECTED PROCESS
 
-How Aurum acknowledges if the handle-opening process is the process to protect?  
-Firstly, in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L694),
+in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L694),
 
 ```c
   if (probable_process != ob_info->Object) /* Check if the desired process is protected */
@@ -348,7 +347,7 @@ Firstly, in the PreObCallback at line [here](https://github.com/kkent030315/Auru
     
   ...
   
-  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore current process, this value would have a pointer of ntoskrnl.exe(4) */
+  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore current process, this value would have a pointer of PsInitialSystemProcess */
   if (probable_process == pcVar7)
     goto code_r0x000140013d59;
     
@@ -363,7 +362,7 @@ Firstly, in the PreObCallback at line [here](https://github.com/kkent030315/Auru
 probable_process = *(char **)(DAT_140033a38 + 8);
 ```
 
-`Aurum+0x33a38 + 8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
+`Aurum+0x33a38+8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
 
 ### PROCESS CALLBACKS
 
