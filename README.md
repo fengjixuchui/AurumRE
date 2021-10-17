@@ -1,9 +1,18 @@
 # AurumRE
 Reverse engineering of Aurum Ricochet anti-cheat driver
 
+### DISCLAIMER
+
+I am trying my best however informations at this repository may not be accurate.
+
+### CONTRIBUTION
+
+Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.  
+I suggest you to use Ghidra at this time because IDA is sucks for packed PEs(not impossible but will took lots of your time).
+
 # NOTES
 
-### Binary
+### BINARY
 
 ```
 Name: Aurum.sys
@@ -48,25 +57,20 @@ See full IDA disassembly at [ida_disasm_full.asm](ida_disasm_full.asm)
 - Packed by original packer
     - jmp control flow obfuscation, can mitigate by writing some code.
 
-### PE Packer
+### PE PACKER
 
-The PE seems packed with not-known packer. 2nd `.text` section is seemed made by packer to store stubs.  
-Packed but it's totally human-readable.
+**UPDATE 17/10/21: Maybe (optimized)LLVM Obfuscator.**
+
+Packer's control flow obfuscation is quite simple and the control will be back in the original sub's epilogue.
 
 The 2nd(at the last index) `.text` section looks like made by packer to store stubs of jmp tables where the specific functions are configured to obfuscate its control flows by abusing `jmp` trampoline.
 
 The following functions are heavily obfuscated (as I just know as of now):
-- Dispatch routine of IRPs: Aurum+0x14450
-- Process creation callback routine: Aurum+0x14060
-- Object pre-callback routine: Aurum+0xD9A0
+- Dispatch routine of IRPs: `Aurum+0x14450`
+- Process creation callback routine: `Aurum+0x14060`
+- Object pre-callback routine: `Aurum+0xD9A0`
 
-Obfuscated control-flow view:
-
-https://user-images.githubusercontent.com/37926134/137597435-5c8264ca-f68e-42cd-9709-2e805c326e26.mp4
-
-Looks like the obfuscation algorithm is quite simple?
-
-### PE Sections
+### PE SECTIONS
 
 ```
 [0] .text  IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_NOT_PAGED | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
@@ -83,7 +87,7 @@ Looks like the obfuscation algorithm is quite simple?
 
 No potential abusable section.
 
-### Imports
+### IMPORTS
 
 - nt!RtlCompareMemory
 - nt!KeAcquireGuardedMutex
@@ -113,7 +117,97 @@ No potential abusable section.
 - nt!PsProcessType
 - nt!__C_specific_handler
 
-No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.
+~~No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.~~
+
+### POOL TAG
+
+Pool tags are seem not defined. (`'None'`)
+
+```c
+puVar7 = (undefined8 *)ExAllocatePoolWithTag(0, uVar12, 'None');
+```
+
+### STRINGS
+
+Strings are indeed "encrypted" and on the stack just like EQU8 did trick to deceive import name.
+
+# DRIVER INTEGRITY CHECK
+
+The Aurum driver implements integrity check measure, which executed at the [Pre-operation object callbacks](#object-callbacks):
+
+```c
+if (DAT_140033a18 != 0) {
+    do {
+        lVar14 = RtlCompareMemory(auStack72,(longlong)DAT_140033a28 + uVar20 * 0x23a + 0x10);
+        if (lVar14 == 0x10) goto LAB_140013d3f;
+        uVar26 = (int)uVar28 + 1;
+        uVar20 = SEXT48((int)uVar26);
+        uVar28 = (ulonglong)uVar26;
+    } while (uVar20 < DAT_140033a18);
+}
+```
+
+### IMAGE INTEGRITY CHECK
+
+```c
+uStack1384 = filehandle;
+uStack1376 = 2;
+uStack1424 = uStack1424 & 0xffffffff00000000;
+ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
+ZwClose(filehandle);
+uVar4 = 1;
+if (ntstatus != STATUS_INVALID_IMAGE_HASH)
+{
+    if (ntstatus == STATUS_IMAGE_CERT_EXPIRED)
+    {
+        uVar4 = 2;
+    }
+    else
+    {
+        uVar4 = 3;
+        if (ntstatus != STATUS_IMAGE_CERT_REVOKED)
+            goto LAB_140011e1c;
+    }
+}
+```
+
+# DRIVER INITIALIZATION
+
+### FUNCTION
+
+The driver initialization function exists at the offset `0x1D640` which calls:
+
+- nt!ExAllocatePoolWithTag
+- nt!ExFreePoolWithTag
+- [nt!KeInitializeSpinLock](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L123-L125)
+- [nt!KeInitializeGuardedMutex](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5415-L5418)
+- [nt!PsSetCreateProcessNotifyRoutineEx](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5568-L5571)
+    - See [PROCESS CALLBACKS](#process-callbacks) section about this.
+- [nt!ObRegisterCallbacks](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L6690-L6692)
+- xref: [nt!PsProcessType](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L6589-L6591)
+    - See [OBJECT CALLBACKS](#object-callbacks) section about this.
+
+### POOL ALLOCATION
+
+`ExAllocatePoolWithTag` will be called four times, with `'None' 0x656E6F4E` (default tag defined in `ExAllocatePool` as macro in WDK) tag, and all pools are paged.
+
+```
+1 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x18, Tag:0x656E6F4E
+2 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x28, Tag:0x656E6F4E
+3 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x10, Tag:0x656E6F4E
+4 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x11D00, Tag:0x656E6F4E
+```
+
+1. https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L117
+2. https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L118
+3. https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L126
+4. https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5399
+
+These pool pointers will be contained in [Global Variables](https://github.com/kkent030315/AurumRE#driver-global-variables).
+
+# DRIVER UNLOAD
+
+See full pseudocode at [AurumDriverUnloadPseudocode.c](AurumDriverUnloadPseudocode.c)
 
 # IOCTL
 
@@ -133,6 +227,12 @@ Invalid IOCTL requests will resulted in getting last error code `0xE0000001`.
 ```cpp
 hDevice = CreateFileW(L"\\\\.\\Aurum", ...);
 DeviceIoControl(hDevice, 0x555); // GetLastError:0xE0000001
+```
+
+```c
+LAB_14000e9d5:
+    uStack560 = 0xe0000001;
+    uStack556 = uStack560;
 ```
 
 ### DISPATCH ROUTINES
@@ -192,125 +292,33 @@ Device Object stacks:
 Processed 1 device objects.
 ```
 
-### DeviceIoControl Handler
+### DEVICE IOCTL HANDLER
 
-Now we know that the dispatch routine is at offset `0x14450`.
+Dispatch routine is at offset `0x14450`.   
+See full pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
-```asm
-2: kd> u Aurum+0x14450
-Aurum+0x14450:
-fffff800`74864450 e960deffff      jmp     Aurum+0x122b5 (fffff800`748622b5) ; jmp
-fffff800`74864455 3da7bc1300      cmp     eax,13BCA7h
-fffff800`7486445a 0f84f7a20000    je      Aurum+0x1e757 (fffff800`7486e757)
-fffff800`74864460 e9ffd00200      jmp     Aurum+0x41564 (fffff800`74891564)
-fffff800`74864465 4d0fafc1        imul    r8,r9
-fffff800`74864469 498bc0          mov     rax,r8
-fffff800`7486446c 48c1e820        shr     rax,20h
-fffff800`74864470 493bc3          cmp     rax,r11
+### AURUM_IOCTL_REGISTER_PROCESS
+
+```c
+#define AURUM_IOCTL_REGISTER_PROCESS CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
 ```
 
-```asm
-2: kd> u Aurum+0x122b5
-Aurum+0x122b5:
-fffff800`748622b5 48895c2408      mov     qword ptr [rsp+8],rbx
-fffff800`748622ba 4889742418      mov     qword ptr [rsp+18h],rsi
-fffff800`748622bf 57              push    rdi
-fffff800`748622c0 4154            push    r12
-fffff800`748622c2 4155            push    r13
-fffff800`748622c4 4156            push    r14
-fffff800`748622c6 4157            push    r15
-fffff800`748622c8 4881ec60020000  sub     rsp,260h
+This IOCTL command is to register a process which is desired to protect.  
+IRP caller (IoGetCurrentProcess) will be registered as a protected process.
+
+See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c8cdcd48ed5479164f713/AurumIoctlPseudocode.c#L2039-L2041).
+
+```c
+pcVar8 = (char *)IoGetCurrentProcess();
+...
+LAB_140012b7a:
+    *(char **)(DAT_140033a38 + 8) = pcVar8;
+    irp_2->IoStatus.Information = 8;
 ```
 
-I am seeing this assembly stub on the entire IOCTL control flow over and over.
+# CALLBACKS
 
-<details>
-<summary>Spoiler</summary>
-
-```asm
-.text:000000014001059D                 mov     [rsp+arg_180], rcx
-.text:00000001400105A5                 imul    rcx, 7D0h
-.text:00000001400105AC                 mul     rcx
-.text:00000001400105AF                 mov     rax, rcx
-.text:00000001400105B2                 sub     rax, rdx
-.text:00000001400105B5                 shr     rax, 1
-.text:00000001400105B8                 add     rax, rdx
-.text:00000001400105BB                 shr     rax, 0Bh
-.text:00000001400105BF                 imul    rax, 0E1Bh
-.text:00000001400105C6                 sub     rcx, rax
-.text:00000001400105C9                 imul    rdi, rcx, 0E1Bh
-.text:00000001400105D0                 mov     rax, r11
-.text:00000001400105D3                 mul     rdi
-.text:00000001400105D6                 shr     rdx, 0Ch
-.text:00000001400105DA                 imul    rax, rdx, 1107h
-.text:00000001400105E1                 sub     rdi, rax
-.text:00000001400105E4                 mov     rax, rbx
-.text:00000001400105E7                 mul     rdi
-.text:00000001400105EA                 mov     rax, rdi
-.text:00000001400105ED                 sub     rax, rdx
-.text:00000001400105F0                 shr     rax, 1
-.text:00000001400105F3                 add     rax, rdx
-.text:00000001400105F6                 shr     rax, 6
-.text:00000001400105FA                 imul    rcx, rax, 62h ; 'b'
-.text:00000001400105FE                 mov     rax, 0A0A0A0A0A0A0A0A1h
-.text:0000000140010608                 mul     rdi
-.text:000000014001060B                 shr     rdx, 5
-.text:000000014001060F                 add     rcx, rdx
-.text:0000000140010612                 imul    rax, rcx, 66h ; 'f'
-.text:0000000140010616                 imul    rcx, rdi, 68h ; 'h'
-.text:000000014001061A                 sub     rcx, rax
-.text:000000014001061D                 movzx   eax, word ptr [rcx+rsi+29050h]
-.text:0000000140010625                 imul    rcx, rax, 7D0h
-.text:000000014001062C                 mov     rax, r9
-.text:000000014001062F                 mul     rcx
-.text:0000000140010632                 shr     rdx, 0Bh
-.text:0000000140010636                 imul    rax, rdx, 0C9Dh
-.text:000000014001063D                 sub     rcx, rax
-.text:0000000140010640                 imul    rdi, rcx, 0E35h
-.text:0000000140010647                 mov     rax, r9
-.text:000000014001064A                 mul     rdi
-.text:000000014001064D                 shr     rdx, 0Bh
-.text:0000000140010651                 imul    rax, rdx, 0C9Dh
-.text:0000000140010658                 sub     rdi, rax
-.text:000000014001065B                 mov     rax, r12
-.text:000000014001065E                 mul     rdi
-.text:0000000140010661                 shr     rdx, 7
-.text:0000000140010665                 imul    rcx, rdx, 0F5h ; 'õ'
-.text:000000014001066C                 mov     rax, r14
-.text:000000014001066F                 mul     rdi
-.text:0000000140010672                 shr     rdx, 4
-.text:0000000140010676                 add     rcx, rdx
-.text:0000000140010679                 imul    rax, rcx, 88h ; 'ˆ'
-.text:0000000140010680                 lea     rcx, [rdi+rdi*8]
-.text:0000000140010684                 shl     rcx, 4
-.text:0000000140010688                 sub     rcx, rax
-.text:000000014001068B                 add     rcx, r15
-.text:000000014001068E                 mov     [rsp+ByteOffset], rcx
-.text:0000000140010693                 mov     rdi, [rcx]
-.text:0000000140010696                 mov     rcx, rdi
-.text:0000000140010699                 rol     rcx, 4
-.text:000000014001069D                 mov     rdx, qword ptr [rsp+Length]
-.text:00000001400106A2                 shr     rdx, 20h
-.text:00000001400106A6                 mov     rax, rdx
-.text:00000001400106A9                 and     eax, 4021BAB6h
-.text:00000001400106AE                 mov     [rsp+arg_40], rax
-.text:00000001400106B3                 or      rdx, 4021BAB6h
-.text:00000001400106BA                 sub     rdx, rax
-.text:00000001400106BD                 mov     rax, rcx
-.text:00000001400106C0                 not     rax
-.text:00000001400106C3                 and     rax, 0FFFFFFFFFFFFFFFEh
-.text:00000001400106C7                 add     rax, 2
-.text:00000001400106CB                 add     rax, rcx
-.text:00000001400106CE                 jz      loc_140014F99
-.text:00000001400106D4                 jmp     loc_140017A89
-```
-
-</details>
-
-See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
-See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)
-
-### Object Callbacks
+### OBJECT CALLBACKS
 
 `ObRegisterCallbacks` is called at the initialization phase of the driver.
 
@@ -326,9 +334,37 @@ See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeob
 [DEBUGGER] CallbackRegistration->OperationRegistration[0].PreOperation  : 0xFFFFF8067137D9A0 Aurum+0xd9a0
 ```
 
-No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
+No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.  
+See full pseudocode at [AurumPreObPseudocode.c](AurumPreObPseudocode.c)
 
-### Process Callbacks
+### PROTECTED PROCESS
+
+in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L694),
+
+```c
+  if (probable_process != ob_info->Object) /* Check if the desired process is protected */
+    goto code_r0x000140013d59;
+    
+  ...
+  
+  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore current process, this value would have a pointer of PsInitialSystemProcess */
+  if (probable_process == pcVar7)
+    goto code_r0x000140013d59;
+    
+  code_r0x000140013d59:
+  thunk_FUN_1400164f0(uStack56 ^ (ulonglong)auStack1656);
+  return;
+```
+
+`probable_process` is the pointer of process structe, called `PEPROCESS` in NT, is set from the global variable at the prologue:
+
+```c
+probable_process = *(char **)(DAT_140033a38 + 8);
+```
+
+`Aurum+0x33a38+8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
+
+### PROCESS CALLBACKS
 
 `PsSetCreateProcessNotifyRoutineEx` is called at the initialization phase of the driver as well as object callbacks.
 
@@ -336,4 +372,25 @@ No post operation (because post operation does not have an ability to strip gran
 [DEBUGGER] PsSetCreateProcessNotifyRoutineEx: FFFFF80313374060(Aurum+0x14060) 0
 ```
 
-See disassembly at [AurumProcessCallback.asm](AurumProcessCallback.asm)
+See disassembly at [AurumProcessCallback.asm](AurumProcessCallback.asm)  
+See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPseudocode.c)
+
+# MISCELLANEOUS
+
+### DRIVER GLOBAL VARIABLES
+
+- Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1971
+- Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1813
+- Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
+- Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
+        - Contains ObCallback Protected Process Pointer at offset 0x8
+    - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/ab1a2b8eeeb05a64a32faff2b437c10c2d3ef7b9/AurumPreObPseudocode.c#L411
+- Aurum+0x33a80: PVOID gAurumUnknownPool2 sizeof(0x28)
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1814
+- Aurum+0x33a40: PVOID gAurumUnknownPool3 sizeof(0x10)
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1982
+- Aurum+0x33a28: PVOID gAurumUnknownPool4 sizeof(0x11D00)
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/6def5fba0b05bf7138cc2b15c35754cfe1d4c700/AurumPreObPseudocode.c#L1973
