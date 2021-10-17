@@ -40,7 +40,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   ulonglong *puStack600;
   ulonglong *puStack592;
   longlong lStack584;
-  ulonglong *puStack576;
+  ulonglong *irp_sp_2;
   ulonglong *puStack568;
   uint uStack560;
   uint uStack556;
@@ -48,7 +48,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   undefined auStack544[16];
   undefined uStack528;
   char cStack527;
-  uint uStack524;
+  uint minor_function;
   byte bStack520;
   char *pcStack512;
   ulonglong uStack504;
@@ -141,12 +141,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                      uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
           uVar12 = *puStack592;
           uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-          puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x7d2d664a);
-          uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x7d2d664a) - (longlong)puStack576;
+          irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x7d2d664a);
+          uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x7d2d664a) - (longlong)irp_sp_2;
           if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
             break;
           if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x7d2d664a00000000) -
-                   ((longlong)puStack576 << 0x20) |
+                   ((longlong)irp_sp_2 << 0x20) |
                uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
             goto LAB_1400127c3;
           puStack600 = (ulonglong *)((uVar12 - 1) +
@@ -180,12 +180,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                          uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
               uVar12 = *puStack592;
               uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-              puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xc8e41653);
-              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xc8e41653) - (longlong)puStack576;
+              irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xc8e41653);
+              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xc8e41653) - (longlong)irp_sp_2;
               if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                 break;
               if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xc8e4165300000000) -
-                       ((longlong)puStack576 << 0x20) |
+                       ((longlong)irp_sp_2 << 0x20) |
                    uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                 goto LAB_1400127c3;
               puStack600 = (ulonglong *)((uVar12 - 1) +
@@ -216,12 +216,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                            uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                 uVar12 = *puStack592;
                 uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xa961f610);
-                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xa961f610) - (longlong)puStack576;
+                irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xa961f610);
+                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xa961f610) - (longlong)irp_sp_2;
                 if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                   break;
                 if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xa961f61000000000) -
-                         ((longlong)puStack576 << 0x20) |
+                         ((longlong)irp_sp_2 << 0x20) |
                      uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                   goto LAB_1400127c3;
                 puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) -
@@ -254,12 +254,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                              uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                   uVar12 = *puStack592;
                   uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                  puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x568f71bd);
-                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x568f71bd) - (longlong)puStack576;
+                  irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x568f71bd);
+                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x568f71bd) - (longlong)irp_sp_2;
                   if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                     break;
                   if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x568f71bd00000000) -
-                           ((longlong)puStack576 << 0x20) |
+                           ((longlong)irp_sp_2 << 0x20) |
                        uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                     goto LAB_1400127c3;
                   puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) -
@@ -291,12 +291,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                     uVar12 = *puStack592;
                     uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                    puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x50a70b50);
-                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x50a70b50) - (longlong)puStack576;
+                    irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x50a70b50);
+                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x50a70b50) - (longlong)irp_sp_2;
                     if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                       break;
                     if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x50a70b5000000000) -
-                             ((longlong)puStack576 << 0x20) |
+                             ((longlong)irp_sp_2 << 0x20) |
                          uVar12 << 0x20) ==
                         (uVar22 & uVar12) << 0x20)
                       goto LAB_1400127c3;
@@ -330,12 +330,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                  uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                       uVar12 = *puStack592;
                       uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                      puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xe2a99c94);
-                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xe2a99c94) - (longlong)puStack576;
+                      irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xe2a99c94);
+                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xe2a99c94) - (longlong)irp_sp_2;
                       if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                         break;
                       if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xe2a99c9400000000) -
-                               ((longlong)puStack576 << 0x20) |
+                               ((longlong)irp_sp_2 << 0x20) |
                            uVar12 << 0x20) ==
                           (uVar12 & uVar22) << 0x20)
                         goto LAB_1400127c3;
@@ -371,12 +371,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                    ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                         uVar12 = *puStack592;
                         uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                        puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x6573c2d0);
-                        uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x6573c2d0) - (longlong)puStack576;
+                        irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x6573c2d0);
+                        uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x6573c2d0) - (longlong)irp_sp_2;
                         if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                           break;
                         if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x6573c2d000000000) -
-                                 ((longlong)puStack576 << 0x20) |
+                                 ((longlong)irp_sp_2 << 0x20) |
                              uVar12 << 0x20) ==
                             (uVar12 & uVar22) << 0x20)
                           goto LAB_1400127c3;
@@ -411,13 +411,13 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                      ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                           uVar12 = *puStack592;
                           uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                          puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x43f83d14);
+                          irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x43f83d14);
                           uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x43f83d14) -
-                                   (longlong)puStack576;
+                                   (longlong)irp_sp_2;
                           if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                             break;
                           if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x43f83d1400000000) -
-                                   ((longlong)puStack576 << 0x20) |
+                                   ((longlong)irp_sp_2 << 0x20) |
                                uVar12 << 0x20) ==
                               (uVar12 & uVar22) << 0x20)
                             goto LAB_1400127c3;
@@ -451,13 +451,13 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                      ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                           uVar12 = *puStack592;
                           uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                          puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x43706c31);
+                          irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x43706c31);
                           uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x43706c31) -
-                                   (longlong)puStack576;
+                                   (longlong)irp_sp_2;
                           if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                             break;
                           if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x43706c3100000000) -
-                                   ((longlong)puStack576 << 0x20) |
+                                   ((longlong)irp_sp_2 << 0x20) |
                                uVar12 << 0x20) ==
                               (uVar12 & uVar22) << 0x20)
                             goto LAB_1400127c3;
@@ -498,12 +498,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                          uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
               uVar12 = *puStack592;
               uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-              puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xf9736436);
-              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xf9736436) - (longlong)puStack576;
+              irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xf9736436);
+              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xf9736436) - (longlong)irp_sp_2;
               if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                 break;
               if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xf973643600000000) -
-                       ((longlong)puStack576 << 0x20) |
+                       ((longlong)irp_sp_2 << 0x20) |
                    uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
                 goto LAB_1400127c3;
               puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) - (~(ulonglong)puStack600 | uVar12)) - (longlong)puStack600) + -1 + uVar12);
@@ -533,12 +533,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                            uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                 uVar12 = *puStack592;
                 uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xe6f6b898);
-                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xe6f6b898) - (longlong)puStack576;
+                irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xe6f6b898);
+                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xe6f6b898) - (longlong)irp_sp_2;
                 if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                   break;
                 if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xe6f6b89800000000) -
-                         ((longlong)puStack576 << 0x20) |
+                         ((longlong)irp_sp_2 << 0x20) |
                      uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
                   goto LAB_1400127c3;
                 puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) -
@@ -572,12 +572,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                              uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                   uVar12 = *puStack592;
                   uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                  puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0x9f97637a);
-                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x9f97637a) - (longlong)puStack576;
+                  irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0x9f97637a);
+                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x9f97637a) - (longlong)irp_sp_2;
                   if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                     break;
                   if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x9f97637a00000000) -
-                           ((longlong)puStack576 << 0x20) |
+                           ((longlong)irp_sp_2 << 0x20) |
                        uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
                     goto LAB_1400127c3;
                   puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) -
@@ -609,12 +609,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                     uVar12 = *puStack592;
                     uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                    puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x57b98901);
-                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x57b98901) - (longlong)puStack576;
+                    irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x57b98901);
+                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x57b98901) - (longlong)irp_sp_2;
                     if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                       break;
                     if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x57b9890100000000) -
-                             ((longlong)puStack576 << 0x20) |
+                             ((longlong)irp_sp_2 << 0x20) |
                          uVar12 << 0x20) ==
                         (uVar12 & uVar22) << 0x20)
                       goto LAB_1400127c3;
@@ -646,12 +646,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                  uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                       uVar12 = *puStack592;
                       uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                      puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5257c4c4);
-                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5257c4c4) - (longlong)puStack576;
+                      irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5257c4c4);
+                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5257c4c4) - (longlong)irp_sp_2;
                       if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                         break;
                       if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x5257c4c400000000) -
-                               ((longlong)puStack576 << 0x20) |
+                               ((longlong)irp_sp_2 << 0x20) |
                            uVar12 << 0x20) ==
                           (uVar12 & uVar22) << 0x20)
                         goto LAB_1400127c3;
@@ -682,12 +682,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                  uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                       uVar12 = *puStack592;
                       uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                      puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xa7db1bfb);
-                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xa7db1bfb) - (longlong)puStack576;
+                      irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xa7db1bfb);
+                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xa7db1bfb) - (longlong)irp_sp_2;
                       if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                         break;
                       if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xa7db1bfb00000000) -
-                               ((longlong)puStack576 << 0x20) |
+                               ((longlong)irp_sp_2 << 0x20) |
                            uVar12 << 0x20) ==
                           (uVar22 & uVar12) << 0x20)
                         goto LAB_1400127c3;
@@ -728,12 +728,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                        uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
             uVar12 = *puStack592;
             uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-            puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x48263782);
-            uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x48263782) - (longlong)puStack576;
+            irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x48263782);
+            uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x48263782) - (longlong)irp_sp_2;
             if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
               break;
             if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x4826378200000000) -
-                     ((longlong)puStack576 << 0x20) |
+                     ((longlong)irp_sp_2 << 0x20) |
                  uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
               goto LAB_1400127c3;
             puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) - (~(ulonglong)puStack600 | uVar12)) -
@@ -765,12 +765,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                          uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
               uVar12 = *puStack592;
               uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-              puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xed538de2);
-              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xed538de2) - (longlong)puStack576;
+              irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xed538de2);
+              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xed538de2) - (longlong)irp_sp_2;
               if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                 break;
               if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xed538de200000000) -
-                       ((longlong)puStack576 << 0x20) |
+                       ((longlong)irp_sp_2 << 0x20) |
                    uVar12 << 0x20) == (uVar12 & uVar22) << 0x20)
                 goto LAB_1400127c3;
               puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) - (~(ulonglong)puStack600 | uVar12)) - (longlong)puStack600) + -1 + uVar12);
@@ -799,12 +799,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                            uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                 uVar12 = *puStack592;
                 uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5fc2efb3);
-                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5fc2efb3) - (longlong)puStack576;
+                irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5fc2efb3);
+                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5fc2efb3) - (longlong)irp_sp_2;
                 if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                   break;
                 if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x5fc2efb300000000) -
-                         ((longlong)puStack576 << 0x20) |
+                         ((longlong)irp_sp_2 << 0x20) |
                      uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                   goto LAB_1400127c3;
                 puStack600 = (ulonglong *)((uVar12 - 1) +
@@ -838,12 +838,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                              uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                   uVar12 = *puStack592;
                   uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                  puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xb2c41b84);
-                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xb2c41b84) - (longlong)puStack576;
+                  irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xb2c41b84);
+                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xb2c41b84) - (longlong)irp_sp_2;
                   if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                     break;
                   if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xb2c41b8400000000) -
-                           ((longlong)puStack576 << 0x20) |
+                           ((longlong)irp_sp_2 << 0x20) |
                        uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                     goto LAB_1400127c3;
                   puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) -
@@ -876,12 +876,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                     uVar12 = *puStack592;
                     uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                    puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xd00daa9f);
-                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xd00daa9f) - (longlong)puStack576;
+                    irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xd00daa9f);
+                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xd00daa9f) - (longlong)irp_sp_2;
                     if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                       break;
                     if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xd00daa9f00000000) -
-                             ((longlong)puStack576 << 0x20) |
+                             ((longlong)irp_sp_2 << 0x20) |
                          uVar12 << 0x20) ==
                         (uVar12 & uVar22) << 0x20)
                       goto LAB_1400127c3;
@@ -914,12 +914,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                  uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                       uVar12 = *puStack592;
                       uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                      puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x2d93783);
-                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x2d93783) - (longlong)puStack576;
+                      irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x2d93783);
+                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x2d93783) - (longlong)irp_sp_2;
                       if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                         break;
                       if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x2d9378300000000) -
-                               ((longlong)puStack576 << 0x20) |
+                               ((longlong)irp_sp_2 << 0x20) |
                            uVar12 << 0x20) ==
                           (uVar12 & uVar22) << 0x20)
                         goto LAB_1400127c3;
@@ -949,12 +949,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                  uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                       uVar12 = *puStack592;
                       uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                      puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5e7f69b8);
-                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5e7f69b8) - (longlong)puStack576;
+                      irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x5e7f69b8);
+                      uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x5e7f69b8) - (longlong)irp_sp_2;
                       if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                         break;
                       if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x5e7f69b800000000) -
-                               ((longlong)puStack576 << 0x20) |
+                               ((longlong)irp_sp_2 << 0x20) |
                            uVar12 << 0x20) ==
                           (uVar12 & uVar22) << 0x20)
                         goto LAB_1400127c3;
@@ -992,12 +992,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                        uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
             uVar12 = *puStack592;
             uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-            puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x17326a2e);
-            uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x17326a2e) - (longlong)puStack576;
+            irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x17326a2e);
+            uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x17326a2e) - (longlong)irp_sp_2;
             if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
               break;
             if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x17326a2e00000000) -
-                     ((longlong)puStack576 << 0x20) |
+                     ((longlong)irp_sp_2 << 0x20) |
                  uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
               goto LAB_1400127c3;
             puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) - (~(ulonglong)puStack600 | uVar12)) -
@@ -1037,12 +1037,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                          uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
               uVar12 = *puStack592;
               uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-              puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x16b0524d);
-              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x16b0524d) - (longlong)puStack576;
+              irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x16b0524d);
+              uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x16b0524d) - (longlong)irp_sp_2;
               if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                 break;
               if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x16b0524d00000000) -
-                       ((longlong)puStack576 << 0x20) |
+                       ((longlong)irp_sp_2 << 0x20) |
                    uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                 goto LAB_1400127c3;
               puStack600 = (ulonglong *)((((~uVar12 & (ulonglong)puStack600) - (~(ulonglong)puStack600 | uVar12)) - (longlong)puStack600) + -1 + uVar12);
@@ -1072,12 +1072,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                            uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                 uVar12 = *puStack592;
                 uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xd84e2215);
-                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xd84e2215) - (longlong)puStack576;
+                irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0xd84e2215);
+                uVar22 = ((ulonglong)puStack600 >> 0x20 | 0xd84e2215) - (longlong)irp_sp_2;
                 if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                   break;
                 if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0xd84e221500000000) -
-                         ((longlong)puStack576 << 0x20) |
+                         ((longlong)irp_sp_2 << 0x20) |
                      uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                   goto LAB_1400127c3;
                 puStack600 = (ulonglong *)((uVar12 - 1) +
@@ -1107,12 +1107,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                              uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                   uVar12 = *puStack592;
                   uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                  puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x4021bab6);
-                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x4021bab6) - (longlong)puStack576;
+                  irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x4021bab6);
+                  uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x4021bab6) - (longlong)irp_sp_2;
                   if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                     break;
                   if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x4021bab600000000) -
-                           ((longlong)puStack576 << 0x20) |
+                           ((longlong)irp_sp_2 << 0x20) |
                        uVar12 << 0x20) == (uVar22 & uVar12) << 0x20)
                     goto LAB_1400127c3;
                   puStack600 = (ulonglong *)((uVar12 - 1) +
@@ -1143,12 +1143,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                     uVar12 = *puStack592;
                     uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                    puStack576 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x7b9b1527);
-                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x7b9b1527) - (longlong)puStack576;
+                    irp_sp_2 = (ulonglong *)(ulonglong)((uint)((ulonglong)puStack600 >> 0x20) & 0x7b9b1527);
+                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x7b9b1527) - (longlong)irp_sp_2;
                     if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                       break;
                     if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x7b9b152700000000) -
-                             ((longlong)puStack576 << 0x20) |
+                             ((longlong)irp_sp_2 << 0x20) |
                          uVar12 << 0x20) ==
                         (uVar12 & uVar22) << 0x20)
                       goto LAB_1400127c3;
@@ -1179,12 +1179,12 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                                                uVar12 * 0x90 + ((uVar12 / 0xf5) * 0xf5 + uVar12 / 0x11) * -0x88);
                     uVar12 = *puStack592;
                     uVar13 = uVar12 << 4 | uVar12 >> 0x3c;
-                    puStack576 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0x99e15c84);
-                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x99e15c84) - (longlong)puStack576;
+                    irp_sp_2 = (ulonglong *)((ulonglong)puStack600 >> 0x20 & 0x99e15c84);
+                    uVar22 = ((ulonglong)puStack600 >> 0x20 | 0x99e15c84) - (longlong)irp_sp_2;
                     if ((~uVar13 & 0xfffffffffffffffe) + 2 + uVar13 == 0)
                       break;
                     if ((((ulonglong)puStack600 & 0xffffffff00000000 | 0x99e15c8400000000) -
-                             ((longlong)puStack576 << 0x20) |
+                             ((longlong)irp_sp_2 << 0x20) |
                          uVar12 << 0x20) ==
                         (uVar12 & uVar22) << 0x20)
                       goto LAB_1400127c3;
@@ -1216,10 +1216,10 @@ LAB_1400127c3:
     goto LAB_14001a24a;
   uStack560 = 0xe0000001;
   uStack556 = 0xe0000001;
-  *(undefined8 *)(irp + 0x38) = 0;
-  puStack576 = *(ulonglong **)(irp + 0xb8);
-  uStack524 = *(uint *)(puStack576 + 2);
-  if (uStack524 < 0x14)
+  *(undefined8 *)(irp + 0x38) = 0;          // irp->IoStatus.Information = 0;
+  irp_sp_2 = *(ulonglong **)(irp + 0xb8);   // irp->Tail.Overlay.CurrentStackLocation
+  minor_function = *(uint *)(irp_sp_2 + 2); // irp_sp_2->MinorFunction
+  if (minor_function < 0x14)
   {
     if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
     {
@@ -1234,12 +1234,12 @@ LAB_1400127c3:
                                    uVar13 * 0x90 + ((uVar13 / 0xf5) * 0xf5 + uVar13 / 0x11) * -0x88);
         uVar13 = *puStack592;
         uVar22 = uVar13 << 4 | uVar13 >> 0x3c;
-        puStack576 = (ulonglong *)(ulonglong)((uint)(uVar12 >> 0x20) & 0x25b416cf);
-        uVar14 = (uVar12 >> 0x20 | 0x25b416cf) - (longlong)puStack576;
+        irp_sp_2 = (ulonglong *)(ulonglong)((uint)(uVar12 >> 0x20) & 0x25b416cf);
+        uVar14 = (uVar12 >> 0x20 | 0x25b416cf) - (longlong)irp_sp_2;
         lStack224 = lVar11;
         if ((~uVar22 & 0xfffffffffffffffe) + 2 + uVar22 == 0)
           break;
-        if (((uVar12 & 0xffffffff00000000 | 0x25b416cf00000000) - ((longlong)puStack576 << 0x20) |
+        if (((uVar12 & 0xffffffff00000000 | 0x25b416cf00000000) - ((longlong)irp_sp_2 << 0x20) |
              uVar13 << 0x20) == (uVar14 & uVar13) << 0x20)
           goto LAB_140018470;
         uVar12 = (uVar13 - 1) + (((~uVar13 & uVar12) - (~uVar12 | uVar13)) - uVar12);
@@ -1253,7 +1253,7 @@ LAB_1400127c3:
     uStack480 = 0xe0000001;
     goto LAB_14001a24a;
   }
-  if (*(int *)(puStack576 + 3) == -0x7ffedffc)
+  if (*(int *)(irp_sp_2 + 3) == -0x7ffedffc)
   {
     puStack440 = *(ulonglong **)(irp + 0x18);
     _auStack72 = ZEXT816(0);
@@ -1279,7 +1279,7 @@ LAB_1400127c3:
               0xb);
     uVar22 = ~uVar13 ^ uVar12;
     auStack544 = CONCAT88(uVar22, uVar12);
-    uStack448 = (ulonglong)uStack524;
+    uStack448 = (ulonglong)minor_function;
     irp_sp = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
                            uVar12 >> 0x10 & 0xff)
                               << 8 |
@@ -1911,7 +1911,7 @@ LAB_1400127c3:
       else
       {
         puVar21 = (ulonglong *)((longlong)puStack440 - uStack552);
-        for (uVar12 = (ulonglong)uStack524; uVar12 != 0; uVar12 = uVar12 - 1)
+        for (uVar12 = (ulonglong)minor_function; uVar12 != 0; uVar12 = uVar12 - 1)
         {
           *(undefined *)puVar21 = 0;
           puVar21 = (ulonglong *)((longlong)puVar21 + 1);
@@ -2166,7 +2166,7 @@ LAB_1400127c3:
                 DAT_140033a40[2] = uStack432;
                 uVar20 = uStack456;
                 uVar19 = uStack560;
-                uStack524 = uStack432;
+                minor_function = uStack432;
               }
               if ((uint)uStack472 < uVar20)
               {
@@ -2424,7 +2424,7 @@ LAB_1400127c3:
                                  uStack58),
                         uStack57);
       puStack592 = puStack96 + 2;
-      if (puStack592 <= (ulonglong *)(ulonglong) * (uint *)(puStack576 + 1))
+      if (puStack592 <= (ulonglong *)(ulonglong) * (uint *)(irp_sp_2 + 1))
       {
         uVar14 = uVar13 ^ 0x80400c0600000000;
         uVar22 = uStack464 ^ (ulonglong)irp_sp ^ 0xf0;
@@ -2778,14 +2778,14 @@ LAB_1400127c3:
         while (true)
         {
           cStack527 = (char)puVar21;
-          puStack576 = (ulonglong *)((longlong)puStack168 + 1);
+          irp_sp_2 = (ulonglong *)((longlong)puStack168 + 1);
           if (puStack96 <= puVar21)
             break;
           mj_function = ('\a' - cStack527) * '\b';
           uVar24 = uVar24 ^ (ulonglong) * (byte *)puStack168 << (mj_function & 0x3f);
           *(char *)puStack168 = (char)(uVar24 >> (mj_function & 0x3f));
           puVar21 = (ulonglong *)(ulonglong)(byte)(cStack527 + 1);
-          puStack168 = puStack576;
+          puStack168 = irp_sp_2;
         }
         uStack552 = uStack552 ^ (ulonglong)irp_sp;
         uVar24 = uVar24 ^ uVar13;
@@ -2999,7 +2999,7 @@ LAB_1400127c3:
         uVar12 = (uVar13 >> 7 | (uVar15 >> 10) << 0x39) ^ uVar15 ^ uVar13 ^ (ulonglong)irp_sp;
         uVar13 = (uVar22 >> 0x22 | (uVar24 >> 7) << 0x1e) ^ uVar24 ^ uVar22 ^ uStack464;
         *(char *)puStack168 = (char)(uVar12 >> 0x38);
-        *(char *)puStack576 = (char)(uVar12 >> 0x30);
+        *(char *)irp_sp_2 = (char)(uVar12 >> 0x30);
         *(char *)((longlong)puStack168 + 2) = (char)(uVar12 >> 0x28);
         *(char *)((longlong)puStack168 + 3) = (char)(uVar12 >> 0x20);
         *(char *)((longlong)puStack168 + 4) = (char)(uVar12 >> 0x18);
@@ -3036,12 +3036,12 @@ LAB_1400127c3:
                                    uVar13 * 0x90 + ((uVar13 / 0xf5) * 0xf5 + uVar13 / 0x11) * -0x88);
         uVar13 = *puStack592;
         uVar22 = uVar13 << 4 | uVar13 >> 0x3c;
-        puStack576 = (ulonglong *)(ulonglong)((uint)(uVar12 >> 0x20) & 0x6f735d2c);
-        uVar14 = (uVar12 >> 0x20 | 0x6f735d2c) - (longlong)puStack576;
+        irp_sp_2 = (ulonglong *)(ulonglong)((uint)(uVar12 >> 0x20) & 0x6f735d2c);
+        uVar14 = (uVar12 >> 0x20 | 0x6f735d2c) - (longlong)irp_sp_2;
         lStack160 = lVar11;
         if ((~uVar22 & 0xfffffffffffffffe) + 2 + uVar22 == 0)
           break;
-        if (((uVar12 & 0xffffffff00000000 | 0x6f735d2c00000000) - ((longlong)puStack576 << 0x20) |
+        if (((uVar12 & 0xffffffff00000000 | 0x6f735d2c00000000) - ((longlong)irp_sp_2 << 0x20) |
              uVar13 << 0x20) == (uVar13 & uVar14) << 0x20)
           goto LAB_14001d5dc;
         uVar12 = (uVar13 - 1) + (((~uVar13 & uVar12) - (~uVar12 | uVar13)) - uVar12);
