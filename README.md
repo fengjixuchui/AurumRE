@@ -139,7 +139,7 @@ No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low 
 
 Dumped live memory of entire driver image but couldn't find any useful information like strings expanded at the runtime.
 
-## POOL TAG
+### POOL TAG
 
 Pool tags are seem not defined.
 
