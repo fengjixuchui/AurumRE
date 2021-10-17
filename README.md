@@ -1,6 +1,10 @@
 # AurumRE
 Reverse engineering of Aurum Ricochet anti-cheat driver
 
+### DISCLAIMER
+
+I am trying my best however informations at this repository may be not accurate.
+
 ### CONTRIBUTION
 
 Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.  
