@@ -153,6 +153,21 @@ if (puVar7 != (undefined8 *)0x0)
 }
 ```
 
+# DRIVER INITIALIZATION
+
+### FUNCTION
+
+The driver initialization function exists at the offset `0x1D640` which calls:
+
+- nt!ExAllocatePoolWithTag
+- nt!ExFreePoolWithTag
+- [nt!KeInitializeSpinLock](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L123-L125)
+- [nt!KeInitializeGuardedMutex](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5415-L5418)
+- [nt!PsSetCreateProcessNotifyRoutineEx](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5568-L5571)
+- [nt!ObRegisterCallbacks](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L6690-L6692)
+- xref: [nt!PsProcessType](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L6589-L6591)
+    - See [OBJECT CALLBACKS](#object-callbacks) section about this.
+
 # IOCTL
 
 ### DEVICE
