@@ -447,7 +447,7 @@ See full pseudocode at [AurumPreObPseudocode.c](AurumPreObPseudocode.c)
 ### PROTECTED PROCESS
 
 How Aurum acknowledges if the handle-opening process is the process to protect?  
-Firstly, in the PreObCallback,
+Firstly, in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L694),
 
 ```c
   if (probable_process != ob_info->Object) /* Check if the desired process is protected */
