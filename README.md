@@ -137,6 +137,22 @@ No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low 
 
 Dumped live memory of entire driver image but couldn't find any useful information like strings expanded at the runtime.
 
+## POOL TAG
+
+Pool tags are seem not defined.
+
+```c
+puVar7 = (undefined8 *)ExAllocatePoolWithTag(0, uVar12, 'None');
+if (puVar7 != (undefined8 *)0x0)
+{
+    thunk_FUN_14001504b(puVar7, puVar18 + 1, uVar12);
+    KeAcquireGuardedMutex(&DAT_140033a48);
+    ExFreePoolWithTag(DAT_140033a80);
+    DAT_140033a80 = puVar7;
+    goto LAB_14001a514;
+}
+```
+
 # IOCTL
 
 ### DEVICE
