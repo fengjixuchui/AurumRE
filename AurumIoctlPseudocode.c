@@ -1253,9 +1253,9 @@ LAB_1400127c3:
     uStack480 = 0xe0000001;
     goto LAB_14001a24a;
   }
-  if (irp_sp_2->Control == -0x7ffedffc)
+  if (irp_sp_2->Control == 0x80012004)
   {
-    puStack440 = *(ulonglong **)(irp + 0x18);
+    puStack440 = *(ulonglong **)(irp + 0x18); // irp->AssociatedIrp.SystemBuffer
     _auStack72 = ZEXT816(0);
     auStack544 = ZEXT816(0);
     puVar23 = auStack72;
