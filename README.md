@@ -447,6 +447,8 @@ Indeed, the IRP caller (IoGetCurrentProcess) will be registered.
 See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c8cdcd48ed5479164f713/AurumIoctlPseudocode.c#L2039-L2041).
 
 ```c
+pcVar8 = (char *)IoGetCurrentProcess();
+...
 LAB_140012b7a:
     *(char **)(DAT_140033a38 + 8) = pcVar8;
     irp_2->IoStatus.Information = 8;
