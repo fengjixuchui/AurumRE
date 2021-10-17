@@ -405,3 +405,4 @@ See disassembly at [AurumProcessCallback.asm](AurumProcessCallback.asm)
 - Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
 - Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
+- Aurum+0x33a40: PVOID gAurumUnknownPool1
