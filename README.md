@@ -407,6 +407,8 @@ See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
 No post operation (because post operation does not have an ability to strip granted-access mask of the handle) and no context.
 
+See full pseudocode at [AurumPreObPseudocode.c](AurumPreObPseudocode.c)
+
 ### PROCESS CALLBACKS
 
 `PsSetCreateProcessNotifyRoutineEx` is called at the initialization phase of the driver as well as object callbacks.
