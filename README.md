@@ -426,6 +426,7 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
 - Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
 - Aurum+0x33a38: PVOID gAurumUnknownPool1
+    - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
 - Aurum+0x33a80: PVOID gAurumUnknownPool2
 - Aurum+0x33a40: PVOID gAurumUnknownPool3
 - Aurum+0x33a28: PVOID gAurumUnknownPool4
