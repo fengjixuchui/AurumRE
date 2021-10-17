@@ -2017,10 +2017,11 @@ LAB_14000e4e7:
   }
   else
   {
+    /* ZwCreateFile Failed */
     uStack1384 = filehandle;
     uStack1376 = 2;
     uStack1424 = uStack1424 & 0xffffffff00000000;
-    ntstatus = ZwQuerySystemInformation(0xb7, &uStack1384);
+    ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
     ZwClose(filehandle);
     uVar4 = 1;
     if (ntstatus != -0x3ffffbd8)
