@@ -445,7 +445,7 @@ See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c
 ```c
 LAB_140012b7a:
     *(char **)(DAT_140033a38 + 8) = pcVar8;
-    *(undefined8 *)(irp_2 + 0x38) = 8;
+    irp_2->IoStatus.Information = 8;
 ```
 
 # CALLBACKS
