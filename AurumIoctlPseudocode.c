@@ -39,7 +39,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   ulonglong uStack608;
   ulonglong *puStack600;
   ulonglong *puStack592;
-  longlong lStack584;
+  longlong irp_2;
   ulonglong *irp_sp_2;
   ulonglong *puStack568;
   uint uStack560;
@@ -1210,7 +1210,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   }
 LAB_1400127c3:
   uVar12 = 0xaa2d145923ec7f30;
-  lStack584 = irp;
+  irp_2 = irp;
   lStack88 = irp;
   if (*irp_sp != 0xe)
     goto LAB_14001a24a;
@@ -1253,7 +1253,7 @@ LAB_1400127c3:
     uStack480 = 0xe0000001;
     goto LAB_14001a24a;
   }
-  if (*(int *)(irp_sp_2 + 3) == -0x7ffedffc)
+  if (irp_sp_2->Control == -0x7ffedffc)
   {
     puStack440 = *(ulonglong **)(irp + 0x18);
     _auStack72 = ZEXT816(0);
@@ -1926,7 +1926,7 @@ LAB_1400127c3:
       iVar10 = *(int *)puVar18;
       if (iVar10 == 0x23f931ac)
       {
-        if (0xf < *(uint *)(*(longlong *)(lStack584 + 0xb8) + 8))
+        if (0xf < irp_2->Tail.Overlay.CurrentStackLocation->SecurityContext)
         {
           if (puVar18[1] == 0x943dc9fa3fb97c84)
           {
@@ -2038,7 +2038,7 @@ LAB_1400127c3:
             }
           LAB_140012b7a:
             *(char **)(DAT_140033a38 + 8) = pcVar8;
-            *(undefined8 *)(lStack584 + 0x38) = 8;
+            *(undefined8 *)(irp_2 + 0x38) = 8;
           LAB_140016da5:
             uStack560 = 0x20000000;
             uStack556 = uStack560;
@@ -2084,7 +2084,7 @@ LAB_1400127c3:
         if (iVar10 == 0x7f1943eb)
         {
           uStack528 = KeAcquireSpinLockRaiseToDpc();
-          uVar20 = *(uint *)(*(longlong *)(lStack584 + 0xb8) + 8);
+          uVar20 = *(uint *)(*(longlong *)(irp_2 + 0xb8) + 8);
           uVar17 = *DAT_140033a40;
           uStack472 = uStack472 & 0xffffffff00000000 | (ulonglong)uVar17;
           uVar19 = uVar17 * 4 + 0x14;
@@ -2182,7 +2182,7 @@ LAB_1400127c3:
                 puVar18 = (ulonglong *)(ulonglong)uStack428;
               }
               *(uint *)puStack600 = uVar20;
-              *(ulonglong *)(lStack584 + 0x38) = (ulonglong)uVar19;
+              *(ulonglong *)(irp_2 + 0x38) = (ulonglong)uVar19;
               puVar23 = (undefined *)puStack568;
               for (lVar11 = (longlong)irp_sp; lVar11 != 0; lVar11 = lVar11 + -1)
               {
@@ -2260,15 +2260,15 @@ LAB_1400127c3:
           if (iVar10 == -0x6808af4f)
           {
             KeAcquireGuardedMutex();
-            lVar11 = lStack584;
-            uVar19 = *(uint *)(*(longlong *)(lStack584 + 0xb8) + 8);
+            lVar11 = irp_2;
+            uVar19 = *(uint *)(*(longlong *)(irp_2 + 0xb8) + 8);
             uVar17 = (int)DAT_140033a18 * 0x23a + 0x10;
             if ((uVar19 != 0) && (uVar17 <= uVar19))
             {
               if (DAT_140033a28 != (undefined8 *)0x0)
               {
                 uVar12 = DAT_140033a18 * 0x23a;
-                thunk_FUN_14001504b(*(undefined8 **)(lStack584 + 0x18), DAT_140033a28, uVar12);
+                thunk_FUN_14001504b(*(undefined8 **)(irp_2 + 0x18), DAT_140033a28, uVar12);
                 *(ulonglong *)(lVar11 + 0x38) = uVar12;
                 DAT_140033a18 = 0;
                 puVar7 = DAT_140033a28;
@@ -2329,7 +2329,7 @@ LAB_1400127c3:
               if (0x1000 < uVar12)
                 goto LAB_14000e9d5;
               uVar12 = uVar12 << 4;
-              puVar7 = (undefined8 *)ExAllocatePoolWithTag(0, uVar12, 0x656e6f4e);
+              puVar7 = (undefined8 *)ExAllocatePoolWithTag(0, uVar12, 'None');
               if (puVar7 != (undefined8 *)0x0)
               {
                 thunk_FUN_14001504b(puVar7, puVar18 + 1, uVar12);
@@ -2387,7 +2387,7 @@ LAB_1400127c3:
                 0xb);
       uVar13 = ~auStack72._0_8_ ^ uVar12;
       auStack544 = CONCAT88(uVar13, uVar12);
-      puStack96 = *(ulonglong **)(lStack584 + 0x38);
+      puStack96 = *(ulonglong **)(irp_2 + 0x38);
       puStack168 = puStack600;
       irp_sp = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
                              uVar12 >> 0x10 & 0xff)
@@ -3016,7 +3016,7 @@ LAB_1400127c3:
         *(char *)((longlong)puStack168 + 0xf) = (char)uVar13;
         puVar21 = puStack592;
       }
-      *(ulonglong **)(lStack584 + 0x38) = puVar21;
+      *(ulonglong **)(irp_2 + 0x38) = puVar21;
       puStack600 = puStack168;
       puStack568 = puStack96;
     }
@@ -3055,8 +3055,8 @@ LAB_1400127c3:
 LAB_14001d5dc:
   uStack480 = uStack560;
 LAB_14001a24a:
-  *(uint *)(lStack584 + 0x30) = uStack480;
-  IofCompleteRequest(lStack584, 0);
+  *(uint *)(irp_2 + 0x30) = uStack480;
+  IofCompleteRequest(irp_2, 0);
   thunk_FUN_1400164f0(uStack56 ^ (ulonglong)auStack648);
   return;
 }
