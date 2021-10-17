@@ -452,6 +452,12 @@ Firstly, in the PreObCallback at line [here](https://github.com/kkent030315/Auru
 ```c
   if (probable_process != ob_info->Object) /* Check if the desired process is protected */
     goto code_r0x000140013d59;
+    
+  ...
+  
+  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore current process, this value would have a pointer of ntoskrnl.exe(4) */
+  if (probable_process == pcVar7)
+    goto code_r0x000140013d59;
 ```
 
 `probable_process` is the pointer of process structe, called `PEPROCESS` in NT, is set from the global variable at the prologue:
