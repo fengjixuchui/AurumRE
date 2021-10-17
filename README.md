@@ -257,6 +257,12 @@ hDevice = CreateFileW(L"\\\\.\\Aurum", ...);
 DeviceIoControl(hDevice, 0x555); // GetLastError:0xE0000001
 ```
 
+```c
+LAB_14000e9d5:
+    uStack560 = 0xe0000001;
+    uStack556 = uStack560;
+```
+
 ### DISPATCH ROUTINES
 
 ```
