@@ -167,6 +167,10 @@ if (DAT_140033a18 != 0) {
 }
 ```
 
+### SYSTEM INTEGRITY CHECKS
+
+### TESTSIGN MODE CHECK
+
 `ZwQuerySystemInformation` is used to query [`SystemCodeIntegrityCertificateInformation`](https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L2024).
 
 ```
