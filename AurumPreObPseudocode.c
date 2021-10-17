@@ -2023,16 +2023,16 @@ LAB_14000e4e7:
     ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
     ZwClose(filehandle);
     uVar4 = 1;
-    if (ntstatus != -0x3ffffbd8)
+    if (ntstatus != STATUS_INVALID_IMAGE_HASH)
     {
-      if (ntstatus == -0x3ffff9fb)
+      if (ntstatus == STATUS_IMAGE_CERT_EXPIRED)
       {
         uVar4 = 2;
       }
       else
       {
         uVar4 = 3;
-        if (ntstatus != -0x3ffff9fd)
+        if (ntstatus != STATUS_IMAGE_CERT_REVOKED)
           goto LAB_140011e1c;
       }
     }
