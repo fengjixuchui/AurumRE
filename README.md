@@ -172,7 +172,7 @@ The driver initialization function exists at the offset `0x1D640` which calls:
 
 ### POOL ALLOCATION
 
-`ExAllocatePoolWithTag` will be called 4 times, with `'NoNe' 0x656E6F4E` tag.
+`ExAllocatePoolWithTag` will be called 4 times, with `'None' 0x656E6F4E` (default tag defined in `ExAllocatePool` as macro in WDK) tag.
 
 ```
 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x18, Tag:0x656E6F4E
