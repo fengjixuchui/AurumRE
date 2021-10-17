@@ -425,7 +425,9 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
 ### DRIVER GLOBAL VARIABLES
 
 - Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1971
 - Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1813
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
 - Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
     - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
