@@ -151,6 +151,10 @@ if (puVar7 != (undefined8 *)0x0)
 }
 ```
 
+### STRINGS
+
+Strings are indeed "encrypted" and on the stack just like EQU8 did trick to deceive import name.
+
 # DRIVER INTEGRITY CHECK
 
 The Aurum driver implements integrity check measure, which executed at the [Pre-operation object callbacks](#object-callbacks):
