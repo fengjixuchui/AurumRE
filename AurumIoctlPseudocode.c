@@ -121,7 +121,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   uStack480 = 0;
   *(undefined8 *)(irp + 0x38) = 0; // irp->IoStatus.Information = 0;
   irp_sp = *(byte **)(irp + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
-  mj_function = *irp_sp;           // MajorFunction
+  mj_function = *irp_sp;           // irp_sp->MajorFunction
   if (mj_function < 0xf)
   {
     if (mj_function == 0xe)
