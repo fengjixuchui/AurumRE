@@ -233,6 +233,10 @@ The driver initialization function exists at the offset `0x1D640` which calls:
 
 These pool pointers will be contained in [Global Variables](https://github.com/kkent030315/AurumRE#driver-global-variables).
 
+# DRIVER UNLOAD
+
+See full pseudocode at [AurumDriverUnloadPseudocode.c](AurumDriverUnloadPseudocode.c)
+
 # IOCTL
 
 ### DEVICE
