@@ -167,6 +167,30 @@ if (DAT_140033a18 != 0) {
 }
 ```
 
+### IMAGE INTEGRITY CHECK
+
+```c
+uStack1384 = filehandle;
+uStack1376 = 2;
+uStack1424 = uStack1424 & 0xffffffff00000000;
+ntstatus = ZwQuerySystemInformation(SystemCodeIntegrityCertificateInformation, &uStack1384);
+ZwClose(filehandle);
+uVar4 = 1;
+if (ntstatus != STATUS_INVALID_IMAGE_HASH)
+{
+    if (ntstatus == STATUS_IMAGE_CERT_EXPIRED)
+    {
+        uVar4 = 2;
+    }
+    else
+    {
+        uVar4 = 3;
+        if (ntstatus != STATUS_IMAGE_CERT_REVOKED)
+            goto LAB_140011e1c;
+    }
+}
+```
+
 # DRIVER INITIALIZATION
 
 ### FUNCTION
