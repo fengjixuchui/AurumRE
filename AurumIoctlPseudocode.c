@@ -2038,7 +2038,7 @@ LAB_1400127c3:
             }
           LAB_140012b7a:
             *(char **)(DAT_140033a38 + 8) = pcVar8;
-            *(undefined8 *)(irp_2 + 0x38) = 8;
+            *(undefined8 *)(irp_2 + 0x38) = 8; // irp_2->IoStatus.Information = 8;
           LAB_140016da5:
             uStack560 = 0x20000000;
             uStack556 = uStack560;
