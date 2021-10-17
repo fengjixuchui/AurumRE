@@ -80,10 +80,6 @@ The following functions are heavily obfuscated (as I just know as of now):
 - Process creation callback routine: Aurum+0x14060
 - Object pre-callback routine: Aurum+0xD9A0
 
-Obfuscated control-flow view:
-
-https://user-images.githubusercontent.com/37926134/137597435-5c8264ca-f68e-42cd-9709-2e805c326e26.mp4
-
 Looks like the obfuscation algorithm is quite simple?
 
 ### PE SECTIONS
