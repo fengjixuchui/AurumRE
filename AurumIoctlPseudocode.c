@@ -119,8 +119,8 @@ void UndefinedFunction_140014450(undefined8 param_1,longlong param_2)
   uStack56 = DAT_1400339d0 ^ (ulonglong)auStack648;
   lVar11 = 0;
   uStack480 = 0;
-  *(undefined8 *)(param_2 + 0x38) = 0;
-  pbStack496 = *(byte **)(param_2 + 0xb8); // Irp->Tail.Overlay.CurrentStackLocation
+  *(undefined8 *)(param_2 + 0x38) = 0; // irp->IoStatus.Information = 0;
+  pbStack496 = *(byte **)(param_2 + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
   bVar9 = *pbStack496;
   if (bVar9 < 0xf) {
     if (bVar9 == 0xe) {
