@@ -435,6 +435,19 @@ See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)
 See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)  
 See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
+### AURUM_IOCTL_REGISTER_PROCESS
+
+This IOCTL command is to register a process which is desired to protect.  
+Indeed, the IRP caller (IoGetCurrentProcess) will be registered.
+
+See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c8cdcd48ed5479164f713/AurumIoctlPseudocode.c#L2039-L2041).
+
+```c
+LAB_140012b7a:
+    *(char **)(DAT_140033a38 + 8) = pcVar8;
+    *(undefined8 *)(irp_2 + 0x38) = 8;
+```
+
 # CALLBACKS
 
 ### OBJECT CALLBACKS
