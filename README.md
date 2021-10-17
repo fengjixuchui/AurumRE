@@ -427,8 +427,9 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
 - Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
 - Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
-- Aurum+0x33a38: PVOID gAurumUnknownPool1
+- Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
     - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
-- Aurum+0x33a80: PVOID gAurumUnknownPool2
-- Aurum+0x33a40: PVOID gAurumUnknownPool3
-- Aurum+0x33a28: PVOID gAurumUnknownPool4
+- Aurum+0x33a80: PVOID gAurumUnknownPool2 sizeof(0x28)
+- Aurum+0x33a40: PVOID gAurumUnknownPool3 sizeof(0x10)
+- Aurum+0x33a28: PVOID gAurumUnknownPool4 sizeof(0x11D00)
+    - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/6def5fba0b05bf7138cc2b15c35754cfe1d4c700/AurumPreObPseudocode.c#L1973
