@@ -3,7 +3,7 @@ Reverse engineering of Aurum Ricochet anti-cheat driver
 
 ### DISCLAIMER
 
-I am trying my best however informations at this repository may be not accurate.
+I am trying my best however informations at this repository may not be accurate.
 
 ### CONTRIBUTION
 
