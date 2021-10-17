@@ -13,7 +13,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   byte bVar6;
   undefined8 *puVar7;
   char *pcVar8;
-  byte bVar9;
+  byte mj_function;
   int iVar10;
   longlong lVar11;
   ulonglong uVar12;
@@ -121,10 +121,10 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   uStack480 = 0;
   *(undefined8 *)(irp + 0x38) = 0; // irp->IoStatus.Information = 0;
   irp_sp = *(byte **)(irp + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
-  bVar9 = *irp_sp;
-  if (bVar9 < 0xf)
+  mj_function = *irp_sp;           // MajorFunction
+  if (mj_function < 0xf)
   {
-    if (bVar9 == 0xe)
+    if (mj_function == 0xe)
     {
       if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
       {
@@ -159,9 +159,9 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
     }
     else
     {
-      if (bVar9 < 8)
+      if (mj_function < 8)
       {
-        if (bVar9 == 7)
+        if (mj_function == 7)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -197,7 +197,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (bVar9 == 0)
+          if (mj_function == 0)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -236,7 +236,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (bVar9 == 1)
+            if (mj_function == 1)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -274,7 +274,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (bVar9 == 2)
+              if (mj_function == 2)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -312,7 +312,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (bVar9 == 3)
+                if (mj_function == 3)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -350,7 +350,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (bVar9 == 4)
+                  if (mj_function == 4)
                   {
                     if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                     {
@@ -391,7 +391,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                   }
                   else
                   {
-                    if (bVar9 == 5)
+                    if (mj_function == 5)
                     {
                       if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                       {
@@ -432,7 +432,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                     }
                     else
                     {
-                      if (((bVar9 == 6) && (DAT_140033a40 != (uint *)0x0)) &&
+                      if (((mj_function == 6) && (DAT_140033a40 != (uint *)0x0)) &&
                           (*DAT_140033a40 < 2000))
                       {
                         puStack600 = (ulonglong *)0xaa2d145923ec7f30;
@@ -479,7 +479,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (bVar9 == 8)
+        if (mj_function == 8)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -514,7 +514,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (bVar9 == 9)
+          if (mj_function == 9)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -553,7 +553,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (bVar9 == 10)
+            if (mj_function == 10)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -592,7 +592,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (bVar9 == 0xb)
+              if (mj_function == 0xb)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -629,7 +629,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (bVar9 == 0xc)
+                if (mj_function == 0xc)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -666,7 +666,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (((bVar9 == 0xd) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                  if (((mj_function == 0xd) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                   {
                     puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                     puStack568 = (ulonglong *)0xa7db1bfb;
@@ -709,9 +709,9 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   }
   else
   {
-    if (bVar9 < 0x16)
+    if (mj_function < 0x16)
     {
-      if (bVar9 == 0x15)
+      if (mj_function == 0x15)
       {
         if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
         {
@@ -746,7 +746,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (bVar9 == 0xf)
+        if (mj_function == 0xf)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -781,7 +781,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (bVar9 == 0x10)
+          if (mj_function == 0x10)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -819,7 +819,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (bVar9 == 0x11)
+            if (mj_function == 0x11)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -858,7 +858,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (bVar9 == 0x12)
+              if (mj_function == 0x12)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -897,7 +897,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (bVar9 == 0x13)
+                if (mj_function == 0x13)
                 {
                   if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                   {
@@ -934,7 +934,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
                 }
                 else
                 {
-                  if (((bVar9 == 0x14) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                  if (((mj_function == 0x14) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                   {
                     puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                     lStack328 = lVar11;
@@ -975,7 +975,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
     }
     else
     {
-      if (bVar9 == 0x16)
+      if (mj_function == 0x16)
       {
         if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
         {
@@ -1019,7 +1019,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
       }
       else
       {
-        if (bVar9 == 0x17)
+        if (mj_function == 0x17)
         {
           if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
           {
@@ -1053,7 +1053,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
         }
         else
         {
-          if (bVar9 == 0x18)
+          if (mj_function == 0x18)
           {
             if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
             {
@@ -1089,7 +1089,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
           }
           else
           {
-            if (bVar9 == 0x19)
+            if (mj_function == 0x19)
             {
               if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
               {
@@ -1126,7 +1126,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
             }
             else
             {
-              if (bVar9 == 0x1a)
+              if (mj_function == 0x1a)
               {
                 if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
                 {
@@ -1163,7 +1163,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
               }
               else
               {
-                if (((bVar9 == 0x1b) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
+                if (((mj_function == 0x1b) && (DAT_140033a40 != (uint *)0x0)) && (*DAT_140033a40 < 2000))
                 {
                   puStack600 = (ulonglong *)0xaa2d145923ec7f30;
                   puStack568 = (ulonglong *)0x99e15c84;
@@ -1543,8 +1543,8 @@ LAB_1400127c3:
         *(byte *)puStack440 = *(byte *)puStack440 ^ (byte)(uVar15 >> 0x38);
         bVar2 = (byte)(uVar15 >> 0x30) ^ *(byte *)((longlong)puStack440 + 1);
         *(byte *)((longlong)puStack440 + 1) = bVar2;
-        bVar9 = (byte)(uVar15 >> 0x28) ^ *(byte *)((longlong)puStack440 + 2);
-        *(byte *)((longlong)puStack440 + 2) = bVar9;
+        mj_function = (byte)(uVar15 >> 0x28) ^ *(byte *)((longlong)puStack440 + 2);
+        *(byte *)((longlong)puStack440 + 2) = mj_function;
         bVar4 = (byte)(uVar15 >> 0x20) ^ *(byte *)((longlong)puStack440 + 3);
         *(byte *)((longlong)puStack440 + 3) = bVar4;
         bVar5 = (byte)(uVar15 >> 0x18) ^ *(byte *)((longlong)puStack440 + 4);
@@ -1554,7 +1554,7 @@ LAB_1400127c3:
         bVar6 = (byte)(uVar15 >> 8) ^ *(byte *)((longlong)puStack440 + 6);
         *(byte *)((longlong)puStack440 + 6) = bVar6;
         *(byte *)((longlong)puStack440 + 7) = *(byte *)((longlong)puStack440 + 7) ^ (byte)uVar15;
-        uVar22 = uVar15 ^ CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)puStack440, bVar2), bVar9), bVar4), bVar5), bVar3), bVar6), *(undefined *)((longlong)puStack440 + 7)) ^
+        uVar22 = uVar15 ^ CONCAT71(CONCAT61(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(*(undefined *)puStack440, bVar2), mj_function), bVar4), bVar5), bVar3), bVar6), *(undefined *)((longlong)puStack440 + 7)) ^
                  uStack472;
         uVar13 = ~uVar26 ^ uStack464 ^ 0x96;
         uStack472 = uStack472 ^ uVar12;
@@ -1674,10 +1674,10 @@ LAB_1400127c3:
         puStack592 = (ulonglong *)((longlong)puStack440 + 1);
         if (uStack448 <= uVar13)
           break;
-        bVar9 = *(byte *)puStack440;
+        mj_function = *(byte *)puStack440;
         bVar2 = ('\a' - (char)uVar13) * '\b';
-        *(byte *)puStack440 = (byte)(uVar15 >> (bVar2 & 0x3f)) ^ bVar9;
-        uVar15 = uVar15 & ~(0xff << (bVar2 & 0x3f)) | (ulonglong)bVar9 << (bVar2 & 0x3f);
+        *(byte *)puStack440 = (byte)(uVar15 >> (bVar2 & 0x3f)) ^ mj_function;
+        uVar15 = uVar15 & ~(0xff << (bVar2 & 0x3f)) | (ulonglong)mj_function << (bVar2 & 0x3f);
         bStack520 = (char)uVar13 + 1;
         uVar13 = (ulonglong)bStack520;
         puStack440 = puStack592;
@@ -2781,9 +2781,9 @@ LAB_1400127c3:
           puStack576 = (ulonglong *)((longlong)puStack168 + 1);
           if (puStack96 <= puVar21)
             break;
-          bVar9 = ('\a' - cStack527) * '\b';
-          uVar24 = uVar24 ^ (ulonglong) * (byte *)puStack168 << (bVar9 & 0x3f);
-          *(char *)puStack168 = (char)(uVar24 >> (bVar9 & 0x3f));
+          mj_function = ('\a' - cStack527) * '\b';
+          uVar24 = uVar24 ^ (ulonglong) * (byte *)puStack168 << (mj_function & 0x3f);
+          *(char *)puStack168 = (char)(uVar24 >> (mj_function & 0x3f));
           puVar21 = (ulonglong *)(ulonglong)(byte)(cStack527 + 1);
           puStack168 = puStack576;
         }
