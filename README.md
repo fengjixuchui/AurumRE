@@ -3,7 +3,7 @@ Reverse engineering of Aurum Ricochet anti-cheat driver
 
 ### CONTRIBUTION
 
-Your contribution is welcome. if you find valuable information of any and mind share, do not heistate to open issue or PRs.
+Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.
 
 # NOTES
 
