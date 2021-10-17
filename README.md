@@ -448,7 +448,7 @@ See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 ```
 
 This IOCTL command is to register a process which is desired to protect.  
-Indeed, the IRP caller (IoGetCurrentProcess) will be registered.
+IRP caller (IoGetCurrentProcess) will be registered as a protected process.
 
 See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c8cdcd48ed5479164f713/AurumIoctlPseudocode.c#L2039-L2041).
 
