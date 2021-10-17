@@ -170,6 +170,17 @@ The driver initialization function exists at the offset `0x1D640` which calls:
 - xref: [nt!PsProcessType](https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L6589-L6591)
     - See [OBJECT CALLBACKS](#object-callbacks) section about this.
 
+### POOL ALLOCATION
+
+`ExAllocatePoolWithTag` will be called 4 times, with `'NoNe' 0x656E6F4E` tag.
+
+```
+[DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x18, Tag:0x656E6F4E
+[DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x28, Tag:0x656E6F4E
+[DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x10, Tag:0x656E6F4E
+[DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x11D00, Tag:0x656E6F4E
+```
+
 # IOCTL
 
 ### DEVICE
