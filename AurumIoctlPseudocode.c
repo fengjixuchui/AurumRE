@@ -48,7 +48,7 @@ void UndefinedFunction_140014450(undefined8 device_object, longlong irp)
   undefined auStack544[16];
   undefined uStack528;
   char cStack527;
-  uint minor_function;
+  uint irpsp_flags;
   byte bStack520;
   char *pcStack512;
   ulonglong uStack504;
@@ -1216,10 +1216,10 @@ LAB_1400127c3:
     goto LAB_14001a24a;
   uStack560 = 0xe0000001;
   uStack556 = 0xe0000001;
-  *(undefined8 *)(irp + 0x38) = 0;          // irp->IoStatus.Information = 0;
-  irp_sp_2 = *(ulonglong **)(irp + 0xb8);   // irp->Tail.Overlay.CurrentStackLocation
-  minor_function = *(uint *)(irp_sp_2 + 2); // irp_sp_2->MinorFunction
-  if (minor_function < 0x14)
+  *(undefined8 *)(irp + 0x38) = 0;        // irp->IoStatus.Information = 0;
+  irp_sp_2 = *(ulonglong **)(irp + 0xb8); // irp->Tail.Overlay.CurrentStackLocation
+  irpsp_flags = *(uint *)(irp_sp_2 + 2);  // irp_sp_2->Flags
+  if (irpsp_flags < 0x14)
   {
     if ((DAT_140033a40 != (uint *)0x0) && (*DAT_140033a40 < 2000))
     {
@@ -1279,7 +1279,7 @@ LAB_1400127c3:
               0xb);
     uVar22 = ~uVar13 ^ uVar12;
     auStack544 = CONCAT88(uVar22, uVar12);
-    uStack448 = (ulonglong)minor_function;
+    uStack448 = (ulonglong)irpsp_flags;
     irp_sp = (byte *)((((((((uVar12 & 0xff) << 8 | uVar12 >> 8 & 0xff) << 8 |
                            uVar12 >> 0x10 & 0xff)
                               << 8 |
@@ -1911,7 +1911,7 @@ LAB_1400127c3:
       else
       {
         puVar21 = (ulonglong *)((longlong)puStack440 - uStack552);
-        for (uVar12 = (ulonglong)minor_function; uVar12 != 0; uVar12 = uVar12 - 1)
+        for (uVar12 = (ulonglong)irpsp_flags; uVar12 != 0; uVar12 = uVar12 - 1)
         {
           *(undefined *)puVar21 = 0;
           puVar21 = (ulonglong *)((longlong)puVar21 + 1);
@@ -2166,7 +2166,7 @@ LAB_1400127c3:
                 DAT_140033a40[2] = uStack432;
                 uVar20 = uStack456;
                 uVar19 = uStack560;
-                minor_function = uStack432;
+                irpsp_flags = uStack432;
               }
               if ((uint)uStack472 < uVar20)
               {
