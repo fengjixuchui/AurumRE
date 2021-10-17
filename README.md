@@ -1,6 +1,10 @@
 # AurumRE
 Reverse engineering of Aurum Ricochet anti-cheat driver
 
+### DISCLAIMER
+
+I am trying my best however informations at this repository may not be accurate.
+
 ### CONTRIBUTION
 
 Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.  
@@ -151,6 +155,10 @@ if (puVar7 != (undefined8 *)0x0)
 }
 ```
 
+### STRINGS
+
+Strings are indeed "encrypted" and on the stack just like EQU8 did trick to deceive import name.
+
 # DRIVER INTEGRITY CHECK
 
 The Aurum driver implements integrity check measure, which executed at the [Pre-operation object callbacks](#object-callbacks):
@@ -224,6 +232,10 @@ The driver initialization function exists at the offset `0x1D640` which calls:
 4. https://github.com/kkent030315/AurumRE/blob/47ef71cbaa1e27ddc15b27e328376838e4b3fed8/AurumInitPseudocode.c#L5399
 
 These pool pointers will be contained in [Global Variables](https://github.com/kkent030315/AurumRE#driver-global-variables).
+
+# DRIVER UNLOAD
+
+See full pseudocode at [AurumDriverUnloadPseudocode.c](AurumDriverUnloadPseudocode.c)
 
 # IOCTL
 
@@ -422,6 +434,19 @@ I am pretty sure the driver would have payload-encryption measure if any of IOCT
 See full disassembly at [asm_Aurum%2B0x122b5.asm](asm_Aurum%2B0x122b5.asm)  
 See full deobfuscated disassembly at [AurumIoctlDeobfuscated.asm](AurumIoctlDeobfuscated.asm)  
 See full Ghidra C pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
+
+### AURUM_IOCTL_REGISTER_PROCESS
+
+This IOCTL command is to register a process which is desired to protect.  
+Indeed, the IRP caller (IoGetCurrentProcess) will be registered.
+
+See [this line](https://github.com/kkent030315/AurumRE/blob/7774923708bf8ad3ee9c8cdcd48ed5479164f713/AurumIoctlPseudocode.c#L2039-L2041).
+
+```c
+LAB_140012b7a:
+    *(char **)(DAT_140033a38 + 8) = pcVar8;
+    irp_2->IoStatus.Information = 8;
+```
 
 # CALLBACKS
 
