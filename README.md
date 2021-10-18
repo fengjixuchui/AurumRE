@@ -325,7 +325,7 @@ typedef struct _AURUM_IOCTL_PAYLOAD
 
 ### AURUM_IOCTL_REGISTER_PROCESS
 
-*Warning: This information may not be accurate, [see this](#ioctl_commands)*
+*Warning: This information may not be accurate, [see this](#ioctl-commands)*
 
 ```c
 #define AURUM_IOCTL_REGISTER_PROCESS CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
