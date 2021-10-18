@@ -2257,7 +2257,7 @@ LAB_1400127c3:
         }
         else
         {
-          if (iVar10 == -0x6808af4f)
+          if (iVar10 == 0x97F750B1)
           {
             KeAcquireGuardedMutex();
             lVar11 = irp_2;
@@ -2323,7 +2323,7 @@ LAB_1400127c3:
           }
           else
           {
-            if (iVar10 == -0x1e5ff74b)
+            if (iVar10 == 0xE1A008B5)
             {
               uVar12 = puVar18[1];
               if (0x1000 < uVar12)
