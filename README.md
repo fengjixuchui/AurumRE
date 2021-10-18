@@ -110,6 +110,10 @@ No potential abusable section.
 
 ~~No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.~~
 
+### EXPORTS
+
+Only entrypoint.
+
 ### POOL TAG
 
 Pool tags are seem not defined. (`'None'`)
