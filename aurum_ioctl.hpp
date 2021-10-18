@@ -6,10 +6,10 @@
 
 typedef enum _AURUM_IOCTL_OPERATIONS
 {
-    AurumIoctlRegisterProtectedProcess = 0x23f931ac,
-    AurumIoctlNotYetAnalyzed1 = 0x7f1943eb,
-    AurumIoctlNotYetAnalyzed2 = 0x97F750B1,
-    AurumIoctlNotYetAnalyzed3 = 0xE1A008B5,
+    AurumIoctlRegisterProtectedProcess = 0x23f931aci32,
+    AurumIoctlNotYetAnalyzed1 = 0x7f1943ebi32,
+    AurumIoctlNotYetAnalyzed2 = 0x97F750B1i32,
+    AurumIoctlNotYetAnalyzed3 = 0xE1A008B5i32,
 } AURUM_IOCTL_OPERATIONS;
 
 typedef struct _AURUM_IOCTL_PAYLOAD
