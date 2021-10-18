@@ -1,16 +1,7 @@
 # AurumRE
 Reverse engineering of Aurum Ricochet anti-cheat driver
 
-### DISCLAIMER
-
-I am trying my best however informations at this repository may not be accurate.
-
-### CONTRIBUTION
-
-Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.  
-I suggest you to use Ghidra at this time because IDA is sucks for packed PEs(not impossible but will took lots of your time).
-
-# NOTES
+# DESCRIPTION
 
 ### BINARY
 
