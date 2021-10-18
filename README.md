@@ -292,7 +292,7 @@ Processed 1 device objects.
 Dispatch routine is at offset `0x14450`.   
 See full pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
-## IOCTL COMMANDS
+### IOCTL COMMANDS
 
 ```c
 #define AURUM_IOCTL_EXECUTE_OPERATION CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
