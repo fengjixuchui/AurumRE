@@ -378,7 +378,7 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1813
 - Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
 - Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
-        - Contains ObCallback Protected Process Pointer at offset 0x8
+    - Contains ObCallback Protected Process Pointer at offset 0x8
     - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/ab1a2b8eeeb05a64a32faff2b437c10c2d3ef7b9/AurumPreObPseudocode.c#L411
 - Aurum+0x33a80: PVOID gAurumUnknownPool2 sizeof(0x28)
