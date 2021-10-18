@@ -338,7 +338,7 @@ in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/
     
   ...
   
-  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore an request from protected process itself*/
+  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore a request from protected process itself*/
   if (probable_process == pcVar7)
     goto code_r0x000140013d59;
     
