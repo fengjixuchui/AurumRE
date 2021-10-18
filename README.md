@@ -347,13 +347,11 @@ in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/
   return;
 ```
 
-`probable_process` is the pointer of process structe, called `PEPROCESS` in NT, is set from the global variable at the prologue:
+`probable_process` is the pointer of process `PEPROCESS`, is set from the global variable at the prologue of the function:
 
 ```c
 probable_process = *(char **)(DAT_140033a38 + 8);
 ```
-
-`Aurum+0x33a38+8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
 
 ### PROCESS CALLBACKS
 
