@@ -833,7 +833,7 @@ LAB_140018af8:
   }
 LAB_14000e4e7:
   pcVar7 = (char *)IoGetCurrentProcess();
-  if (probable_process == pcVar7) /* Ignore current process, this value would have a pointer of ntoskrnl.exe(4) */
+  if (probable_process == pcVar7) /* Ignore an request from protected process itself*/
     goto code_r0x000140013d59;
   image_name = (ushort *)0x0;
   uVar8 = IoGetCurrentProcess();
