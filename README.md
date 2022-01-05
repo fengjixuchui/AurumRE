@@ -1,16 +1,7 @@
 # AurumRE
 Reverse engineering of Aurum Ricochet anti-cheat driver
 
-### DISCLAIMER
-
-I am trying my best however informations at this repository may not be accurate.
-
-### CONTRIBUTION
-
-Your contribution is welcome. if you find valuable information of any and if you mind share, do not heistate to open issue or PRs.  
-I suggest you to use Ghidra at this time because IDA is sucks for packed PEs(not impossible but will took lots of your time).
-
-# NOTES
+# DESCRIPTION
 
 ### BINARY
 
@@ -119,6 +110,10 @@ No potential abusable section.
 
 ~~No `MmGetSystemRoutineAddress` import, but potential hardcoded imports with low possibility.~~
 
+### EXPORTS
+
+Only entrypoint.
+
 ### POOL TAG
 
 Pool tags are seem not defined. (`'None'`)
@@ -189,7 +184,7 @@ The driver initialization function exists at the offset `0x1D640` which calls:
 
 ### POOL ALLOCATION
 
-`ExAllocatePoolWithTag` will be called four times, with `'None' 0x656E6F4E` (default tag defined in `ExAllocatePool` as macro in WDK) tag, and all pools are paged.
+`ExAllocatePoolWithTag` will be called four times at the initialization, with `'None' 0x656E6F4E` (default tag defined in `ExAllocatePool` as macro in WDK) tag, and all pools are paged.
 
 ```
 1 [DEBUGGER] ExAllocatePoolWithTag: PoolType:PagedPool(0) NumberOfBytes:0x18, Tag:0x656E6F4E
@@ -297,7 +292,40 @@ Processed 1 device objects.
 Dispatch routine is at offset `0x14450`.   
 See full pseudocode at [AurumIoctlPseudocode](AurumIoctlPseudocode.c)
 
+### IOCTL COMMANDS
+
+```c
+#define AURUM_IOCTL_EXECUTE_OPERATION CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
+```
+
+Only one control code, [recognize operations by payload](aurum_ioctl.hpp)?
+
+```c
+#pragma once
+#include <winioctl.h>
+
+#define AURUM_IOCTL_TYPE 0x8001
+#define AURUM_IOCTL_EXECUTE_OPERATION CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
+
+typedef enum _AURUM_IOCTL_OPERATIONS
+{
+    AurumIoctlRegisterProtectedProcess = 0x23f931aci32,
+    AurumIoctlNotYetAnalyzed1 = 0x7f1943ebi32,
+    AurumIoctlNotYetAnalyzed2 = 0x97F750B1i32,
+    AurumIoctlNotYetAnalyzed3 = 0xE1A008B5i32,
+} AURUM_IOCTL_OPERATIONS;
+
+typedef struct _AURUM_IOCTL_PAYLOAD
+{
+    AURUM_IOCTL_OPERATIONS operation;
+    void* context;
+    // TODO: Analyze ioctl payloads
+} AURUM_IOCTL_PAYLOAD, * PAURUM_IOCTL_PAYLOAD;
+```
+
 ### AURUM_IOCTL_REGISTER_PROCESS
+
+*Warning: This information may not be accurate, [see this](#ioctl-commands)*
 
 ```c
 #define AURUM_IOCTL_REGISTER_PROCESS CTL_CODE(0x8001, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS) // 0x80012004
@@ -347,7 +375,7 @@ in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/
     
   ...
   
-  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore current process, this value would have a pointer of PsInitialSystemProcess */
+  pcVar7 = (char *)IoGetCurrentProcess(); /* Ignore a request from protected process itself*/
   if (probable_process == pcVar7)
     goto code_r0x000140013d59;
     
@@ -356,13 +384,11 @@ in the PreObCallback at line [here](https://github.com/kkent030315/AurumRE/blob/
   return;
 ```
 
-`probable_process` is the pointer of process structe, called `PEPROCESS` in NT, is set from the global variable at the prologue:
+`probable_process` is the pointer of process `PEPROCESS`, is set from the global variable at the prologue of the function:
 
 ```c
 probable_process = *(char **)(DAT_140033a38 + 8);
 ```
-
-`Aurum+0x33a38+8` is referenced, so we need set it to the arbitrary process pointer which we desired to protect.
 
 ### PROCESS CALLBACKS
 
@@ -379,18 +405,18 @@ See full pseudocode at [AurumProcessCallbackPseudocode.c](AurumProcessCallbackPs
 
 ### DRIVER GLOBAL VARIABLES
 
-- Aurum+0x339e0: PKGUARDED_MUTEX gAurumGuardedMutex1
+- `Aurum+0x339e0`: PKGUARDED_MUTEX gAurumGuardedMutex1
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1971
-- Aurum+0x33a48: PKGUARDED_MUTEX gAurumGuardedMutex2
+- `Aurum+0x33a48`: PKGUARDED_MUTEX gAurumGuardedMutex2
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1813
-- Aurum+0x33a30: PKSPIN_LOCK gAurumSpinLock
-- Aurum+0x33a38: PVOID gAurumUnknownPool1 sizeof(0x18)
-        - Contains ObCallback Protected Process Pointer at offset 0x8
+- `Aurum+0x33a30`: PKSPIN_LOCK gAurumSpinLock
+- `Aurum+0x33a38`: PVOID gAurumUnknownPool1 sizeof(0x18)
     - xref in ProcessCallback: https://github.com/kkent030315/AurumRE/blob/2aa6bb064dc6a4e2d8b69f3e2306069d550aec20/AurumProcessCallbackPseudocode.c#L121-L124
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/ab1a2b8eeeb05a64a32faff2b437c10c2d3ef7b9/AurumPreObPseudocode.c#L411
-- Aurum+0x33a80: PVOID gAurumUnknownPool2 sizeof(0x28)
+- `Aurum+0x33a80`: PVOID gAurumUnknownPool2 sizeof(0x28)
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1814
-- Aurum+0x33a40: PVOID gAurumUnknownPool3 sizeof(0x10)
+- `Aurum+0x33a40`: PVOID gAurumUnknownPool3 sizeof(0x10)
+    - Contains ObCallback Protected Process Pointer at offset 0x8
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/main/AurumPreObPseudocode.c#L1982
-- Aurum+0x33a28: PVOID gAurumUnknownPool4 sizeof(0x11D00)
+- `Aurum+0x33a28`: PVOID gAurumUnknownPool4 sizeof(0x11D00)
     - xref in PreObCallback: https://github.com/kkent030315/AurumRE/blob/6def5fba0b05bf7138cc2b15c35754cfe1d4c700/AurumPreObPseudocode.c#L1973

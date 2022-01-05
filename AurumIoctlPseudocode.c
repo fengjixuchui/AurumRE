@@ -1253,9 +1253,9 @@ LAB_1400127c3:
     uStack480 = 0xe0000001;
     goto LAB_14001a24a;
   }
-  if (irp_sp_2->Control == -0x7ffedffc)
+  if (irp_sp_2->Control == 0x80012004)
   {
-    puStack440 = *(ulonglong **)(irp + 0x18);
+    puStack440 = *(ulonglong **)(irp + 0x18); // irp->AssociatedIrp.SystemBuffer
     _auStack72 = ZEXT816(0);
     auStack544 = ZEXT816(0);
     puVar23 = auStack72;
@@ -2257,7 +2257,7 @@ LAB_1400127c3:
         }
         else
         {
-          if (iVar10 == -0x6808af4f)
+          if (iVar10 == 0x97F750B1)
           {
             KeAcquireGuardedMutex();
             lVar11 = irp_2;
@@ -2323,7 +2323,7 @@ LAB_1400127c3:
           }
           else
           {
-            if (iVar10 == -0x1e5ff74b)
+            if (iVar10 == 0xE1A008B5)
             {
               uVar12 = puVar18[1];
               if (0x1000 < uVar12)
